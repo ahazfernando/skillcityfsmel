@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: "*",
             allow: "/",
         },
-        sitemap: "https://www.skillcityfacilitysolutions.com.au/sitemap.xml",
+        sitemap: "https://www.skillcityfs.com.au/sitemap.xml",
     };
 }

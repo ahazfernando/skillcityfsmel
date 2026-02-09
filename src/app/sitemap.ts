@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://www.skillcityfacilitysolutions.com.au";
+    const baseUrl = "https://www.skillcityfs.com.au";
 
     const blogPosts = [1, 2, 3, 4, 5, 6, 7];
     const blogUrls = blogPosts.map((id) => ({

@@ -6,7 +6,7 @@ import ClientLayout from "@/components/layout/ClientLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const SITE_URL = "https://www.skillcityfacilitysolutions.com.au";
+const SITE_URL = "https://www.skillcityfs.com.au";
 
 export const metadata: Metadata = {
     title: {
@@ -88,11 +88,11 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "LocalBusiness",
-                            "@id": "https://www.skillcityfacilitysolutions.com.au/#organization",
+                            "@id": "https://www.skillcityfs.com.au/#organization",
                             "name": "Skill City Facility Solutions",
                             "description": "Premium residential and commercial cleaning services in Melbourne, Oakleigh and Victoria. Eco-friendly house cleaning, office cleaning, builders cleaning and deep cleaning.",
-                            "image": "https://www.skillcityfacilitysolutions.com.au/SkillCityPNGLOGO.png",
-                            "url": "https://www.skillcityfacilitysolutions.com.au",
+                            "image": "https://www.skillcityfs.com.au/SkillCityPNGLOGO.png",
+                            "url": "https://www.skillcityfs.com.au",
                             "telephone": "+61370447710",
                             "email": "admin@skillcityfacilitysolutions.com.au",
                             "address": {
@@ -143,16 +143,16 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "WebSite",
-                            "@id": "https://www.skillcityfacilitysolutions.com.au/#website",
-                            "url": "https://www.skillcityfacilitysolutions.com.au",
+                            "@id": "https://www.skillcityfs.com.au/#website",
+                            "url": "https://www.skillcityfs.com.au",
                             "name": "Skill City Facility Solutions",
                             "alternateName": "Skill City",
                             "description": "Professional cleaning services in Melbourne, Oakleigh & Victoria. House cleaning, office cleaning, builders cleaning.",
-                            "publisher": { "@id": "https://www.skillcityfacilitysolutions.com.au/#organization" },
+                            "publisher": { "@id": "https://www.skillcityfs.com.au/#organization" },
                             "inLanguage": "en-AU",
                             "potentialAction": {
                                 "@type": "SearchAction",
-                                "target": { "@type": "EntryPoint", "urlTemplate": "https://www.skillcityfacilitysolutions.com.au/services?q={search_term_string}" },
+                                "target": { "@type": "EntryPoint", "urlTemplate": "https://www.skillcityfs.com.au/services?q={search_term_string}" },
                                 "query-input": "required name=search_term_string"
                             }
                         })
@@ -164,11 +164,11 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "Organization",
-                            "@id": "https://www.skillcityfacilitysolutions.com.au/#organization",
+                            "@id": "https://www.skillcityfs.com.au/#organization",
                             "name": "Skill City Facility Solutions",
                             "alternateName": ["Skill City", "Skill City FS"],
-                            "url": "https://www.skillcityfacilitysolutions.com.au",
-                            "logo": "https://www.skillcityfacilitysolutions.com.au/SkillCityPNGLOGO.png",
+                            "url": "https://www.skillcityfs.com.au",
+                            "logo": "https://www.skillcityfs.com.au/SkillCityPNGLOGO.png",
                             "description": "Skill City Facility Solutions provides premium residential and commercial cleaning services in Melbourne, Oakleigh and Victoria."
                         })
                     }}
