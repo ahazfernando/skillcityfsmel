@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 import { AuthProvider } from "@/contexts/AuthContext";
+import WelcomePopup from "@/components/home/WelcomePopup";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
     const [queryClient] = useState(() => new QueryClient());
@@ -15,6 +16,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             <AuthProvider>
                 <TooltipProvider>
                     {children}
+                    <WelcomePopup />
                     <Toaster />
                     <Sonner />
                 </TooltipProvider>

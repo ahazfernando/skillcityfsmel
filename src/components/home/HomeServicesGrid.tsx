@@ -1,7 +1,19 @@
-import { Home, Building2, Sparkles, Truck, ArrowRight } from "lucide-react";
+import { Home, Building2, Sparkles, Truck, HeartPulse, GraduationCap, PartyPopper, Layers, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const services = [
+    {
+        icon: GraduationCap,
+        title: "Educational Cleaning",
+        description: "Keep schools and educational facilities spotlessly clean for students and staff in a healthy learning environment.",
+        link: "/services",
+    },
+    {
+        icon: Truck,
+        title: "Builders Cleaning",
+        description: "Post-construction and builders cleaning for a spotless handover. Serving Melbourne, Oakleigh and Victoria.",
+        link: "/services/builders-cleaning",
+    },
     {
         icon: Home,
         title: "House Cleaning",
@@ -9,10 +21,28 @@ const services = [
         link: "/services/house-cleaning",
     },
     {
+        icon: HeartPulse,
+        title: "Healthcare Cleaning",
+        description: "Specialized sanitization services for medical facilities and healthcare environments.",
+        link: "/services",
+    },
+    {
         icon: Building2,
-        title: "Builders Cleaning",
-        description: "Post-construction and builders cleaning for a spotless handover. Serving Melbourne, Oakleigh and Victoria.",
-        link: "/services/builders-cleaning",
+        title: "Office Cleaning",
+        description: "Professional cleaning for office spaces to keep your environment productive and your team focused.",
+        link: "/services",
+    },
+    {
+        icon: PartyPopper,
+        title: "Event & Venue Cleaning",
+        description: "Pre and post-event cleaning for venues, stadiums, and conference centers, leaving every space pristine.",
+        link: "/services",
+    },
+    {
+        icon: Home,
+        title: "Residential Cleaning",
+        description: "We provide you the best service quality regarding all residential needs, tailored to your lifestyle.",
+        link: "/services",
     },
     {
         icon: Sparkles,
@@ -21,9 +51,9 @@ const services = [
         link: "/services",
     },
     {
-        icon: Truck,
-        title: "Move-in/Move-out",
-        description: "Start fresh in your new space or leave the old one spotless with our moving day cleaning.",
+        icon: Layers,
+        title: "Carpet Cleaning",
+        description: "Deep carpet cleaning to remove stains, allergens and odours, refreshing your floors to like-new condition.",
         link: "/services",
     },
 ];
@@ -72,3 +102,4 @@ export default function HomeServicesGrid() {
         </section>
     );
 }
+

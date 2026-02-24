@@ -1,39 +1,40 @@
 "use client";
 
-import { ArrowRight, ArrowLeft, Home, Building2, Sparkles, Truck, ShoppingBag, HeartPulse, GraduationCap, PartyPopper, PanelTop, Layers, Check } from "lucide-react";
+import { ArrowRight, ArrowLeft, Home, Building2, Sparkles, Truck, HeartPulse, GraduationCap, PartyPopper, Layers, Check } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import cleanHomeImg from "@/assets/clean-home.jpg";
-import officeCleaningImg from "@/assets/office-cleaning.jpg";
 import deepCleaningImg from "@/assets/deep-cleaning.jpg";
 import moveCleaningImg from "@/assets/move-cleaning.jpg";
-import retailCleaningImg from "@/assets/retail-cleaning.jpg";
 import healthcareCleaningImg from "@/assets/healthcare-cleaning.jpg";
-import educationalCleaningImg from "@/assets/educational-cleaning.jpg";
 import eventCleaningImg from "@/assets/event-cleaning.jpg";
-import windowCleaningImg from "@/assets/window-cleaning.jpg";
 import carpetCleaningImg from "@/assets/carpet-cleaning.jpg";
+
+const educationalCleaningImg = "/widgetservices/WhatsApp Image 2026-01-14 at 7.14.07 PM.jpeg";
+const officeCleaningWidgetImg = "/widgetservices/WhatsApp Image 2026-01-14 at 7.14.08 PM (1).jpeg";
+const buildersCleaningImg = "/widgetservices/IMG_6798.jpg";
+const carpetCleaningWidgetImg = "/widgetservices/WhatsApp Image 2026-01-14 at 7.26.05 PM (1).jpeg";
 
 const services = [
   {
+    icon: GraduationCap,
+    title: "Educational Cleaning",
+    description: "Keep schools and educational facilities clean for students and staff.",
+    image: educationalCleaningImg,
+  },
+  {
+    icon: Truck,
+    title: "Builders Cleaning",
+    description: "Post-construction cleaning to make your newly built space spotless and move-in ready.",
+    image: buildersCleaningImg,
+  },
+  {
     icon: Home,
-    title: "Residential Cleaning",
-    description: "We provide you the best service quality regarding residential needs.",
+    title: "House Cleaning",
+    description: "Regular and thorough house cleaning services tailored to keep your home fresh and tidy.",
     image: cleanHomeImg,
-  },
-  {
-    icon: Building2,
-    title: "Office Cleaning",
-    description: "Professional cleaning for office spaces to keep your environment productive.",
-    image: officeCleaningImg,
-  },
-  {
-    icon: ShoppingBag,
-    title: "Retail Store Cleanup",
-    description: "Ensure a clean and welcoming environment for your customers with retail cleaning.",
-    image: retailCleaningImg,
   },
   {
     icon: HeartPulse,
@@ -42,10 +43,10 @@ const services = [
     image: healthcareCleaningImg,
   },
   {
-    icon: GraduationCap,
-    title: "Educational Cleaning",
-    description: "Keep schools and educational facilities clean for students and staff.",
-    image: educationalCleaningImg,
+    icon: Building2,
+    title: "Office Cleaning",
+    description: "Professional cleaning for office spaces to keep your environment productive.",
+    image: officeCleaningWidgetImg,
   },
   {
     icon: PartyPopper,
@@ -54,16 +55,10 @@ const services = [
     image: eventCleaningImg,
   },
   {
-    icon: PanelTop,
-    title: "Window Cleaning",
-    description: "Professional window cleaning for crystal clear views at any height.",
-    image: windowCleaningImg,
-  },
-  {
-    icon: Layers,
-    title: "Carpet Cleaning",
-    description: "Deep carpet cleaning to remove stains and refresh your floors.",
-    image: carpetCleaningImg,
+    icon: Home,
+    title: "Residential Cleaning",
+    description: "We provide you the best service quality regarding residential needs.",
+    image: cleanHomeImg,
   },
   {
     icon: Sparkles,
@@ -72,10 +67,10 @@ const services = [
     image: deepCleaningImg,
   },
   {
-    icon: Truck,
-    title: "Move In/Out Cleaning",
-    description: "Complete cleaning for moving in or out of your home or apartment.",
-    image: moveCleaningImg,
+    icon: Layers,
+    title: "Carpet Cleaning",
+    description: "Deep carpet cleaning to remove stains and refresh your floors.",
+    image: carpetCleaningWidgetImg,
   },
 ];
 
