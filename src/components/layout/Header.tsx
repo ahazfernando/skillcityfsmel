@@ -62,6 +62,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about-us" },
+    { name: "Why Choose Us", path: "/why-choose-us" },
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact-us" },
   ];
@@ -289,7 +290,7 @@ const Header = () => {
                     </p>
                   </Link>
                   <Link
-                    href="/about-us"
+                    href="/why-choose-us"
                     onClick={() => setIsServicesOpen(false)}
                     className="block p-3 rounded-xl hover:bg-muted transition-colors group"
                   >
