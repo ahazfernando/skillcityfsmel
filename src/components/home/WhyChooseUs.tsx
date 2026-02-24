@@ -34,20 +34,30 @@ const stats = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="section-padding bg-secondary relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/20 rounded-full blur-3xl" />
+    <section className="section-padding relative bg-gradient-to-br from-green-900 via-green-800 to-green-700 overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-green-600/30 blur-3xl -translate-y-1/2 translate-x-1/4" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-green-500/20 blur-3xl translate-y-1/2 -translate-x-1/4" />
+
+      {/* Grid overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
 
       <div className="container-custom relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider flex items-center justify-center gap-2">
+          <span className="text-sm font-semibold text-green-300 uppercase tracking-wider flex items-center justify-center gap-2">
             Why Choose Us
-            <span className="text-accent">✨</span>
+            <span>✨</span>
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3">
-            We Are Experienced & We Have Expert Teams
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+            We Are Experienced &amp; We Have Expert Teams
           </h2>
         </div>
 
@@ -56,16 +66,16 @@ const WhyChooseUs = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="bg-card rounded-3xl p-6 text-center hover:shadow-lg transition-shadow animate-fade-in"
+              className="bg-white/10 border border-white/20 backdrop-blur-sm rounded-3xl p-6 text-center hover:bg-white/15 transition-colors animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
-                <feature.icon className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 rounded-full bg-green-400/20 flex items-center justify-center mx-auto mb-4">
+                <feature.icon className="w-8 h-8 text-green-300" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-lg font-semibold text-white mb-2">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-green-100/80 text-sm">
                 {feature.description}
               </p>
             </div>
@@ -73,14 +83,14 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Stats */}
-        <div className="bg-primary rounded-3xl p-8 md:p-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="border border-white/20 bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/20 pt-8 mt-0">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">
+                <p className="text-4xl md:text-5xl font-bold text-white mb-2">
                   {stat.value}
                 </p>
-                <p className="text-primary-foreground/80 text-sm">
+                <p className="text-green-200 text-sm">
                   {stat.label}
                 </p>
               </div>
@@ -90,9 +100,12 @@ const WhyChooseUs = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button className="btn-secondary" asChild>
-            <Link href="/about-us">Cleaning Process</Link>
-          </Button>
+          <Link
+            href="/about-us"
+            className="inline-flex items-center gap-2 bg-white text-green-800 font-bold px-8 py-3.5 rounded-full hover:bg-green-50 transition-colors shadow-lg"
+          >
+            Cleaning Process
+          </Link>
         </div>
       </div>
     </section>

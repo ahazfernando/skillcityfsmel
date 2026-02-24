@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import WCUHero from "@/components/why-choose-us/WCUHero";
+import WCUMarquee from "@/components/why-choose-us/WCUMarquee";
 import WCUDifferentiators from "@/components/why-choose-us/WCUDifferentiators";
 import WCUCommitments from "@/components/why-choose-us/WCUCommitments";
 import WCUProcess from "@/components/why-choose-us/WCUProcess";
@@ -20,6 +21,7 @@ export default function WhyChooseUsPage() {
     return (
         <>
             <WCUHero />
+            <WCUMarquee />
             <WCUDifferentiators />
             <WCUCommitments />
             <WCUProcess />
