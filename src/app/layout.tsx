@@ -69,6 +69,10 @@ export const metadata: Metadata = {
     verification: {
         // Add when you have them: google: "your-google-verification-code", yandex: "your-yandex-code"
     },
+    icons: {
+        icon: "/SkillCityPNGLOGO.png",
+        apple: "/SkillCityPNGLOGO.png",
+    },
 };
 
 export default function RootLayout({
