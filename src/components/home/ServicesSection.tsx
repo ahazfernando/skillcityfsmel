@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import cleanHomeImg from "@/assets/clean-home.jpg";
 import deepCleaningImg from "@/assets/deep-cleaning.jpg";
 import moveCleaningImg from "@/assets/move-cleaning.jpg";
@@ -43,16 +44,16 @@ const services = [
     image: healthcareCleaningImg,
   },
   {
-    icon: Building2,
-    title: "Office Cleaning",
-    description: "Professional cleaning for office spaces to keep your environment productive.",
-    image: officeCleaningWidgetImg,
-  },
-  {
     icon: PartyPopper,
     title: "Event & Venue Cleaning",
     description: "Pre and post-event cleaning for venues, stadiums, and conference centers.",
-    image: eventCleaningImg,
+    image: officeCleaningWidgetImg,
+  },
+  {
+    icon: Building2,
+    title: "Office Cleaning",
+    description: "Professional cleaning for office spaces to keep your environment productive.",
+    image: "/ourservices/SkillCityOfficeCleaning.png",
   },
   {
     icon: Home,
@@ -75,11 +76,22 @@ const services = [
 ];
 
 const ServicesSection = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    containScroll: "trimSnaps",
-    dragFree: true,
-  });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      align: "start",
+      containScroll: "trimSnaps",
+      dragFree: true,
+      loop: true,
+    },
+    [
+      AutoScroll({
+        playOnInit: true,
+        speed: 1,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true,
+      }),
+    ]
+  );
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
 
@@ -113,7 +125,9 @@ const ServicesSection = () => {
       <div className="container-custom">
         <div className="grid lg:grid-cols-12 gap-12">
           {/* Left side - Title and Navigation */}
-          <div className="lg:col-span-4 flex flex-col justify-center z-10">
+          <div className="lg:col-span-4 flex flex-col justify-center z-20 relative">
+            {/* Background mask to hide overlapping carousel items (only active on large screens) */}
+            <div className="hidden lg:block absolute inset-y-[-50vh] -right-6 w-[100vw] bg-background z-[-1]" />
             <div className="mb-2">
               <span className="inline-flex items-center gap-2 text-sm font-bold text-primary uppercase tracking-wider">
                 <Check className="w-4 h-4" strokeWidth={4} />
