@@ -59,7 +59,7 @@ const services = [
         description: "Our house cleaning services are designed to give your home a thorough, professional clean. From dusting and vacuuming to bathroom sanitization, we cover every corner of your living space.",
         image: cleanHomeImg,
         features: ["Kitchen deep clean", "Bathroom sanitization", "Bedroom & living areas", "Floor mopping & vacuuming"],
-
+        href: "/services/house-cleaning",
     },
     {
         icon: Building2,
@@ -67,7 +67,7 @@ const services = [
         description: "Maintain a productive and healthy work environment with our commercial cleaning services. We work around your schedule to ensure minimal disruption to your business operations.",
         image: officeCleaningImg,
         features: ["Desk & workspace cleaning", "Restroom sanitization", "Kitchen/break room cleaning", "Floor care & maintenance"],
-
+        href: "/services/office-cleaning",
     },
     {
         icon: Sparkles,
@@ -75,7 +75,7 @@ const services = [
         description: "Our deep cleaning service goes beyond regular cleaning to tackle built-up grime, hidden dust, and those hard-to-reach areas that need extra attention.",
         image: deepCleaningImg,
         features: ["Behind appliances", "Inside cabinets & closets", "Baseboards & light fixtures", "Grout & tile deep clean"],
-
+        href: "/services/commercial-cleaning",
     },
     {
         icon: Truck,
@@ -83,7 +83,7 @@ const services = [
         description: "Whether you're moving into a new home or preparing your old one for new occupants, our move-in/out cleaning service ensures every space is spotless.",
         image: moveCleaningImg,
         features: ["Complete property cleaning", "Appliance cleaning", "Carpet deep cleaning", "Window & glass cleaning"],
-
+        href: "/services/end-of-lease-cleaning",
     },
 ];
 
@@ -160,12 +160,19 @@ export default function Services() {
                                         ))}
                                     </div>
 
-                                    <Button className="btn-primary flex items-center gap-2" asChild>
-                                        <Link href="/contact-us">
-                                            Get a Quote
-                                            <ArrowRight className="w-4 h-4" />
-                                        </Link>
-                                    </Button>
+                                    <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                                        <Button className="btn-primary flex items-center justify-center gap-2" asChild>
+                                            <Link href="/contact-us">
+                                                Get a Quote
+                                                <ArrowRight className="w-4 h-4" />
+                                            </Link>
+                                        </Button>
+                                        <Button variant="outline" className="flex items-center justify-center gap-2 border-primary text-primary hover:bg-primary/5" asChild>
+                                            <Link href={service.href}>
+                                                Learn More
+                                            </Link>
+                                        </Button>
+                                    </div>
                                 </div>
                             </div>
                         ))}

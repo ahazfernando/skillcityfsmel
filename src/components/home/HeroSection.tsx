@@ -30,8 +30,8 @@ const HeroSection = () => {
                 </h1>
 
                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-in-up font-normal">
-                    Skill City Facility Solutions turns messy environments into spotless sanctuaries with
-                    professional, eco-friendly cleaning across Melbourne, Oakleigh and Victoria.
+                    Skill City Facility Solutions turns messy environments into <span className="font-medium italic text-primary/90">spotless sanctuaries</span> with
+                    <span className="font-medium italic text-primary/90"> professional, eco-friendly cleaning</span> across <span className="font-medium italic text-primary/90">Melbourne, Oakleigh and Victoria</span>.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-in-up" style={{ animationDelay: "0.2s" }}>
