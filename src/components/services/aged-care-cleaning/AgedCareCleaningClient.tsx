@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Heart, HeartPulse, Sparkles, SmileCircle, Check } from 'lucide-react';
+import { ArrowRight, Heart, HeartPulse, Sparkles, Smile, Check } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -108,7 +108,7 @@ export function AgedCareCleaningClient() {
             {/* Content Highlight */}
             <section className="py-24 bg-lime-50 text-center">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <SmileCircle className="w-16 h-16 text-lime-400 mx-auto mb-8" />
+                    <Smile className="w-16 h-16 text-lime-400 mx-auto mb-8" />
                     <p className="text-2xl md:text-3xl text-gray-800 leading-relaxed font-serif italic mb-10">
                         "By choosing Skill City, you partner with a trusted team that understands the care and responsibility required in aged care environments. Our trained and respectful staff follow strict health and safety standards."
                     </p>
