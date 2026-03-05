@@ -224,7 +224,7 @@ const Header = () => {
                 {isMobileServicesOpen && (
                   <div className="pl-4 py-2 space-y-2 animate-fade-in">
                     {services.map((service) => {
-                      const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning"].includes(service.href);
+                      const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning", "/services/commercial-cleaning"].includes(service.href);
                       return (
                         <Link
                           key={service.title}
@@ -289,11 +289,11 @@ const Header = () => {
       {/* Full-width Services Mega Menu - Positioned below header */}
       {isServicesOpen && (
         <div
-          className="hidden lg:block absolute left-4 right-4 top-full mt-2 bg-background border border-border shadow-lg z-50 animate-fade-in rounded-3xl overflow-hidden"
+          className="hidden lg:block absolute left-0 right-0 top-full mt-2 bg-background border border-border shadow-lg z-50 animate-fade-in rounded-3xl overflow-hidden"
           onMouseEnter={() => setIsServicesOpen(true)}
           onMouseLeave={() => setIsServicesOpen(false)}
         >
-          <div className="container-custom py-8">
+          <div className="w-full px-6 md:px-8 py-8">
             <div className="flex gap-12">
               {/* Services Grid */}
               <div className="flex-1">
@@ -304,7 +304,7 @@ const Header = () => {
                 </div>
                 <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
                   {services.map((service) => {
-                    const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning"].includes(service.href);
+                    const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning", "/services/commercial-cleaning"].includes(service.href);
                     return (
                       <Link
                         key={service.title}
