@@ -1,74 +1,75 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Sparkles, Coffee } from 'lucide-react';
+import { MapPin, ShieldCheck, Shirt, BadgeCheck } from 'lucide-react';
 
 const steps = [
     {
-        icon: Calendar,
-        title: "Book Online",
-        description: "Choose your preferred date and time in just a few clicks.",
-        color: "bg-blue-500"
+        icon: MapPin,
+        title: "GPS Tracked\nSign In & Out",
+        description: "Every job is logged with GPS check-in and check-out for full accountability."
     },
     {
-        icon: Sparkles,
-        title: "We Clean",
-        description: "Our professional team arrives and makes your home shine.",
-        color: "bg-lime-500"
+        icon: ShieldCheck,
+        title: "Trained And\nPolice Cleared",
+        description: "All staff undergo rigorous training and full police background checks."
     },
     {
-        icon: Coffee,
-        title: "You Relax",
-        description: "Enjoy your free time and come home to a fresh space.",
-        color: "bg-orange-500"
+        icon: Shirt,
+        title: "Uniformed /\nCorrect PPE",
+        description: "Our team arrives in uniform with appropriate safety equipment"
+    },
+    {
+        icon: BadgeCheck,
+        title: "ID Verified\nStaff",
+        description: "Every cleaner carries verified ID so you always know who's in your space."
     }
 ];
 
 export function HouseCleaningProcess() {
     return (
-        <section className="py-32 bg-white relative overflow-hidden">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold text-forest mb-6 font-sans">How It Works</h2>
-                    <p className="text-gray-500 text-lg">Three simple steps to a cleaner home.</p>
-                </div>
-
-                <div className="relative grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-                    {/* Connecting Line */}
-                    <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-gray-100 rounded-full">
-                        <motion.div
-                            initial={{ width: "0%" }}
-                            whileInView={{ width: "100%" }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.5, ease: "easeInOut" }}
-                            className="h-full bg-gradient-to-r from-blue-500 via-lime-500 to-orange-500 rounded-full"
-                        />
+        <section className="py-24 bg-white relative overflow-hidden">
+            <div className="container mx-auto px-4 max-w-7xl">
+                <div className="text-center mb-20 space-y-4">
+                    <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-green-200 bg-green-50">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00b050]"></span>
+                        <span className="text-xs font-bold tracking-widest text-[#00b050] uppercase">HOW WE WORK</span>
                     </div>
 
-                    {steps.map((step, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.3 }}
-                            className="relative flex flex-col items-center text-center"
-                        >
-                            <div className={`w-24 h-24 rounded-full ${step.color} text-white flex items-center justify-center shadow-xl z-10 mb-8 transform transition-transform hover:scale-110 duration-300`}>
-                                <step.icon className="w-10 h-10" />
-                            </div>
+                    <h2 className="text-4xl md:text-5xl font-bold text-[#111827]">
+                        How We Deliver Quality
+                    </h2>
 
-                            <h3 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                            <p className="text-gray-500 max-w-xs mx-auto text-lg leading-relaxed">
-                                {step.description}
-                            </p>
+                    <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+                        A simple, transparent process built around your convenience from first contact to a spotless result.
+                    </p>
+                </div>
 
-                            {/* Step Number Background */}
-                            <span className="absolute -top-10 left-1/2 -translate-x-1/2 text-[150px] font-bold text-gray-50/80 -z-10 select-none">
-                                {index + 1}
-                            </span>
-                        </motion.div>
-                    ))}
+                <div className="relative max-w-6xl mx-auto pt-4">
+                    {/* Connecting Line */}
+                    <div className="hidden md:block absolute top-[28px] left-[12%] right-[12%] h-[1px] bg-green-100" />
+
+                    <div className="grid md:grid-cols-4 gap-8">
+                        {steps.map((step, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.2 }}
+                                className="relative flex flex-col items-center text-center"
+                            >
+                                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-400 to-[#00b050] text-white flex items-center justify-center shadow-lg shadow-green-500/20 z-10 mb-8 border-4 border-white transform transition-transform duration-300 hover:scale-110">
+                                    <step.icon className="w-6 h-6" strokeWidth={2} />
+                                </div>
+
+                                <h3 className="text-lg font-bold text-[#111827] mb-3 whitespace-pre-line leading-tight">{step.title}</h3>
+                                <p className="text-gray-500 text-sm leading-relaxed max-w-[220px] mx-auto">
+                                    {step.description}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

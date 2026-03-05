@@ -143,8 +143,8 @@ export default function CommercialCleaningServicesTabs() {
                                     </ul>
 
                                     <div className="pt-6">
-                                        <Link href="/contact-us" className="inline-block bg-[#00b050] hover:bg-[#008f40] text-white font-bold py-3 px-8 rounded transition-colors shadow-lg">
-                                            LEARN MORE
+                                        <Link href="/contact-us" className="inline-block bg-[#00b050] hover:bg-[#008f40] text-white font-medium py-3 px-8 rounded transition-colors shadow-lg">
+                                            Book a Free Consultation
                                         </Link>
                                     </div>
                                 </div>

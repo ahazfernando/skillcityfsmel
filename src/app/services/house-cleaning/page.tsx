@@ -1,5 +1,7 @@
 import { HouseCleaningHero } from "@/components/services/house-cleaning/HouseCleaningHero";
+import HouseCleaningAbout from "@/components/services/house-cleaning/HouseCleaningAbout";
 import { HouseCleaningFeatures } from "@/components/services/house-cleaning/HouseCleaningFeatures";
+import HouseCleaningFeaturesAlt from "@/components/services/house-cleaning/HouseCleaningFeaturesAlt";
 import { HouseCleaningProcess } from "@/components/services/house-cleaning/HouseCleaningProcess";
 import { HouseCleaningReviews } from "@/components/services/house-cleaning/HouseCleaningReviews";
 import { HouseCleaningCTA } from "@/components/services/house-cleaning/HouseCleaningCTA";
@@ -40,6 +42,7 @@ export default function HouseCleaningPage() {
         <main className="bg-white">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(houseBreadcrumbSchema) }} />
             <HouseCleaningHero />
+            <HouseCleaningAbout />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -66,6 +69,7 @@ export default function HouseCleaningPage() {
                     })
                 }}
             />
+            <HouseCleaningFeaturesAlt />
             <HouseCleaningFeatures />
             <HouseCleaningProcess />
             <HouseCleaningReviews />
