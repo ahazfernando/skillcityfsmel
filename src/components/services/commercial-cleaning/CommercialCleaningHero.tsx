@@ -11,6 +11,16 @@ const highlights = [
 export default function CommercialCleaningHero() {
     return (
         <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-green-700 overflow-hidden min-h-[90vh] flex items-center">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/CommercialCleaning/WhatsApp Image 2026-01-14 at 7.26.15 PM (1).jpeg"
+                    alt="Commercial Cleaning Background"
+                    fill
+                    className="object-cover opacity-20"
+                    priority
+                />
+            </div>
             {/* Decorative blobs */}
             <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-green-600/30 blur-3xl -translate-y-1/2 translate-x-1/4" />
             <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-green-500/20 blur-3xl translate-y-1/2 -translate-x-1/4" />
@@ -101,7 +111,7 @@ export default function CommercialCleaningHero() {
                     {/* Image frame */}
                     <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-lg mx-auto lg:ml-auto border border-green-800/30">
                         <Image
-                            src="/CommercialCleaning/WhatsApp Image 2026-01-14 at 7.26.15 PM (1).jpeg"
+                            src="/CommercialCleaning/CommercialCleaning.png"
                             alt="Commercial Workspace Cleaning"
                             className="w-full h-full object-cover"
                             fill

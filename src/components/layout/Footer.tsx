@@ -1,107 +1,210 @@
 import Link from "next/link";
-import { Sparkles, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, Facebook, Twitter, Instagram, Linkedin, MapPin } from "lucide-react";
 
-const Footer = () => {
+// You can customize these links for your new project
+const footerLinks = {
+  company: [
+    { name: "About Us", path: "/about-us" },
+    { name: "Services", path: "/services" },
+    { name: "Community", path: "/contact-us" },
+    { name: "Testimonial", path: "/about-us" },
+  ],
+  support: [
+    { name: "Help Center", path: "/contact-us" },
+    { name: "Tweet @ Us", path: "https://twitter.com/skillcityfs" },
+    { name: "Webinars", path: "/services" },
+    { name: "Feedback", path: "/contact-us" },
+  ],
+  links: [
+    { name: "Courses", path: "/services" },
+    { name: "Service", path: "/services" },
+    { name: "All in One", path: "/services" },
+  ],
+};
+
+export const Footer = () => {
   return (
-    <footer className="bg-forest text-primary-foreground">
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand Column */}
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2" title="Skill City Facility Solutions">
-              <div className="relative h-16 w-56">
+    <footer className="bg-[#f4f7f5]">
+      {/* ========================================= */}
+      {/*            Newsletter Section             */}
+      {/* ========================================= */}
+      <div className="container mx-auto px-4 max-w-7xl -mb-8 pt-24 relative z-10">
+        <div className="rounded-2xl overflow-visible relative bg-[#008000]">
+          <div className="flex flex-col md:flex-row items-center">
+            {/* Left: Image */}
+            <div className="w-full md:w-2/5 flex items-end justify-center pt-8 md:pt-0">
+              {/* Sparkle decorations */}
+              <div className="absolute top-0 left-12 text-white text-2xl z-10">✦</div>
+              <div className="absolute top-8 right-8 text-white text-lg z-10">✦</div>
+              <div className="absolute bottom-16 left-8 text-white text-sm z-10">✦</div>
+
+              <div className="w-[80%] md:w-[120%] relative md:-mt-24 md:-ml-8 z-20 flex items-end justify-center">
                 <img
-                  src="/SkillCityFSEC.png"
-                  alt="Skill City Facility Solutions - Professional Cleaning Melbourne Victoria"
-                  className="h-full w-auto object-contain object-left"
+                  src="/CommercialCleaning/KarcherVacumCleaner.png"
+                  alt="Newsletter illustration"
+                  className="w-full h-auto object-contain max-h-[400px]"
                 />
               </div>
-            </Link>
-            <h3 className="text-lg font-semibold text-primary-foreground sr-only">Skill City Facility Solutions</h3>
-            <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              <strong className="text-primary-foreground">Skill City Facility Solutions</strong> — Professional cleaning services for homes and businesses across Melbourne, Oakleigh and Victoria. We make your spaces sparkle so you can focus on what matters most.
-            </p>
-            <p className="text-primary-foreground/70 text-xs">
-              Service area: Melbourne, Victoria, Australia
-            </p>
-            <div className="flex gap-4">
-              <a href="https://www.facebook.com/skillcityfs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="https://twitter.com/skillcityfs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Twitter">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="https://www.instagram.com/skillcityfs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Instagram">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="https://www.linkedin.com/company/skillcityfs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5" />
-              </a>
+            </div>
+
+            {/* Right: Newsletter Form */}
+            <div className="w-full md:w-3/5 p-8 md:p-12 text-white">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">
+                Subscribe to our newsletter to get updates to our Offers
+              </h2>
+              <p className="text-white/80 mb-6">
+                Get 20% off on your first contract just by subscribing to our newsletter
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                <div className="flex-1 relative">
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full pl-12 pr-4 py-3 rounded-full bg-white text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30"
+                  />
+                </div>
+                <button className="px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">
+                  Subscribe
+                </button>
+              </div>
+
+              <p className="text-white/70 text-sm">
+                You will be able to unsubscribe at any time.
+                <br />
+                Read our privacy policy <Link href="/privacy" className="underline hover:text-white">here</Link>
+              </p>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              <li><Link href="/" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Home</Link></li>
-              <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Services</Link></li>
-              <li><Link href="/about-us" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">About Us</Link></li>
-              <li><Link href="/blog" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Blog</Link></li>
-              <li><Link href="/contact-us" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Services — strong internal links for sitelinks */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Our Services</h4>
-            <ul className="space-y-3">
-              <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">All Services</Link></li>
-              <li><Link href="/services/house-cleaning" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">House Cleaning</Link></li>
-              <li><Link href="/services/builders-cleaning" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Builders Cleaning</Link></li>
-              <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Office & Deep Cleaning</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-accent mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm">
-                  4A Haughton Road, Oakleigh,<br />
-                  3166, VIC
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-accent" />
-                <a href="tel:+61370447710" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">
-                  037 044 7710
+      {/* ========================================= */}
+      {/*               Main Footer                 */}
+      {/* ========================================= */}
+      <div className="bg-forest text-primary-foreground pt-32 pb-8 mt-[-3rem]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+            {/* Brand Column */}
+            <div className="lg:col-span-1">
+              <Link href="/" className="flex items-center mb-4">
+                <img
+                  src="/SkillCityFSEC.png"
+                  alt="Skill City Logo"
+                  className="h-12 w-auto brightness-0 invert"
+                />
+              </Link>
+              <p className="text-primary-foreground/80 text-sm mb-6 leading-relaxed">
+                Skill City Group of Companies is a leading provider of comprehensive facility solutions, expert recruitment services, and professional development programs.
+              </p>
+              <div className="flex items-center gap-4">
+                <a href="https://facebook.com/skillcityfs" target="_blank" rel="noreferrer" className="text-primary-foreground hover:text-accent transition-colors">
+                  <Facebook size={18} />
                 </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-accent" />
-                <a href="mailto:admin@skillcityfacilitysolutions.com.au" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">
-                  admin@skillcityfacilitysolutions.com.au
+                <a href="https://twitter.com/skillcityfs" target="_blank" rel="noreferrer" className="text-primary-foreground hover:text-accent transition-colors">
+                  <Twitter size={18} />
                 </a>
-              </li>
-            </ul>
+                <a href="https://instagram.com/skillcityfs" target="_blank" rel="noreferrer" className="text-primary-foreground hover:text-accent transition-colors">
+                  <Instagram size={18} />
+                </a>
+                <a href="https://linkedin.com/company/skillcityfs" target="_blank" rel="noreferrer" className="text-primary-foreground hover:text-accent transition-colors">
+                  <Linkedin size={18} />
+                </a>
+              </div>
+            </div>
+
+            {/* Company Links */}
+            <div>
+              <h4 className="font-semibold text-primary-foreground mb-4">Company</h4>
+              <ul className="space-y-3">
+                {footerLinks.company.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.path}
+                      className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Support Links */}
+            <div>
+              <h4 className="font-semibold text-primary-foreground mb-4">Support</h4>
+              <ul className="space-y-3">
+                {footerLinks.support.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.path}
+                      className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Links */}
+            <div>
+              <h4 className="font-semibold text-primary-foreground mb-4">Links</h4>
+              <ul className="space-y-3">
+                {footerLinks.links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.path}
+                      className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Us */}
+            <div>
+              <h4 className="font-semibold text-primary-foreground mb-4">Contact Us</h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3 text-primary-foreground/80 text-sm">
+                  <MapPin size={16} className="text-accent mt-0.5 flex-shrink-0" />
+                  <span>4A Haughton Road, Oakleigh, 3166, VIC</span>
+                </div>
+                <a href="tel:+61370447710" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors text-sm">
+                  <Phone size={16} className="text-accent" />
+                  <span>037 044 7710</span>
+                </a>
+                <a href="mailto:admin@skillcityfacilitysolutions.com.au" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors text-sm">
+                  <Mail size={16} className="text-accent" />
+                  <span>admin@skillcityfacilitysolutions.com.au</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Bottom Bar */}
+        <div className="border-t border-primary-foreground/20">
+          <div className="container mx-auto px-4 max-w-7xl py-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © 2026 Skill City Facility Solutions. All rights reserved.
+              © Copyright by Skill City Group of Companies. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors text-sm">
+            <div className="flex items-center gap-6">
+              <Link href="/privacy" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors text-sm">
-                Terms of Service
-              </a>
+              </Link>
+              <Link href="/terms" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                Terms of Use
+              </Link>
+              <Link href="/legal" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                Legal
+              </Link>
+              <Link href="/sitemap" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                Site Map
+              </Link>
             </div>
           </div>
         </div>
