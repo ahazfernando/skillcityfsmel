@@ -45,6 +45,7 @@ import { BuildersHeroCard } from "@/components/services/BuildersHeroCard";
 import { BuildersProcessSection } from "@/components/services/BuildersProcessSection";
 import LocationsSection from "@/components/home/LocationsSection";
 import { BuildersWhyChooseUs } from "@/components/services/BuildersWhyChooseUs";
+import { BuildersCleaningTabsSection } from "@/components/services/BuildersCleaningTabsSection";
 
 export default function BuildersCleaningPage() {
     return (
@@ -59,6 +60,7 @@ export default function BuildersCleaningPage() {
 
             <BuildersHeroCard />
             <BuildersProcessSection />
+            <BuildersCleaningTabsSection />
             <LocationsSection />
             <BuildersWhyChooseUs />
         </main>

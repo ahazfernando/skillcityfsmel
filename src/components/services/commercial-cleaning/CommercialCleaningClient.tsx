@@ -10,7 +10,7 @@ import CommercialCleaningWhyChooseUs from './CommercialCleaningWhyChooseUs';
 import CommercialCleaningBenefits from './CommercialCleaningBenefits';
 import CommercialCleaningFAQ from './CommercialCleaningFAQ';
 import LocationsSection from '../../home/LocationsSection';
-import CommercialCleaningServicesTabs from './CommercialCleaningServicesTabs';
+import { CommercialCleaningTabsSection } from './CommercialCleaningTabsSection';
 
 export function CommercialCleaningClient() {
     return (
@@ -20,7 +20,7 @@ export function CommercialCleaningClient() {
 
             <CommercialCleaningWhyChooseUs />
             <CommercialCleaningBenefits />
-            <CommercialCleaningServicesTabs />
+            <CommercialCleaningTabsSection />
 
             <CommercialCleaningHowItWorks />
             <LocationsSection />

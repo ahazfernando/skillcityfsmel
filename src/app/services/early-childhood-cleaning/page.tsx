@@ -1,4 +1,7 @@
-import { EarlyChildhoodCleaningClient } from "@/components/services/early-childhood-cleaning/EarlyChildhoodCleaningClient";
+import { EarlyChildhoodHero } from "@/components/services/early-childhood-cleaning/EarlyChildhoodHero";
+import { EarlyChildhoodAbout } from "@/components/services/early-childhood-cleaning/EarlyChildhoodAbout";
+import { EarlyChildhoodProtectedAreas } from "@/components/services/early-childhood-cleaning/EarlyChildhoodProtectedAreas";
+import LocationsSection from "@/components/home/LocationsSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,5 +10,12 @@ export const metadata: Metadata = {
 };
 
 export default function EarlyChildhoodCleaningPage() {
-    return <EarlyChildhoodCleaningClient />;
+    return (
+        <main>
+            <EarlyChildhoodHero />
+            <EarlyChildhoodAbout />
+            <EarlyChildhoodProtectedAreas />
+            <LocationsSection />
+        </main>
+    );
 }

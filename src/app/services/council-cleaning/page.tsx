@@ -1,4 +1,7 @@
-import { CouncilCleaningClient } from "@/components/services/council-cleaning/CouncilCleaningClient";
+import { CouncilCleaningHero } from "@/components/services/council-cleaning/CouncilCleaningHero";
+import { CouncilCleaningAbout } from "@/components/services/council-cleaning/CouncilCleaningAbout";
+import { CouncilCleaningCapabilities } from "@/components/services/council-cleaning/CouncilCleaningCapabilities";
+import LocationsSection from "@/components/home/LocationsSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,5 +10,12 @@ export const metadata: Metadata = {
 };
 
 export default function CouncilCleaningPage() {
-    return <CouncilCleaningClient />;
+    return (
+        <main>
+            <CouncilCleaningHero />
+            <CouncilCleaningAbout />
+            <CouncilCleaningCapabilities />
+            <LocationsSection />
+        </main>
+    );
 }
