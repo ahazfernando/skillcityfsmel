@@ -7,22 +7,6 @@ import Image from "next/image";
 export function CouncilCleaningAbout() {
     return (
         <div className="bg-white">
-            {/* Visual Break - Large Width Image */}
-            <section className="px-4 pb-20 -mt-10 relative z-20">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                    className="container mx-auto max-w-6xl h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden relative shadow-2xl"
-                >
-                    <Image
-                        src="/home/PHOTO-2026-01-07-18-53-29.jpg"
-                        alt="Public Library Cleaning"
-                        fill
-                        className="object-cover"
-                    />
-                </motion.div>
-            </section>
 
             {/* Zig-Zag Content Sections */}
             <section className="py-24">

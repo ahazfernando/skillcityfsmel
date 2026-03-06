@@ -15,12 +15,12 @@ export function CouncilCleaningCapabilities() {
                         </h2>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
                         {[
-                            { icon: MapPin, title: "Public Lobbies & Desks", desc: "Thorough cleaning of public lobbies, waiting areas, and reception desks." },
-                            { icon: Users, title: "Event Spaces", desc: "Sanitisation of community halls, meeting rooms, and event spaces." },
-                            { icon: Leaf, title: "High-Touch Hygiene", desc: "High-frequency touchpoint disinfection (doors, handles, handrails)." },
-                            { icon: Recycle, title: "Waste & Recycling", desc: "Waste removal, recycling coordination, and bin management." },
+                            { icon: MapPin, title: "Public Lobbies & Desks", desc: "Thorough cleaning of public lobbies, waiting areas, and reception desks.", num: "01" },
+                            { icon: Users, title: "Event Spaces", desc: "Sanitisation of community halls, meeting rooms, and event spaces.", num: "02" },
+                            { icon: Leaf, title: "High-Touch Hygiene", desc: "High-frequency touchpoint disinfection (doors, handles, handrails).", num: "03" },
+                            { icon: Recycle, title: "Waste & Recycling", desc: "Waste removal, recycling coordination, and bin management.", num: "04" },
                         ].map((feature, i) => (
                             <motion.div
                                 key={i}
@@ -28,13 +28,16 @@ export function CouncilCleaningCapabilities() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow text-center"
+                                className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow text-center relative overflow-hidden group"
                             >
-                                <div className="w-16 h-16 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 text-[#00b050] border border-gray-100">
+                                <div className="absolute -top-4 -right-2 text-[120px] font-black text-gray-50/50 -z-10 select-none group-hover:text-[#00b050]/5 transition-colors duration-500">
+                                    {feature.num}
+                                </div>
+                                <div className="w-16 h-16 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 text-[#00b050] border border-gray-100 relative z-10 group-hover:scale-110 transition-transform duration-300">
                                     <feature.icon className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 relative z-10">{feature.title}</h3>
+                                <p className="text-gray-600 leading-relaxed relative z-10">{feature.desc}</p>
                             </motion.div>
                         ))}
                     </div>

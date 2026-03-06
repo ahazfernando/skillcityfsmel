@@ -224,7 +224,7 @@ const Header = () => {
                 {isMobileServicesOpen && (
                   <div className="pl-4 py-2 space-y-2 animate-fade-in">
                     {services.map((service) => {
-                      const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning", "/services/commercial-cleaning"].includes(service.href);
+                      const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning", "/services/commercial-cleaning", "/services/council-cleaning"].includes(service.href);
                       return (
                         <Link
                           key={service.title}
@@ -304,7 +304,7 @@ const Header = () => {
                 </div>
                 <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
                   {services.map((service) => {
-                    const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning", "/services/commercial-cleaning"].includes(service.href);
+                    const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning", "/services/commercial-cleaning", "/services/council-cleaning"].includes(service.href);
                     return (
                       <Link
                         key={service.title}
