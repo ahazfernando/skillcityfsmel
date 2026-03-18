@@ -26,7 +26,11 @@ const HeroSection = () => {
                     Skill City Facility Solutions
                 </p>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-8 animate-fade-in leading-[1.1] text-primary">
-                    Professional Commercial Cleaning Services Across Australia
+                    Professional{" "}
+                    <span className="italic font-medium text-primary/90">
+                        Commercial Cleaning Services
+                    </span>{" "}
+                    Across Australia
                 </h1>
 
                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-in-up font-normal">

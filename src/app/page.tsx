@@ -31,6 +31,7 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import BlogSection from "@/components/home/BlogSection";
 import CTASection from "@/components/home/CTASection";
 import ReviewsSection from "@/components/home/ReviewsSection";
+import LicensesSection from "@/components/home/LicensesSection";
 
 export default function Home() {
     return (
@@ -41,6 +42,7 @@ export default function Home() {
             <LocationsSection />
             <AboutPreview />
             <ServicesSection />
+            <LicensesSection />
             <HomeServicesGrid />
             <ExperienceSection />
             <ReviewsSection />
