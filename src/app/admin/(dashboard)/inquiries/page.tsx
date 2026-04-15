@@ -31,6 +31,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { Copy, Mail, MapPin, MessageSquare, Phone, User } from "lucide-react";
+import { AdminTablePageSkeleton } from "@/components/ui/loading-skeletons";
 
 interface Inquiry {
     id: string;
@@ -103,7 +104,11 @@ export default function InquiriesPage() {
     const uniqueStates = Array.from(new Set(inquiries.map(i => i.state).filter(Boolean)));
 
     if (loading) {
-        return <div className="p-8 text-center text-gray-500">Loading inquiries...</div>;
+        return (
+            <div className="p-1 md:p-0">
+                <AdminTablePageSkeleton columns={7} rows={8} filterToolbar="triple" />
+            </div>
+        );
     }
 
     return (

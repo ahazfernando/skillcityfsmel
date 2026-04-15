@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Check, Award, Users, Clock, Heart } from "lucide-react";
 import AboutHero from "@/components/about/AboutHero";
+import { AboutStoryStats } from "@/components/about/AboutStoryStats";
 import cleanHomeImg from "@/assets/clean-home.jpg";
 import ProcessWorkflow from "@/components/about/ProcessWorkflow";
 
@@ -8,14 +9,14 @@ const baseUrl = "https://www.skillcityfacilitysolutions.com.au";
 
 export const metadata: Metadata = {
     title: "About Us | Professional Cleaning Team Melbourne & Victoria",
-    description: "Skill City Facility Solutions: trusted cleaning services in Melbourne, Oakleigh & Victoria since 2009. 50+ team members, 10K+ cleans, 98% satisfaction.",
+    description: "Skill City Facility Solutions: trusted cleaning services in Melbourne, Oakleigh & Victoria since 2009. 120+ team members, 10K+ cleans, 100% satisfaction.",
     keywords: ["about Skill City", "cleaning company Melbourne", "professional cleaners Victoria", "Oakleigh cleaning"],
     alternates: {
         canonical: `${baseUrl}/about-us`,
     },
     openGraph: {
         title: "About Skill City Facility Solutions | Melbourne & Victoria",
-        description: "Trusted cleaning services in Melbourne, Oakleigh & Victoria since 2009. 50+ team, 10K+ cleans, 98% satisfaction.",
+        description: "Trusted cleaning services in Melbourne, Oakleigh & Victoria since 2009. 120+ team, 10K+ cleans, 100% satisfaction.",
         url: `${baseUrl}/about-us`,
         siteName: "Skill City Facility Solutions",
         locale: "en_AU",
@@ -64,22 +65,9 @@ export default function AboutUsPage() {
                                 What started as a small family business has grown into one of the most trusted cleaning service providers in the region. Skill City Facility Solutions started with just a mop, a bucket, and a dream of helping busy families maintain clean, healthy homes.
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                Today, we're proud to have a team of over 50 professional cleaners serving thousands of satisfied customers. Our commitment to quality, reliability, and exceptional customer service remains at the heart of everything we do.
+                                Today, we're proud to have a team of over 120 professional cleaners serving thousands of satisfied customers. Our commitment to quality, reliability, and exceptional customer service remains at the heart of everything we do.
                             </p>
-                            <div className="grid grid-cols-3 gap-6 pt-4">
-                                <div className="text-left">
-                                    <p className="text-3xl font-bold text-primary">50+</p>
-                                    <p className="text-sm text-muted-foreground">Team Members</p>
-                                </div>
-                                <div className="text-left">
-                                    <p className="text-3xl font-bold text-primary">10K+</p>
-                                    <p className="text-sm text-muted-foreground">Cleans Completed</p>
-                                </div>
-                                <div className="text-left">
-                                    <p className="text-3xl font-bold text-primary">98%</p>
-                                    <p className="text-sm text-muted-foreground">Satisfaction Rate</p>
-                                </div>
-                            </div>
+                            <AboutStoryStats />
                         </div>
                     </div>
                 </div>

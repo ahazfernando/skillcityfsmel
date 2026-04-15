@@ -1,6 +1,4 @@
-import { SchoolCleaningHero } from "@/components/services/school-cleaning/SchoolCleaningHero";
-import { SchoolCleaningFeatures } from "@/components/services/school-cleaning/SchoolCleaningFeatures";
-import LocationsSection from "@/components/home/LocationsSection";
+import { SchoolCleaningClient } from "@/components/services/school-cleaning/SchoolCleaningClient";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,11 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function SchoolCleaningPage() {
-    return (
-        <main>
-            <SchoolCleaningHero />
-            <SchoolCleaningFeatures />
-            <LocationsSection />
-        </main>
-    );
+    return <SchoolCleaningClient />;
 }

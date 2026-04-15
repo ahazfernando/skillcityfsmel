@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check, X } from "lucide-react";
 import { toast } from "sonner";
+import { AdminTablePageSkeleton } from "@/components/ui/loading-skeletons";
 
 interface UserData {
     id: string;
@@ -66,7 +67,11 @@ export default function UsersPage() {
     );
 
     if (loading) {
-        return <div className="p-8 text-center text-gray-500">Loading users...</div>;
+        return (
+            <div className="p-1 md:p-0">
+                <AdminTablePageSkeleton columns={5} rows={6} filterToolbar="search" />
+            </div>
+        );
     }
 
     return (

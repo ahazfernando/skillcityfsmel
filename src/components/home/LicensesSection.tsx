@@ -6,13 +6,13 @@ const licenses = [
         alt: "CM3 contractor management prequalification",
         heading: "CM3 prequalified contractor",
         description:
-            "Prequalified under CM3 for contractor management—so your site’s safety and compliance processes align with how we work on your premises.",
+            "Prequalified under CM3 for contractor management so your site’s safety and compliance processes align with how we work on your premises.",
         isSvg: true,
     },
     {
         src: "/licenses/TestandTagW1.png",
         alt: "Electrical test and tag certification",
-        heading: "Test & tag",
+        heading: "Test & tag Training",
         description:
             "Portable electrical equipment is tested and tagged to Australian standards, supporting safe operations wherever our teams use gear on your facility.",
         isSvg: false,
@@ -24,7 +24,7 @@ const licenses = [
         alt: "Victorian Labour Hire Authority licence",
         heading: "Labour hire licensed",
         description:
-            "Licensed with the Victorian Labour Hire Authority—giving you transparency and assurance when we supply cleaning and facility staff to your business.",
+            "Licensed with the Victorian Labour Hire Authority giving you transparency and assurance when we supply cleaning and facility staff to your business.",
         isSvg: false,
         width: 200,
         height: 80,
@@ -39,13 +39,12 @@ const LicensesSection = () => {
                     <p className="text-primary font-semibold text-xs md:text-sm uppercase tracking-widest mb-3">
                         Licences & compliance
                     </p>
-                    <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-4">
-                        Certified for safe, compliant facility work
+                    <h2 className="text-3xl font-bold text-foreground tracking-tight mb-4">
+                    Certified for safe, <br />compliant facility management in Australia
                     </h2>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                        We maintain the registrations and prequalifications your sites expect—so you can
-                        engage us with confidence across commercial, industrial, and regulated environments
-                        in Victoria and beyond.
+                        We maintain the registrations and prequalifications your sites expect so you can
+                        engage us with confidence across commercial, industrial, and regulated environments.
                     </p>
                 </div>
 

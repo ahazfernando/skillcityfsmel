@@ -2,7 +2,7 @@ import { HouseCleaningHero } from "@/components/services/house-cleaning/HouseCle
 import HouseCleaningAbout from "@/components/services/house-cleaning/HouseCleaningAbout";
 import { HouseCleaningLocations } from "@/components/services/house-cleaning/HouseCleaningLocations";
 import HouseCleaningSmarter from "@/components/services/house-cleaning/HouseCleaningSmarter";
-import { HouseCleaningTabsSection } from "@/components/services/house-cleaning/HouseCleaningTabsSection";
+import { HouseCleaningInDepthTabs } from "@/components/services/house-cleaning/HouseCleaningInDepthTabs";
 import { HouseCleaningProcess } from "@/components/services/house-cleaning/HouseCleaningProcess";
 import { HouseCleaningReviews } from "@/components/services/house-cleaning/HouseCleaningReviews";
 import { HouseCleaningCTA } from "@/components/services/house-cleaning/HouseCleaningCTA";
@@ -71,7 +71,7 @@ export default function HouseCleaningPage() {
                 }}
             />
             <HouseCleaningSmarter />
-            <HouseCleaningTabsSection />
+            <HouseCleaningInDepthTabs />
             <HouseCleaningLocations />
             <HouseCleaningProcess />
             <HouseCleaningReviews />

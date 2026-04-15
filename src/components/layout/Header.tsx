@@ -4,102 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Menu, X, Phone, Home, Building2, Building, Hammer, ChevronDown, ArrowRight, Users, GraduationCap, Baby, Heart, Stethoscope, Factory, Warehouse, Utensils, Dumbbell, Film, Key } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-const services = [
-  {
-    icon: Home,
-    title: "House Cleaning",
-    description: "Complete residential cleaning for a spotless home",
-    href: "/services/house-cleaning",
-  },
-  {
-    icon: Hammer,
-    title: "Builders Cleaning",
-    description: "Post-construction cleanup and debris removal",
-    href: "/services/builders-cleaning",
-  },
-  {
-    icon: Building2,
-    title: "Commercial Cleaning",
-    description: "Comprehensive cleaning for commercial properties",
-    href: "/services/commercial-cleaning",
-  },
-  {
-    icon: Users,
-    title: "Council & Community Service Cleaning",
-    description: "Specialized cleaning for public and community spaces",
-    href: "/services/council-cleaning",
-  },
-  {
-    icon: GraduationCap,
-    title: "School Cleaning",
-    description: "Safe and hygienic environments for students",
-    href: "/services/school-cleaning",
-  },
-  {
-    icon: Baby,
-    title: "Early Childhood Education Cleaning",
-    description: "Gentle, non-toxic cleaning for childcare centers",
-    href: "/services/early-childhood-cleaning",
-  },
-  {
-    icon: Heart,
-    title: "Aged Care Cleaning",
-    description: "Rigorous sanitization for aged care facilities",
-    href: "/services/aged-care-cleaning",
-  },
-  {
-    icon: Stethoscope,
-    title: "Medical / Healthcare Cleaning",
-    description: "Clinical grade cleaning meeting health standards",
-    href: "/services/medical-cleaning",
-  },
-  {
-    icon: Factory,
-    title: "Industrial Cleaning",
-    description: "Heavy-duty cleaning for industrial sites",
-    href: "/services/industrial-cleaning",
-  },
-  {
-    icon: Warehouse,
-    title: "Warehouse & Factory Cleaning",
-    description: "Large-scale cleaning for storage and production",
-    href: "/services/warehouse-cleaning",
-  },
-  {
-    icon: Utensils,
-    title: "Restaurant & Kitchen Cleaning",
-    description: "Deep cleaning for food service environments",
-    href: "/services/restaurant-cleaning",
-  },
-  {
-    icon: Dumbbell,
-    title: "Gym Cleaning",
-    description: "Sanitizing workout equipment and facilities",
-    href: "/services/gym-cleaning",
-  },
-  {
-    icon: Film,
-    title: "Cinema & Theater Cleaning",
-    description: "Thorough cleaning between sessions and events",
-    href: "/services/cinema-cleaning",
-  },
-  {
-    icon: Key,
-    title: "End of Lease Cleaning",
-    description: "Comprehensive cleaning for property transitions",
-    href: "/services/end-of-lease-cleaning",
-  },
-  {
-    icon: Building,
-    title: "Office Cleaning",
-    description: "Professional workspace sanitization",
-    href: "/services/office-cleaning",
-  },
-];
+import { siteServices as services } from "@/data/siteServices";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -223,27 +131,23 @@ const Header = () => {
                 </button>
                 {isMobileServicesOpen && (
                   <div className="pl-4 py-2 space-y-2 animate-fade-in">
-                    {services.map((service) => {
-                      const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning", "/services/commercial-cleaning", "/services/council-cleaning"].includes(service.href);
-                      return (
+                    {services.map((service) => (
                         <Link
-                          key={service.title}
-                          href={isAllowed ? service.href : "#"}
-                          onClick={(e) => {
-                            if (!isAllowed) {
-                              e.preventDefault();
-                              return;
-                            }
+                          key={service.href}
+                          href={service.href}
+                          onClick={() => {
                             setIsMenuOpen(false);
                             setIsMobileServicesOpen(false);
                           }}
-                          className={cn("flex items-center gap-2 py-2 text-sm text-muted-foreground transition-colors hover:text-primary", !isAllowed && "cursor-default")}
+                          className={cn(
+                            "flex items-center gap-2 py-2 text-sm transition-colors hover:text-primary",
+                            pathname === service.href ? "text-primary font-medium" : "text-muted-foreground"
+                          )}
                         >
-                          <service.icon className="w-4 h-4" />
+                          <service.icon className="w-4 h-4 shrink-0" />
                           {service.title}
                         </Link>
-                      )
-                    })}
+                    ))}
                     <Link
                       href="/services"
                       onClick={() => {
@@ -303,26 +207,21 @@ const Header = () => {
                   </span>
                 </div>
                 <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
-                  {services.map((service) => {
-                    const isAllowed = ["/services/house-cleaning", "/services/builders-cleaning", "/services/commercial-cleaning", "/services/council-cleaning"].includes(service.href);
-                    return (
+                  {services.map((service) => (
                       <Link
-                        key={service.title}
-                        href={isAllowed ? service.href : "#"}
-                        onClick={(e) => {
-                          if (!isAllowed) {
-                            e.preventDefault();
-                            return;
-                          }
-                          setIsServicesOpen(false);
-                        }}
-                        className={cn("flex items-start gap-3 p-3 rounded-xl transition-colors group hover:bg-muted", !isAllowed && "cursor-default")}
+                        key={service.href}
+                        href={service.href}
+                        onClick={() => setIsServicesOpen(false)}
+                        className={cn(
+                          "flex items-start gap-3 p-3 rounded-xl transition-colors group hover:bg-muted",
+                          pathname === service.href && "bg-primary/10 ring-1 ring-primary/20"
+                        )}
                       >
-                        <div className={cn("w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors", isAllowed && "group-hover:bg-primary/20")}>
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-primary/20">
                           <service.icon className="w-5 h-5 text-primary" />
                         </div>
                         <div>
-                          <h4 className={cn("text-sm font-semibold text-foreground transition-colors", isAllowed && "group-hover:text-primary")}>
+                          <h4 className="text-sm font-semibold text-foreground transition-colors group-hover:text-primary">
                             {service.title}
                           </h4>
                           <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
@@ -330,8 +229,7 @@ const Header = () => {
                           </p>
                         </div>
                       </Link>
-                    )
-                  })}
+                  ))}
                 </div>
               </div>
 

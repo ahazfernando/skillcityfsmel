@@ -17,6 +17,7 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { AdminShellSkeleton } from "@/components/ui/loading-skeletons";
 
 export default function AdminDashboardLayout({
     children,
@@ -60,21 +61,13 @@ export default function AdminDashboardLayout({
     }, [user, loading, router]);
 
     if (loading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                Loading...
-            </div>
-        );
+        return <AdminShellSkeleton />;
     }
 
     if (!user) return null;
 
     if (!approvalChecked) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                Loading...
-            </div>
-        );
+        return <AdminShellSkeleton />;
     }
 
     return (
