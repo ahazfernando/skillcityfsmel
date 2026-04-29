@@ -5,27 +5,18 @@ import { ArrowRight, Sparkles, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type CertificationLogo = {
-    src: string;
-    alt: string;
-    unoptimized: boolean;
-};
-
-const certificationLogos: CertificationLogo[] = [
+const certificationLogos: { src: string; alt: string }[] = [
     {
         src: "/licenses/Logo_Cm3_Contractor-Management-Prequalification.svg",
         alt: "CM3 contractor management prequalification",
-        unoptimized: true,
     },
     {
         src: "/licenses/TestandTagW1.png",
         alt: "Electrical test and tag certification",
-        unoptimized: false,
     },
     {
         src: "/licenses/LabourHire.png",
         alt: "Victorian Labour Hire Authority licence",
-        unoptimized: false,
     },
 ];
 
@@ -97,7 +88,7 @@ export function HouseCleaningHero() {
                                             width={120}
                                             height={36}
                                             className="h-7 w-auto object-contain"
-                                            unoptimized={logo.unoptimized}
+                                            unoptimized={logo.src.endsWith(".svg")}
                                         />
                                     </div>
                                 ))}
