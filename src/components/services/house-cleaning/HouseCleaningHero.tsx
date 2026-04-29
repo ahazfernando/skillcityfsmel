@@ -53,9 +53,13 @@ export function HouseCleaningHero() {
                         </div>
 
                         <div className="space-y-2">
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-forest font-sans">
-                                Your Trusted Partner in <br className="hidden sm:block" />
-                                <span className="text-lime-600">House Cleaning</span>
+                            <h1 className="font-bold leading-[1.1] tracking-tight text-forest font-sans">
+                                <span className="block text-3xl sm:text-4xl lg:text-5xl">
+                                    Your Trusted Partner in
+                                </span>
+                                <span className="block text-4xl sm:text-5xl lg:text-6xl text-lime-600">
+                                    Professional House Cleaning
+                                </span>
                             </h1>
 
                             <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
