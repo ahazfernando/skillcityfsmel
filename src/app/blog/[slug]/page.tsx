@@ -166,7 +166,7 @@ export default function BlogPost() {
                                 className="mt-4 flex items-center justify-center gap-2 text-sm text-primary-foreground/90 hover:text-primary-foreground"
                             >
                                 <Phone className="w-4 h-4" />
-                                037 044 7710
+                                03 9034 6492
                             </a>
                         </div>
                     </aside>

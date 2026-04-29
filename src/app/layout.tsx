@@ -97,7 +97,7 @@ export default function RootLayout({
                             "description": "Premium residential and commercial cleaning services in Melbourne, Oakleigh and Victoria. Eco-friendly house cleaning, office cleaning, builders cleaning and deep cleaning.",
                             "image": "https://www.skillcityfs.com.au/SkillCityPNGLOGO.png",
                             "url": "https://www.skillcityfs.com.au",
-                            "telephone": "+61370447710",
+                            "telephone": "+61390346492",
                             "email": "admin@skillcityfacilitysolutions.com.au",
                             "address": {
                                 "@type": "PostalAddress",

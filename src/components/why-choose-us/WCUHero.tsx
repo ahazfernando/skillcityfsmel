@@ -65,11 +65,11 @@ export default function WCUHero() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a
-                            href="tel:+61370447710"
+                            href="tel:+61390346492"
                             className="inline-flex items-center gap-2 border-2 border-white/40 text-white font-semibold px-6 py-3.5 rounded-full hover:bg-white/10 transition-colors"
                         >
                             <Phone className="w-4 h-4" />
-                            037 044 7710
+                            03 9034 6492
                         </a>
                     </div>
 

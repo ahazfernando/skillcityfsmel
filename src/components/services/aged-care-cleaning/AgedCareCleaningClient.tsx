@@ -86,11 +86,11 @@ export function AgedCareCleaningClient() {
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
                             <a
-                                href="tel:+61370447710"
+                                href="tel:+61390346492"
                                 className="inline-flex items-center gap-2 border-2 border-white/40 text-white font-semibold px-6 py-3.5 rounded-full hover:bg-white/10 transition-colors"
                             >
                                 <Phone className="w-4 h-4" />
-                                037 044 7710
+                                03 9034 6492
                             </a>
                         </div>
                         <div className="flex items-center gap-6 pt-2">
@@ -315,7 +315,7 @@ export function AgedCareCleaningClient() {
                                 We Have <span className="text-gray-800">Answers</span>
                             </h2>
                             <div className="space-y-4">
-                                {[{"question":"What areas do you cover for aged care cleaning?","answer":"We scope each site individually—common areas, high-touch surfaces, washrooms, and specialist zones. Contact us for a walkthrough and written scope."},{"question":"Are your products safe for staff and visitors?","answer":"Yes. We use effective, responsibly chosen products and can align with your site's chemical policies or green requirements."},{"question":"How do I book?","answer":"Call 037 044 7710 or use our contact form. We'll propose a schedule and pricing for your facility."},{"question":"Do I need to be on site?","answer":"Not necessarily. Many clients provide after-hours access. We're insured and follow your security protocols."},{"question":"What if something needs a touch-up?","answer":"Tell us within 24 hours and we'll address priority areas as part of our service commitment."}].map((faq, index) => (
+                                {[{"question":"What areas do you cover for aged care cleaning?","answer":"We scope each site individually—common areas, high-touch surfaces, washrooms, and specialist zones. Contact us for a walkthrough and written scope."},{"question":"Are your products safe for staff and visitors?","answer":"Yes. We use effective, responsibly chosen products and can align with your site's chemical policies or green requirements."},{"question":"How do I book?","answer":"Call 03 9034 6492 or use our contact form. We'll propose a schedule and pricing for your facility."},{"question":"Do I need to be on site?","answer":"Not necessarily. Many clients provide after-hours access. We're insured and follow your security protocols."},{"question":"What if something needs a touch-up?","answer":"Tell us within 24 hours and we'll address priority areas as part of our service commitment."}].map((faq, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, y: 10 }}

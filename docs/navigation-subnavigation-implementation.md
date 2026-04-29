@@ -1,3 +1,301 @@
+# Navigation and sub-navigation (mega menu) — implementation guide
+
+This document copies the **main navigation bar**, **desktop Services mega menu** (sub-navigation), and **mobile Services accordion** from this project, explains **how they sit above the page** (fixed header), and lists **implementation steps** for another Next.js + Tailwind codebase.
+
+---
+
+## What you are implementing
+
+| Layer | Behavior |
+|--------|-----------|
+| **Main nav** | Fixed, centered bar (`top-2`, ~95% width, max width). Logo, links, phone, CTA. |
+| **Sub-navigation (desktop)** | Full-width panel **below** the bar: `absolute` + `top-full` + `mt-2`, toggled by **Services** (`onMouseEnter` / `onMouseLeave` on the panel). |
+| **Sub-navigation (mobile)** | **Accordion** under Services inside the hamburger drawer. |
+
+Because the bar is **`position: fixed`**, your first content section (hero) needs **top padding** (e.g. `pt-32`) so text is not hidden under the nav.
+
+---
+
+## Prerequisites
+
+- **Next.js** (App Router) with `"use client"` allowed for the header.
+- **Tailwind CSS** with theme tokens matching usage: `border-border`, `bg-background`, `text-primary`, `text-foreground`, `text-muted-foreground`, `bg-muted`, `bg-primary`, `ring-primary`, etc. (align with your `tailwind.config` / CSS variables.)
+- **Packages**: `lucide-react`, `clsx`, `tailwind-merge`, `@radix-ui/react-slot`, `class-variance-authority` (for the shadcn-style `Button` below).
+
+---
+
+## Step 1 — Install dependencies
+
+```bash
+npm install lucide-react clsx tailwind-merge @radix-ui/react-slot class-variance-authority
+```
+
+---
+
+## Step 2 — Path alias
+
+Ensure `@/` resolves to `src/` (or change imports in the snippets), e.g. in `tsconfig.json`:
+
+```json
+"paths": { "@/*": ["./src/*"] }
+```
+
+---
+
+## Step 3 — Add `cn` helper
+
+Create `src/lib/utils.ts`:
+
+```ts
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+---
+
+## Step 4 — Optional: `animate-fade-in` animation
+
+The header uses the class `animate-fade-in`. In this repo it is defined in `tailwind.config.ts`:
+
+```ts
+keyframes: {
+  "fade-in": {
+    from: { opacity: "0", transform: "translateY(20px)" },
+    to: { opacity: "1", transform: "translateY(0)" },
+  },
+},
+animation: {
+  "fade-in": "fade-in 0.6s ease-out forwards",
+},
+```
+
+If you skip this, replace `animate-fade-in` with nothing or Tailwind’s `animate-in` utilities.
+
+---
+
+## Step 5 — Button component (shadcn-style)
+
+Create `src/components/ui/button.tsx` (or use your own button and remove `Button` / `asChild` usage in the header):
+
+```tsx
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+);
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
+  },
+);
+Button.displayName = "Button";
+
+export { Button, buttonVariants };
+```
+
+---
+
+## Step 6 — CTA utility class (optional)
+
+The header uses `className="btn-secondary"` on `Button`. In this repo that lives in global CSS (`src/index.css`):
+
+```css
+@layer components {
+  .btn-secondary {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 rounded-full px-8 py-2 font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+  }
+}
+```
+
+If you do not use `@layer` / `accent` tokens, replace with inline Tailwind on `Button` (e.g. `variant="secondary"` + `className="rounded-full ..."`).
+
+---
+
+## Step 7 — Services data (feeds mega menu + mobile sub-nav)
+
+Create `src/data/siteServices.ts` (edit titles, descriptions, `href`, and icons for your site):
+
+```ts
+import type { LucideIcon } from "lucide-react";
+import {
+  Home,
+  Hammer,
+  Building2,
+  Users,
+  GraduationCap,
+  Baby,
+  Heart,
+  Stethoscope,
+  Factory,
+  Warehouse,
+  Utensils,
+  Dumbbell,
+  Film,
+  Key,
+  Building,
+  Sparkles,
+} from "lucide-react";
+
+export type SiteService = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  href: string;
+};
+
+/** All service routes — single source for nav, mega menu, and service-page grids */
+export const siteServices: SiteService[] = [
+  {
+    icon: Home,
+    title: "House Cleaning",
+    description: "Complete residential cleaning for a spotless home",
+    href: "/services/house-cleaning",
+  },
+  {
+    icon: Hammer,
+    title: "Builders Cleaning",
+    description: "Post-construction cleanup and debris removal",
+    href: "/services/builders-cleaning",
+  },
+  {
+    icon: Building2,
+    title: "Commercial Cleaning",
+    description: "Comprehensive cleaning for commercial properties",
+    href: "/services/commercial-cleaning",
+  },
+  {
+    icon: Users,
+    title: "Council & Community Service Cleaning",
+    description: "Specialized cleaning for public and community spaces",
+    href: "/services/council-cleaning",
+  },
+  {
+    icon: GraduationCap,
+    title: "School Cleaning",
+    description: "Safe and hygienic environments for students",
+    href: "/services/school-cleaning",
+  },
+  {
+    icon: Baby,
+    title: "Early Childhood Education Cleaning",
+    description: "Gentle, non-toxic cleaning for childcare centers",
+    href: "/services/early-childhood-cleaning",
+  },
+  {
+    icon: Heart,
+    title: "Aged Care Cleaning",
+    description: "Rigorous sanitization for aged care facilities",
+    href: "/services/aged-care-cleaning",
+  },
+  {
+    icon: Stethoscope,
+    title: "Medical / Healthcare Cleaning",
+    description: "Clinical grade cleaning meeting health standards",
+    href: "/services/medical-cleaning",
+  },
+  {
+    icon: Factory,
+    title: "Industrial Cleaning",
+    description: "Heavy-duty cleaning for industrial sites",
+    href: "/services/industrial-cleaning",
+  },
+  {
+    icon: Warehouse,
+    title: "Warehouse & Factory Cleaning",
+    description: "Large-scale cleaning for storage and production",
+    href: "/services/warehouse-cleaning",
+  },
+  {
+    icon: Utensils,
+    title: "Restaurant & Kitchen Cleaning",
+    description: "Deep cleaning for food service environments",
+    href: "/services/restaurant-cleaning",
+  },
+  {
+    icon: Dumbbell,
+    title: "Gym Cleaning",
+    description: "Sanitizing workout equipment and facilities",
+    href: "/services/gym-cleaning",
+  },
+  {
+    icon: Film,
+    title: "Cinema & Theater Cleaning",
+    description: "Thorough cleaning between sessions and events",
+    href: "/services/cinema-cleaning",
+  },
+  {
+    icon: Key,
+    title: "End of Lease Cleaning",
+    description: "Comprehensive cleaning for property transitions",
+    href: "/services/end-of-lease-cleaning",
+  },
+  {
+    icon: Building,
+    title: "Office Cleaning",
+    description: "Professional workspace sanitization",
+    href: "/services/office-cleaning",
+  },
+  {
+    icon: Sparkles,
+    title: "One-Off Cleaning",
+    description: "Single deep cleans and special-event turnaround",
+    href: "/services/one-off-cleaning",
+  },
+];
+```
+
+---
+
+## Step 8 — Header component (navigation + sub-navigation)
+
+Create `src/components/layout/Header.tsx`.
+
+**Positioning summary**
+
+- Outer `<header>`: `fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1920px]` — floating bar on top of the page.
+- Mega menu: `absolute left-0 right-0 top-full mt-2` — directly under the header box, same width as the fixed header.
+
+Put your logo file in `public/` and update `src` / `alt` below.
+
+```tsx
 "use client";
 
 import { useState } from "react";
@@ -288,8 +586,75 @@ const Header = () => {
           </div>
         </div>
       )}
-    </header >
+    </header>
   );
 };
 
 export default Header;
+```
+
+---
+
+## Step 9 — Mount the header above page content
+
+In this repo, a client layout wraps pages:
+
+```tsx
+"use client";
+
+import { usePathname } from "next/navigation";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
+export default function ClientLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isAdmin = pathname?.startsWith("/admin");
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      {!isAdmin && <Header />}
+      <main className="flex-1">{children}</main>
+      {!isAdmin && <Footer />}
+    </div>
+  );
+}
+```
+
+Wire `ClientLayout` (or inline `<Header />`) from `src/app/layout.tsx` according to your structure.
+
+---
+
+## Step 10 — Clear space under the fixed header
+
+Add top padding to your hero or first section, for example:
+
+```tsx
+<section className="pt-32 ...">
+```
+
+Tune `pt-28` / `pt-32` / `md:pt-40` until content clears the bar and mega menu gap.
+
+---
+
+## Step 11 — Quality checks
+
+- [ ] Logo path exists under `public/`.
+- [ ] All routes in `navLinks` and `siteServices` exist.
+- [ ] Desktop: hover **Services** opens mega menu; moving mouse into panel keeps it open; leaving closes it.
+- [ ] Desktop: click **Services** toggles menu (keyboard / touch users).
+- [ ] Mobile: hamburger opens drawer; Services expands nested links.
+- [ ] `z-50` is above hero imagery; increase if something overlaps.
+
+---
+
+## Source files in this repository
+
+For a diff against the live project:
+
+- `src/components/layout/Header.tsx`
+- `src/data/siteServices.ts`
+- `src/components/layout/ClientLayout.tsx`
+- `src/lib/utils.ts`
+- `src/components/ui/button.tsx`
+- `src/index.css` (`.btn-secondary`)
+- `tailwind.config.ts` (`fade-in` animation)

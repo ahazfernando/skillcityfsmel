@@ -173,9 +173,9 @@ export const Footer = () => {
                   <MapPin size={16} className="text-accent mt-0.5 flex-shrink-0" />
                   <span>4A Haughton Road, Oakleigh, 3166, VIC</span>
                 </div>
-                <a href="tel:+61370447710" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors text-sm">
+                <a href="tel:+61390346492" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors text-sm">
                   <Phone size={16} className="text-accent" />
-                  <span>037 044 7710</span>
+                  <span>03 9034 6492</span>
                 </a>
                 <a href="mailto:admin@skillcityfacilitysolutions.com.au" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors text-sm">
                   <Mail size={16} className="text-accent" />

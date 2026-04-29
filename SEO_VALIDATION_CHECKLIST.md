@@ -138,7 +138,7 @@ Confirm these links exist in header/footer and key sections:
 
 ## Placeholders to replace (if not set)
 
-- **Phone:** Already set (037 044 7710 / +61370447710).
+- **Phone:** Already set (03 9034 6492 / +61390346492).
 - **Email:** Already set (admin@skillcityfacilitysolutions.com.au).
 - **Logo URL:** Uses `/SkillCityPNGLOGO.png` (relative).
 - **Socials:** Footer uses facebook/skillcityfs, twitter/skillcityfs, instagram/skillcityfs, linkedin/company/skillcityfs.

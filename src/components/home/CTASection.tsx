@@ -25,11 +25,11 @@ const CTASection = () => {
                   </Link>
                 </Button>
                 <a
-                  href="tel:+61370447710"
+                  href="tel:+61390346492"
                   className="flex items-center gap-2 text-primary-foreground font-semibold hover:text-accent transition-colors"
                 >
                   <Phone className="w-5 h-5" />
-                  037 044 7710
+                  03 9034 6492
                 </a>
               </div>
             </div>
