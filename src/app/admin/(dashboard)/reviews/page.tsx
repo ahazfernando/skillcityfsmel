@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 import {
     Timestamp,
     addDoc,
@@ -14,10 +14,12 @@ import {
     updateDoc,
 } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { uploadImageUnsigned } from "@/lib/cloudinary";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 import {
     Table,
     TableBody,
@@ -63,6 +65,7 @@ export default function AdminReviewsPage() {
     const [form, setForm] = useState<ReviewForm>(initialForm);
     const [editingId, setEditingId] = useState<string | null>(null);
     const [submitting, setSubmitting] = useState(false);
+    const [uploadingAvatar, setUploadingAvatar] = useState(false);
 
     useEffect(() => {
         const q = query(collection(db, "homepageReviews"), orderBy("createdAt", "desc"));
@@ -152,6 +155,27 @@ export default function AdminReviewsPage() {
         }
     };
 
+    const handleAvatarUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        e.target.value = "";
+        if (!file) return;
+        if (!file.type.startsWith("image/")) {
+            toast.error("Please choose an image file");
+            return;
+        }
+        setUploadingAvatar(true);
+        try {
+            const url = await uploadImageUnsigned(file, { folder: "homepage-reviews" });
+            setForm((prev) => ({ ...prev, avatar: url }));
+            toast.success("Avatar uploaded to Cloudinary");
+        } catch (err) {
+            console.error(err);
+            toast.error(err instanceof Error ? err.message : "Upload failed");
+        } finally {
+            setUploadingAvatar(false);
+        }
+    };
+
     const handleDelete = async (id: string) => {
         try {
             await deleteDoc(doc(db, "homepageReviews", id));
@@ -200,11 +224,28 @@ export default function AdminReviewsPage() {
                         value={form.rating}
                         onChange={(e) => setForm((prev) => ({ ...prev, rating: e.target.value }))}
                     />
-                    <Input
-                        placeholder="Avatar URL (optional)"
-                        value={form.avatar}
-                        onChange={(e) => setForm((prev) => ({ ...prev, avatar: e.target.value }))}
-                    />
+                    <div className="md:col-span-2 space-y-2">
+                        <Label htmlFor="review-avatar-url">Avatar (optional)</Label>
+                        <Input
+                            id="review-avatar-url"
+                            placeholder="Image URL, or upload below"
+                            value={form.avatar}
+                            onChange={(e) => setForm((prev) => ({ ...prev, avatar: e.target.value }))}
+                        />
+                        <div className="flex flex-wrap items-center gap-3">
+                            <Input
+                                id="review-avatar-file"
+                                type="file"
+                                accept="image/*"
+                                className="cursor-pointer"
+                                disabled={uploadingAvatar}
+                                onChange={handleAvatarUpload}
+                            />
+                            {uploadingAvatar && (
+                                <span className="text-sm text-muted-foreground">Uploading…</span>
+                            )}
+                        </div>
+                    </div>
                 </div>
 
                 <Textarea

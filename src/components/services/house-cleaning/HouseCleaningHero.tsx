@@ -5,7 +5,13 @@ import { ArrowRight, Sparkles, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const certificationLogos = [
+type CertificationLogo = {
+    src: string;
+    alt: string;
+    unoptimized: boolean;
+};
+
+const certificationLogos: CertificationLogo[] = [
     {
         src: "/licenses/Logo_Cm3_Contractor-Management-Prequalification.svg",
         alt: "CM3 contractor management prequalification",
@@ -14,12 +20,14 @@ const certificationLogos = [
     {
         src: "/licenses/TestandTagW1.png",
         alt: "Electrical test and tag certification",
+        unoptimized: false,
     },
     {
         src: "/licenses/LabourHire.png",
         alt: "Victorian Labour Hire Authority licence",
+        unoptimized: false,
     },
-] as const;
+];
 
 export function HouseCleaningHero() {
     return (
@@ -44,18 +52,16 @@ export function HouseCleaningHero() {
                             <span>Premium House Cleaning Services</span>
                         </div>
 
-                        <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-forest font-sans">
-                            <span className="font-medium italic">Experience the</span> <br />
-                            <span className="relative">
-                                <span className="relative z-10 text-lime-600">Magic</span>
-                                <span className="absolute bottom-2 left-0 w-full h-3 bg-lime-200/50 -rotate-2 -z-0" />
-                            </span> of a <br />
-                            <span className="font-medium italic">Spotless Home</span>
-                        </h1>
+                        <div className="space-y-2">
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-forest font-sans">
+                                Your Trusted Partner in <br className="hidden sm:block" />
+                                <span className="text-lime-600">House Cleaning</span>
+                            </h1>
 
-                        <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
-                            We clean your home thoroughly and reliably, so you can enjoy a fresh, comfortable space without the stress.
-                        </p>
+                            <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
+                                We clean your home thoroughly and reliably, so you can enjoy a fresh, comfortable space without the stress.
+                            </p>
+                        </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link href="/contact-us" className="group relative px-8 py-4 bg-forest text-white rounded-full font-medium overflow-hidden transition-transform hover:scale-105 active:scale-95">
