@@ -5,6 +5,22 @@ import { ArrowRight, Sparkles, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const certificationLogos = [
+    {
+        src: "/licenses/Logo_Cm3_Contractor-Management-Prequalification.svg",
+        alt: "CM3 contractor management prequalification",
+        unoptimized: true,
+    },
+    {
+        src: "/licenses/TestandTagW1.png",
+        alt: "Electrical test and tag certification",
+    },
+    {
+        src: "/licenses/LabourHire.png",
+        alt: "Victorian Labour Hire Authority licence",
+    },
+] as const;
+
 export function HouseCleaningHero() {
     return (
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white pt-40">
@@ -38,7 +54,7 @@ export function HouseCleaningHero() {
                         </h1>
 
                         <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
-                            Step into a home that feels brand new. Our meticulous cleaning wizards transform your living space into a sanctuary of purity and calm.
+                            We clean your home thoroughly and reliably, so you can enjoy a fresh, comfortable space without the stress.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
@@ -50,12 +66,35 @@ export function HouseCleaningHero() {
                                 <div className="absolute inset-0 bg-lime-600 transform translate-y-full transition-transform group-hover:translate-y-0" />
                             </Link>
 
-                            <button className="px-8 py-4 bg-white border border-gray-200 text-forest rounded-full font-medium hover:bg-gray-50 transition-colors">
-                                View Services
-                            </button>
+                            <Link
+                                href="/about-us"
+                                className="px-8 py-4 bg-white border border-gray-200 text-forest rounded-full font-medium hover:bg-gray-50 transition-colors"
+                            >
+                                Why Choose Us
+                            </Link>
                         </div>
 
-                        <div className="flex items-center gap-8 pt-8">
+                        <div className="pt-1">
+                            <p className="text-xs text-gray-500 mb-2">
+                                Certified for safe, compliant facility management in Australia
+                            </p>
+                            <div className="flex items-center gap-4 flex-wrap">
+                                {certificationLogos.map((logo) => (
+                                    <div key={logo.src} className="h-10 flex items-center">
+                                        <Image
+                                            src={logo.src}
+                                            alt={logo.alt}
+                                            width={120}
+                                            height={36}
+                                            className="h-7 w-auto object-contain"
+                                            unoptimized={logo.unoptimized}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="flex items-center gap-8 pt-5">
                             <div className="flex -space-x-4">
                                 {[1, 2, 3, 4].map((i) => (
                                     <div key={i} className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white relative overflow-hidden">
@@ -95,7 +134,7 @@ export function HouseCleaningHero() {
                             {/* Central Image Mask with interesting shape */}
                             <div className="relative w-[500px] h-[600px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3">
                                 <Image
-                                    src="/home/PHOTO-2026-01-07-18-53-29.jpg"
+                                    src="/home/Both_people_here_should_be_202604290733.jpeg"
                                     alt="Clean Living Room"
                                     fill
                                     className="object-cover"

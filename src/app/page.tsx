@@ -29,7 +29,6 @@ import HomeServicesGrid from "@/components/home/HomeServicesGrid";
 import ExperienceSection from "@/components/home/ExperienceSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import BlogSection from "@/components/home/BlogSection";
-import CTASection from "@/components/home/CTASection";
 import ReviewsSection from "@/components/home/ReviewsSection";
 import LicensesSection from "@/components/home/LicensesSection";
 
@@ -48,7 +47,6 @@ export default function Home() {
             <ReviewsSection />
             {/* <WhyChooseUs /> */}
             <BlogSection />
-            <CTASection />
         </>
     );
 }

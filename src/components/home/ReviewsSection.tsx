@@ -1,185 +1,149 @@
 "use client";
 
-import { Star, ArrowRight, Play, ChevronRight } from "lucide-react";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
+import { Timestamp, collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
-interface Review {
+type Review = {
+    id: string;
+    text: string;
     name: string;
-    location: string;
+    timeAgo: string;
     rating: number;
-    title: string;
-    content: string;
-    image: string;
-    imageCaption: string;
-}
+    avatar?: string;
+    createdAt?: Timestamp;
+};
 
-interface ReviewsSectionProps {
-    reviews?: Review[];
-    title?: string;
-    description?: string;
-}
-
-const ReviewsSection = ({
-    reviews = [
-        {
-            name: "Sarah Nguyen",
-            location: "Office Manager, Meridian Group — Melbourne",
-            rating: 5,
-            title: "Consistently Spotless Office, Every Single Time",
-            content:
-                "We've been using Skill City Facility Solutions for our Melbourne CBD office for over two years now. Their office cleaning team is thorough, reliable, and always on time. The level of detail they put into every clean — from the workstations to the kitchen — is impressive. We've had zero complaints from our 80-strong team since switching to them. Genuinely couldn't recommend a cleaning company more highly.",
-            image: "/home/PHOTO-2025-10-06-14-54-06.jpg",
-            imageCaption: "Melbourne Office Cleaning",
-        },
-        {
-            name: "James Whitfield",
-            location: "Site Manager, Whitfield Constructions — Victoria",
-            rating: 5,
-            title: "Builders Clean Done Right — First Time, Every Time",
-            content:
-                "Skill City handled the post-construction clean on our Oakleigh residential project and the result was outstanding. The team worked efficiently around our handover timeline — removing dust, debris and construction residue without a hitch. The client was blown away by how move-in ready the property looked. We now use them exclusively for all our builders cleans across Victoria.",
-            image: "/home/ConstructionCleaner.png",
-            imageCaption: "Post-Construction Clean — Oakleigh",
-        },
-        {
-            name: "Dr. Amara Patel",
-            location: "Practice Manager, Southgate Medical Centre",
-            rating: 5,
-            title: "Trusted Healthcare Cleaning Partner",
-            content:
-                "Hygiene standards in a medical setting are non-negotiable, and Skill City consistently meets and exceeds them. Their healthcare cleaning team is trained in infection control protocols and uses hospital-grade products. Every visit is documented and thorough. Our patients frequently comment on how clean and welcoming our centre feels. They're a team you can genuinely trust with the most sensitive environments.",
-            image: "/home/ContactlessHeader.png",
-            imageCaption: "Healthcare Facility — Southgate Medical",
-        },
-    ],
-    title = "What Our Clients Say",
-    description = "Hear from businesses and homeowners across Melbourne and Victoria who trust Skill City Facility Solutions to keep their spaces spotless, safe, and welcoming every day.",
-}: ReviewsSectionProps) => {
+function Stars({ count = 5 }: { count?: number }) {
     return (
-        <section className="px-4 lg:px-6 py-12 lg:py-16 bg-white">
-            <div className="max-w-[1120px] mx-auto">
-                {/* Header */}
-                <div className="mb-12">
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="flex items-center text-green-600">
-                            <ChevronRight className="w-5 h-5 -mr-2" />
-                            <ChevronRight className="w-5 h-5" />
-                        </div>
-                        <div className="inline-block px-4 py-2 bg-green-50 backdrop-blur-sm rounded-full border border-green-100 shadow-sm">
-                            <span className="text-sm text-green-600 font-medium">Client Reviews</span>
-                        </div>
-                    </div>
-                    <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-gray-900">
-                        {title.split(" ").slice(0, -2).join(" ")}{" "}
-                        <span className="text-green-600">
-                            {title.split(" ").slice(-2).join(" ")}
-                        </span>
+        <div className="flex gap-1">
+            {Array.from({ length: count }).map((_, i) => (
+                <span key={i} className="text-emerald-500 text-lg leading-none">
+                    ★
+                </span>
+            ))}
+        </div>
+    );
+}
+
+export default function ReviewsSection() {
+    const rowRef = useRef<HTMLDivElement>(null);
+    const [reviews, setReviews] = useState<Review[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const q = query(collection(db, "homepageReviews"), orderBy("createdAt", "desc"));
+        const unsubscribe = onSnapshot(
+            q,
+            (snapshot) => {
+                const data = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                })) as Review[];
+                setReviews(data);
+                setLoading(false);
+            },
+            (error) => {
+                console.error("Error loading homepage reviews:", error);
+                setLoading(false);
+            }
+        );
+
+        return () => unsubscribe();
+    }, []);
+
+    const scroll = (dir: "left" | "right") => {
+        const el = rowRef.current;
+        if (!el) return;
+        const cardWidth = 420;
+        el.scrollBy({
+            left: dir === "left" ? -cardWidth : cardWidth,
+            behavior: "smooth",
+        });
+    };
+
+    if (!loading && reviews.length === 0) return null;
+
+    return (
+        <section className="bg-white py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-4">
+                <div className="mx-auto max-w-3xl text-center">
+                    <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
+                        Read reviews, hire with confidence.
                     </h2>
-                    <p className="text-gray-500 text-base lg:text-lg max-w-2xl">
-                        {description}
-                    </p>
+                    <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-500">
+                        <span className="font-semibold text-slate-900">4.2/5</span>
+                        <div className="flex items-center gap-2">
+                            <span className="text-emerald-500">★</span>
+                            <span className="font-semibold text-slate-800">Trusted by Clients All Over Australia</span>
+                        </div>
+                        <span>Based on 5,210 reviews</span>
+                    </div>
                 </div>
 
-                <div className="relative">
-                    <Carousel
-                        opts={{ align: "start", loop: true }}
-                        className="w-full"
+                <div className="mt-12 grid gap-10 lg:grid-cols-[380px_1fr]">
+                    <div className="flex flex-col gap-5">
+                        <span className="w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-500">
+                            Testimonial
+                        </span>
+
+                        <h3 className="text-3xl font-extrabold leading-tight text-slate-900">
+                            Trusted By Top Tier Industry Professionals
+                        </h3>
+
+                        <p className="text-slate-600">
+                            Leaders and organizations rely on research-led strategy and execution to drive measurable outcomes and confidence in their decisions.
+                        </p>
+
+                        <div className="flex items-center gap-3 pt-2">
+                            <button
+                                onClick={() => scroll("left")}
+                                className="h-11 w-11 rounded-full border-2 border-slate-300 text-slate-700 hover:bg-slate-50"
+                                aria-label="Previous reviews"
+                                type="button"
+                            >
+                                ←
+                            </button>
+                            <button
+                                onClick={() => scroll("right")}
+                                className="h-11 w-11 rounded-full border-2 border-slate-900 text-slate-900 hover:bg-slate-50"
+                                aria-label="Next reviews"
+                                type="button"
+                            >
+                                →
+                            </button>
+                        </div>
+                    </div>
+
+                    <div
+                        ref={rowRef}
+                        className="flex gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                     >
-                        <CarouselContent className="-ml-2 md:-ml-4">
-                            {reviews.map((review, index) => (
-                                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full">
-                                    <div className="grid lg:grid-cols-2 gap-8 items-center">
-                                        {/* Left — Profile Card */}
-                                        <div className="bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 shadow-sm">
-                                            <div className="flex items-center gap-4 mb-4">
-                                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                                                    <span className="text-lg font-semibold text-white">
-                                                        {review.name
-                                                            .split(" ")
-                                                            .map((n) => n[0])
-                                                            .join("")}
-                                                    </span>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-semibold text-gray-900">
-                                                        {review.name}
-                                                    </h4>
-                                                    <p className="text-sm text-gray-500">
-                                                        {review.location}
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div className="flex items-center gap-1 mb-4">
-                                                {[...Array(review.rating)].map((_, i) => (
-                                                    <Star
-                                                        key={i}
-                                                        className="w-4 h-4 fill-green-500 text-green-500"
-                                                    />
-                                                ))}
-                                            </div>
-
-                                            <h3 className="font-semibold text-lg mb-3 text-gray-900">
-                                                {review.title}
-                                            </h3>
-                                            <p className="text-sm text-gray-500 leading-relaxed mb-4">
-                                                {review.content}
-                                            </p>
-
-                                            <button className="text-green-600 text-sm font-medium hover:underline inline-flex items-center gap-1">
-                                                Read full story
-                                                <ArrowRight className="w-4 h-4" />
-                                            </button>
-                                        </div>
-
-                                        {/* Right — Image */}
-                                        <div className="space-y-4">
-                                            <div className="bg-green-50 rounded-2xl h-64 lg:h-80 flex items-center justify-center relative group cursor-pointer border border-green-100 shadow-sm overflow-hidden">
-                                                <Image
-                                                    src={review.image}
-                                                    alt={review.imageCaption}
-                                                    fill
-                                                    className="object-cover"
-                                                    unoptimized
-                                                />
-                                                <div className="absolute inset-0 flex items-center justify-center">
-                                                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-600 to-green-500 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                                                        <Play className="w-6 h-6 text-white fill-white ml-1" />
-                                                    </div>
-                                                </div>
-                                                <span className="absolute bottom-4 left-4 text-xs text-gray-900 bg-white/90 px-3 py-1 rounded-full border border-gray-100">
-                                                    {review.imageCaption}
-                                                </span>
-                                            </div>
-
-                                            <div className="flex justify-center lg:justify-start">
-                                                <Button
-                                                    variant="outline"
-                                                    className="rounded-full border-green-200 text-green-700 hover:bg-green-50"
-                                                >
-                                                    See more reviews
-                                                </Button>
-                                            </div>
-                                        </div>
+                        {reviews.map((r) => (
+                            <article key={r.id} className="min-w-[340px] max-w-[400px] flex-shrink-0">
+                                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+                                    <p className="text-slate-600">{r.text}</p>
+                                    <div className="mt-4">
+                                        <Stars count={Math.max(1, Math.min(5, Number(r.rating) || 5))} />
                                     </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious className="left-0 md:-left-12 border-green-200 text-green-700 hover:bg-green-50" />
-                        <CarouselNext className="right-0 md:-right-12 border-green-200 text-green-700 hover:bg-green-50" />
-                    </Carousel>
+                                </div>
+
+                                <div className="mt-4 flex items-center gap-3">
+                                    <img
+                                        src={r.avatar || "https://i.pravatar.cc/80?img=12"}
+                                        alt={r.name}
+                                        className="h-11 w-11 rounded-full object-cover"
+                                    />
+                                    <div>
+                                        <p className="text-sm font-semibold text-slate-900">{r.name}</p>
+                                        <p className="text-xs text-slate-500">{r.timeAgo}</p>
+                                    </div>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
     );
-};
-
-export default ReviewsSection;
+}

@@ -5,7 +5,6 @@ import HouseCleaningSmarter from "@/components/services/house-cleaning/HouseClea
 import { HouseCleaningInDepthTabs } from "@/components/services/house-cleaning/HouseCleaningInDepthTabs";
 import { HouseCleaningProcess } from "@/components/services/house-cleaning/HouseCleaningProcess";
 import { HouseCleaningReviews } from "@/components/services/house-cleaning/HouseCleaningReviews";
-import { HouseCleaningCTA } from "@/components/services/house-cleaning/HouseCleaningCTA";
 import { Metadata } from "next";
 
 const baseUrl = "https://www.skillcityfacilitysolutions.com.au";
@@ -75,7 +74,6 @@ export default function HouseCleaningPage() {
             <HouseCleaningLocations />
             <HouseCleaningProcess />
             <HouseCleaningReviews />
-            <HouseCleaningCTA />
         </main>
     );
 }
