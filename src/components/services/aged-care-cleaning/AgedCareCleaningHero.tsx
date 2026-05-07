@@ -5,7 +5,7 @@ import { Heart, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-/** Aged care — rigorous sanitization for aged care facilities. */
+/** Aged care, rigorous sanitization for aged care facilities. */
 export function AgedCareCleaningHero() {
     return (
         <section className="pt-40 pb-24 overflow-hidden relative bg-[#fff9f9]">
@@ -26,7 +26,7 @@ export function AgedCareCleaningHero() {
                             Rigorous sanitization for <span className="text-lime-500 font-serif italic">aged care facilities</span>
                         </h1>
                         <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                            Clean surroundings reduce infection risk and support residents&apos; dignity and comfort—delivered by respectful, trained teams.
+                            Clean surroundings reduce infection risk and support residents&apos; dignity and comfort: delivered by respectful, trained teams.
                         </p>
                         <Link
                             href="/contact-us"

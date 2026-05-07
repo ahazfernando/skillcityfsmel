@@ -11,7 +11,7 @@ export function OneOffCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="One-off"
             titleGreen="deep clean options"
-            description="Spring resets, post-event recovery, and pre-sale sparkle—intensive single visits when you need a visible before-and-after."
+            description="Spring resets, post-event recovery, and pre-sale sparkle: intensive single visits when you need a visible before-and-after."
             tabs={[
                 {
                     id: "spring",
@@ -19,7 +19,7 @@ export function OneOffCleaningInDepthTabs() {
                     title: "Whole home refresh.",
                     subtitle: "Seasonal dust and detail.",
                     description:
-                        "Winter closes up houses—dust on sills, edges, and behind furniture. We bring extra hands to hit skirtings, appliance exteriors, wet areas, and living zones in one intensive day or multi-day blitz.",
+                        "Winter closes up houses: dust on sills, edges, and behind furniture. We bring extra hands to hit skirtings, appliance exteriors, wet areas, and living zones in one intensive day or multi-day blitz.",
                     bullets: [
                         "Cobwebs, sills, and skirting detail",
                         "Appliance exteriors and cupboard faces",
@@ -36,7 +36,7 @@ export function OneOffCleaningInDepthTabs() {
                     title: "After the party.",
                     subtitle: "Fast turnaround.",
                     description:
-                        "Rubbish, sticky floors, and kitchen chaos—we mobilise quickly to restore livable order so you’re not facing Sunday morning alone.",
+                        "Rubbish, sticky floors, and kitchen chaos: we mobilise quickly to restore livable order so you’re not facing Sunday morning alone.",
                     bullets: [
                         "Rubbish bag-out and bin sort",
                         "Floor mop and spot carpet vacuum",
@@ -53,7 +53,7 @@ export function OneOffCleaningInDepthTabs() {
                     title: "Photo and open-home ready.",
                     subtitle: "Buyer appeal.",
                     description:
-                        "Buyers notice kitchens, bathrooms, and light. We prioritise gleam where photos and first walk-throughs matter—windows in, fittings, and entrance impact.",
+                        "Buyers notice kitchens, bathrooms, and light. We prioritise gleam where photos and first walk-throughs matter: windows in, fittings, and entrance impact.",
                     bullets: [
                         "Window interiors and tracks (scoped)",
                         "Light fitting and fan dust",
@@ -70,7 +70,7 @@ export function OneOffCleaningInDepthTabs() {
                     title: "You set the priority list.",
                     subtitle: "Kitchen-first or room-specific.",
                     description:
-                        "Not every one-off is whole-home. Tell us the top three zones—we’ll load crew and time there first so budget matches impact.",
+                        "Not every one-off is whole-home. Tell us the top three zones: we’ll load crew and time there first so budget matches impact.",
                     bullets: [
                         "Brief-led priority zones",
                         "Extra hours for ovens or fridges",

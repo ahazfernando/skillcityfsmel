@@ -11,7 +11,7 @@ export function IndustrialCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="Industrial"
             titleGreen="capabilities"
-            description="Floors, high-level dust, amenities, and spill-aware programs—sized to shutdowns or rolling maintenance windows."
+            description="Floors, high-level dust, amenities, and spill-aware programs: sized to shutdowns or rolling maintenance windows."
             tabs={[
                 {
                     id: "floors",
@@ -19,7 +19,7 @@ export function IndustrialCleaningInDepthTabs() {
                     title: "Scrub, sweep, and degrease.",
                     subtitle: "Concrete, epoxy, and coated slabs.",
                     description:
-                        "Industrial floors take oil, tyre marks, and fine dust. We deploy sweepers and scrubbers with pads and chemistry matched to your coating—plus spill response when you need it.",
+                        "Industrial floors take oil, tyre marks, and fine dust. We deploy sweepers and scrubbers with pads and chemistry matched to your coating: plus spill response when you need it.",
                     bullets: [
                         "Ride-on or walk-behind scrub programs",
                         "Degrease zones near plant and docks",
@@ -36,7 +36,7 @@ export function IndustrialCleaningInDepthTabs() {
                     title: "Rafters, racking, and conduit.",
                     subtitle: "Reduce overhead dust load.",
                     description:
-                        "Overhead dust eventually lands on product and staff. We use reach systems appropriate to your SWMS—racking tops, ledges, and exposed conduit on agreed frequencies.",
+                        "Overhead dust eventually lands on product and staff. We use reach systems appropriate to your SWMS: racking tops, ledges, and exposed conduit on agreed frequencies.",
                     bullets: [
                         "Racking and mezzanine ledge dusting",
                         "Conduit and pipe runs",

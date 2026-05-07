@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Dumbbell, Droplets, ShieldCheck } from "lucide-react";
 
-/** Gym — three fixed focus areas (no data props). */
+/** Gym, three fixed focus areas (no data props). */
 export function GymCleaningSanitisationFocus() {
     return (
         <section className="py-24 bg-gray-50 relative">

@@ -31,7 +31,7 @@ export function CinemaCleaningVenueZones() {
                             <Ticket className="w-6 h-6" />
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-3 font-serif">Foyers &amp; ticketing</h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">Welcoming entrances—counters, glass, and lobbies.</p>
+                        <p className="text-sm text-gray-600 leading-relaxed">Welcoming entrances: counters, glass, and lobbies.</p>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

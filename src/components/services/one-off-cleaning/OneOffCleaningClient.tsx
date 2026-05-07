@@ -67,7 +67,7 @@ export function OneOffCleaningClient() {
                             Professional One-Off <br />
                             <span className="text-green-300 font-semibold italic">Cleaning</span> You Can Trust
                         </h1>
-                        <p className="text-white/80 text-lg lg:text-xl leading-relaxed max-w-lg">Spring cleans, pre-sale sparkle, post-event reset—intensive single visits when you need a reset button.</p>
+                        <p className="text-white/80 text-lg lg:text-xl leading-relaxed max-w-lg">Spring cleans, pre-sale sparkle, post-event reset: intensive single visits when you need a reset button.</p>
                         <ul className="flex flex-wrap gap-x-6 gap-y-3">
                             {HIGHLIGHTS.map((h) => (
                                 <li key={h} className="flex items-center gap-2 text-green-100 text-sm">
@@ -193,7 +193,7 @@ export function OneOffCleaningClient() {
                             {" "}
                             <span className="italic">Visit</span>
                             </h2>
-                            <p className="text-gray-600 text-lg leading-relaxed">Tell us the priority rooms—we bring crew and product for a visible before/after.</p>
+                            <p className="text-gray-600 text-lg leading-relaxed">Tell us the priority rooms: we bring crew and product for a visible before/after.</p>
                             <div className="space-y-8 pt-4">
                                 <div className="flex gap-5">
                                     <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#e5f7ed] flex items-center justify-center border-2 border-[#bce8d0]">
@@ -210,7 +210,7 @@ export function OneOffCleaningClient() {
                                     </div>
                                     <div>
                                         <h3 className="text-xl font-bold text-[#111827] mb-2">Flexible brief</h3>
-                                        <p className="text-gray-500 leading-relaxed text-sm md:text-base">Kitchen-first, or whole-home—your call.</p>
+                                        <p className="text-gray-500 leading-relaxed text-sm md:text-base">Kitchen-first, or whole-home: your call.</p>
                                     </div>
                                 </div>
                             </div>
@@ -314,7 +314,7 @@ export function OneOffCleaningClient() {
                                 We Have <span className="text-gray-800">Answers</span>
                             </h2>
                             <div className="space-y-4">
-                                {[{"question":"What areas do you cover for one-off cleaning?","answer":"We scope each site individually—common areas, high-touch surfaces, washrooms, and specialist zones. Contact us for a walkthrough and written scope."},{"question":"Are your products safe for staff and visitors?","answer":"Yes. We use effective, responsibly chosen products and can align with your site's chemical policies or green requirements."},{"question":"How do I book?","answer":"Call 03 9034 6492 or use our contact form. We'll propose a schedule and pricing for your facility."},{"question":"Do I need to be on site?","answer":"Not necessarily. Many clients provide after-hours access. We're insured and follow your security protocols."},{"question":"What if something needs a touch-up?","answer":"Tell us within 24 hours and we'll address priority areas as part of our service commitment."}].map((faq, index) => (
+                                {[{"question":"What areas do you cover for one-off cleaning?","answer":"We scope each site individually: common areas, high-touch surfaces, washrooms, and specialist zones. Contact us for a walkthrough and written scope."},{"question":"Are your products safe for staff and visitors?","answer":"Yes. We use effective, responsibly chosen products and can align with your site's chemical policies or green requirements."},{"question":"How do I book?","answer":"Call 03 9034 6492 or use our contact form. We'll propose a schedule and pricing for your facility."},{"question":"Do I need to be on site?","answer":"Not necessarily. Many clients provide after-hours access. We're insured and follow your security protocols."},{"question":"What if something needs a touch-up?","answer":"Tell us within 24 hours and we'll address priority areas as part of our service commitment."}].map((faq, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, y: 10 }}

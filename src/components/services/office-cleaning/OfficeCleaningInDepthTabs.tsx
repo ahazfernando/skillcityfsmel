@@ -19,7 +19,7 @@ export function OfficeCleaningInDepthTabs() {
                     title: "High-traffic floors and shared workspaces.",
                     subtitle: "Daily reset for productive teams.",
                     description:
-                        "Open-plan offices collect dust, coffee rings, and bin overflow fast. We run systematic desk-and-floor programs so every morning feels organised—vacuum lines, sanitised hot desks, and clear walkways without disrupting your people.",
+                        "Open-plan offices collect dust, coffee rings, and bin overflow fast. We run systematic desk-and-floor programs so every morning feels organised: vacuum lines, sanitised hot desks, and clear walkways without disrupting your people.",
                     bullets: [
                         "Floor vacuum, spot mop, and cable-safe vacuuming under desks",
                         "Hot-desk and shared bench sanitisation",
@@ -36,7 +36,7 @@ export function OfficeCleaningInDepthTabs() {
                     title: "Boardrooms and leadership floors.",
                     subtitle: "Discreet, presentation-ready detail.",
                     description:
-                        "Executive zones need a different tempo—AV-safe dusting, catering cleanup, and meeting rooms that look sharp for clients. Our teams are briefed on confidentiality and work around your calendar.",
+                        "Executive zones need a different tempo: AV-safe dusting, catering cleanup, and meeting rooms that look sharp for clients. Our teams are briefed on confidentiality and work around your calendar.",
                     bullets: [
                         "AV equipment and screen-safe dusting",
                         "Boardroom reset: tables, chairs, whiteboards, and ledges",
@@ -70,7 +70,7 @@ export function OfficeCleaningInDepthTabs() {
                     title: "One schedule, many floors.",
                     subtitle: "Access-aware teams for portfolios.",
                     description:
-                        "Many clients give us after-hours or weekend access. We’re comfortable with swipe cards, lifts, lock-up checklists, and multi-tenant floors—single point of contact for several sites if you need consistency.",
+                        "Many clients give us after-hours or weekend access. We’re comfortable with swipe cards, lifts, lock-up checklists, and multi-tenant floors: single point of contact for several sites if you need consistency.",
                     bullets: [
                         "After-hours and weekend windows to suit your lease",
                         "Security-inducted staff and documented lock-up",

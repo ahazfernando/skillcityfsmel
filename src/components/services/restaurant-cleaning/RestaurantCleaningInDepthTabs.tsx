@@ -11,7 +11,7 @@ export function RestaurantCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="Restaurant"
             titleGreen="cleaning areas"
-            description="Kitchen line, dining room, bar, cool rooms, and exhaust-aware programs—supporting EHO expectations and guest-facing polish."
+            description="Kitchen line, dining room, bar, cool rooms, and exhaust-aware programs: supporting EHO expectations and guest-facing polish."
             tabs={[
                 {
                     id: "kitchen",

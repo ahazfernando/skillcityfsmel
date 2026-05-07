@@ -39,6 +39,12 @@ const HOW_STEPS = [
     { number: "04", title: "You Relax", description: "Enjoy your sparkling clean space, guaranteed" },
 ] as const;
 
+const HERO_REVIEW_FACES = [
+    { src: "/peoplelogos/LiamCarter.png", alt: "Liam Carter" },
+    { src: "/peoplelogos/SophieBennett.png", alt: "Sophie Bennett" },
+    { src: "/peoplelogos/DanielHarper.png", alt: "Daniel Harper" },
+] as const;
+
 export function EarlyChildhoodCleaningClient() {
     const [openFaq, setOpenFaq] = useState(0);
     const Icon = Baby;
@@ -65,10 +71,13 @@ export function EarlyChildhoodCleaningClient() {
                             <span className="text-white/90 text-sm font-medium tracking-wide uppercase">Early Childhood Cleaning</span>
                         </div>
                         <h1 className="text-4xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-                            Professional Early Childhood <br />
-                            <span className="text-green-300 font-semibold italic">Cleaning</span> You Can Trust
+                            <span className="block">
+                                Professional Early Childhood{" "}
+                                <span className="text-green-300 font-semibold italic">Cleaning</span>
+                            </span>
+                            <span className="block">You Can Trust</span>
                         </h1>
-                        <p className="text-white/80 text-lg lg:text-xl leading-relaxed max-w-lg">Gentle, non-toxic cleaning for childcares and kinders—play spaces, sleep rooms, and nappy change areas.</p>
+                        <p className="text-white/80 text-lg lg:text-xl leading-relaxed max-w-lg">Gentle, non-toxic cleaning for childcares and kinders: play spaces, sleep rooms, and nappy change areas.</p>
                         <ul className="flex flex-wrap gap-x-6 gap-y-3">
                             {HIGHLIGHTS.map((h) => (
                                 <li key={h} className="flex items-center gap-2 text-green-100 text-sm">
@@ -95,12 +104,18 @@ export function EarlyChildhoodCleaningClient() {
                         </div>
                         <div className="flex items-center gap-6 pt-2">
                             <div className="flex -space-x-2">
-                                {["BH", "JM", "SC", "RL"].map((initials) => (
+                                {HERO_REVIEW_FACES.map((face, idx) => (
                                     <div
-                                        key={initials}
-                                        className="w-10 h-10 rounded-full bg-green-400/30 border-2 border-white/40 flex items-center justify-center text-xs font-bold text-white"
+                                        key={`${face.src}-${idx}`}
+                                        className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-white/40 bg-green-400/30"
                                     >
-                                        {initials}
+                                        <Image
+                                            src={face.src}
+                                            alt={face.alt}
+                                            fill
+                                            className="object-cover"
+                                            sizes="40px"
+                                        />
                                     </div>
                                 ))}
                             </div>
@@ -116,7 +131,13 @@ export function EarlyChildhoodCleaningClient() {
                     </div>
                     <div className="relative mt-8 lg:mt-0">
                         <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-lg mx-auto lg:ml-auto border border-green-800/30">
-                            <Image src="/CommercialCleaning/WhatsApp Image 2026-01-14 at 7.26.15 PM (1).jpeg" alt="" className="w-full h-full object-cover" fill priority />
+                            <Image
+                                src="/servicesimages/Screenshot 2026-05-07 at 11.06.25 AM.png"
+                                alt=""
+                                className="w-full h-full object-cover"
+                                fill
+                                priority
+                            />
                         </div>
                         <div className="absolute bottom-8 -left-4 lg:left-4 z-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 shadow-lg">
                             <div className="flex items-center gap-3">
@@ -235,7 +256,7 @@ export function EarlyChildhoodCleaningClient() {
                         <div className="space-y-6">
                             <span className="text-sm font-semibold text-primary uppercase tracking-wider">Why Choose Us</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">Early learning environments done right</h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed">From sandpits to bottle prep benches—we've got you.</p>
+                            <p className="text-lg text-muted-foreground leading-relaxed">From sandpits to bottle prep benches: we've got you.</p>
                             <Button className="btn-primary" asChild>
                                 <Link href="/contact-us">Request a Quote</Link>
                             </Button>
@@ -313,7 +334,7 @@ export function EarlyChildhoodCleaningClient() {
                                 We Have <span className="text-gray-800">Answers</span>
                             </h2>
                             <div className="space-y-4">
-                                {[{"question":"What areas do you cover for early childhood cleaning?","answer":"We scope each site individually—common areas, high-touch surfaces, washrooms, and specialist zones. Contact us for a walkthrough and written scope."},{"question":"Are your products safe for staff and visitors?","answer":"Yes. We use effective, responsibly chosen products and can align with your site's chemical policies or green requirements."},{"question":"How do I book?","answer":"Call 03 9034 6492 or use our contact form. We'll propose a schedule and pricing for your facility."},{"question":"Do I need to be on site?","answer":"Not necessarily. Many clients provide after-hours access. We're insured and follow your security protocols."},{"question":"What if something needs a touch-up?","answer":"Tell us within 24 hours and we'll address priority areas as part of our service commitment."}].map((faq, index) => (
+                                {[{"question":"What areas do you cover for early childhood cleaning?","answer":"We scope each site individually: common areas, high-touch surfaces, washrooms, and specialist zones. Contact us for a walkthrough and written scope."},{"question":"Are your products safe for staff and visitors?","answer":"Yes. We use effective, responsibly chosen products and can align with your site's chemical policies or green requirements."},{"question":"How do I book?","answer":"Call 03 9034 6492 or use our contact form. We'll propose a schedule and pricing for your facility."},{"question":"Do I need to be on site?","answer":"Not necessarily. Many clients provide after-hours access. We're insured and follow your security protocols."},{"question":"What if something needs a touch-up?","answer":"Tell us within 24 hours and we'll address priority areas as part of our service commitment."}].map((faq, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, y: 10 }}

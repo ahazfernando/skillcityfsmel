@@ -10,7 +10,7 @@ export function EarlyChildhoodHero() {
         <section className="relative pt-40 pb-32 bg-[#f8f9fa]">
             <div className="absolute inset-0 h-[600px] w-full">
                 <Image
-                    src="/home/PHOTO-2026-01-07-18-53-29.jpg"
+                    src="/servicesimages/Screenshot 2026-05-07 at 11.06.25 AM.png"
                     alt="Childcare Cleaning"
                     fill
                     className="object-cover"

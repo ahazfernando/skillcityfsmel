@@ -11,7 +11,7 @@ export function CouncilCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="How Skill City Facility Solutions"
             titleGreen="supports council & community sites in detail"
-            description="Explore how we clean libraries, community venues, public amenities, and recreation assets—aligned to public-sector expectations and community use patterns."
+            description="Explore how we clean libraries, community venues, public amenities, and recreation assets: aligned to public-sector expectations and community use patterns."
             tabs={[
                 {
                     id: "public-facilities",

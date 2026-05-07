@@ -21,7 +21,7 @@ export function OneOffCleaningIntensiveScope() {
                         <Sparkles className="w-8 h-8 text-lime-500 group-hover:text-lime-200 mb-6 transition-colors" />
                         <h3 className="text-xl font-bold text-gray-900 group-hover:text-white mb-3 transition-colors">Top-to-bottom dusting</h3>
                         <p className="text-gray-600 group-hover:text-lime-100 font-medium leading-relaxed transition-colors">
-                            Every surface wiped—no cobweb left behind.
+                            Every surface wiped: no cobweb left behind.
                         </p>
                     </motion.div>
                     <motion.div

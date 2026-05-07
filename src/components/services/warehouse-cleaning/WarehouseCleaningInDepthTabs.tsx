@@ -11,7 +11,7 @@ export function WarehouseCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="Warehouse"
             titleGreen="cleaning modules"
-            description="Dock areas, pick aisles, mezzanine offices, and yard-adjacent hygiene—scheduled around inbound peaks and stocktakes."
+            description="Dock areas, pick aisles, mezzanine offices, and yard-adjacent hygiene: scheduled around inbound peaks and stocktakes."
             tabs={[
                 {
                     id: "dock",
@@ -70,7 +70,7 @@ export function WarehouseCleaningInDepthTabs() {
                     title: "Under-rack and bulk zones.",
                     subtitle: "Seasonal deep windows.",
                     description:
-                        "During slow periods or stocktake prep, we can deep-clean under selective racking, cool room surrounds, and staging areas—scoped to your WMS quiet hours.",
+                        "During slow periods or stocktake prep, we can deep-clean under selective racking, cool room surrounds, and staging areas: scoped to your WMS quiet hours.",
                     bullets: [
                         "Under-rack vacuum where accessible",
                         "Staging bay sweep and scrub",

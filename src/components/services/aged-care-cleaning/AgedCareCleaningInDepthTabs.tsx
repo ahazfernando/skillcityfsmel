@@ -11,7 +11,7 @@ export function AgedCareCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="Aged care"
             titleGreen="service scope"
-            description="Respectful cleaning for resident rooms, communal living, dining, and clinical-adjacent zones—in step with your infection prevention plan."
+            description="Respectful cleaning for resident rooms, communal living, dining, and clinical-adjacent zones: in step with your infection prevention plan."
             tabs={[
                 {
                     id: "resident",
@@ -19,7 +19,7 @@ export function AgedCareCleaningInDepthTabs() {
                     title: "Personal space with dignity.",
                     subtitle: "Ensuites, floors, and furnishings.",
                     description:
-                        "We train staff to work quietly and respectfully around residents. Room cleans cover ensuites, floors, furniture dusting, and waste—on a roster that minimises disruption to routines and care.",
+                        "We train staff to work quietly and respectfully around residents. Room cleans cover ensuites, floors, furniture dusting, and waste: on a roster that minimises disruption to routines and care.",
                     bullets: [
                         "Ensuite sanitisation and fixture polish",
                         "Floor vacuum or mop to mobility-safe standards",
@@ -53,7 +53,7 @@ export function AgedCareCleaningInDepthTabs() {
                     title: "Near-care and isolation support.",
                     subtitle: "PPE, logs, and nursing coordination.",
                     description:
-                        "When rooms are isolated or clinical zones need extra attention, we follow your IPC directions—PPE, signage, and documented cleans where your facility requires it.",
+                        "When rooms are isolated or clinical zones need extra attention, we follow your IPC directions: PPE, signage, and documented cleans where your facility requires it.",
                     bullets: [
                         "Terminal-style add-ons when directed",
                         "PPE and room-entry protocols",

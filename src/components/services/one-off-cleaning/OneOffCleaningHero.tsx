@@ -5,7 +5,7 @@ import { CalendarClock, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-/** One-off cleaning — single deep cleans and event turnaround. */
+/** One-off cleaning, single deep cleans and event turnaround. */
 export function OneOffCleaningHero() {
     return (
         <section className="pt-40 pb-24 text-center px-4 relative overflow-hidden bg-lime-50">
@@ -26,7 +26,7 @@ export function OneOffCleaningHero() {
                     <span className="text-lime-600">special-event turnaround</span>
                 </h1>
                 <p className="text-2xl text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
-                    Pre-inspection prep, post-event reset, or an intensive spring clean—we arrive equipped and leave the space transformed.
+                    Pre-inspection prep, post-event reset, or an intensive spring clean: we arrive equipped and leave the space transformed.
                 </p>
                 <div className="pt-8 mb-16">
                     <Link

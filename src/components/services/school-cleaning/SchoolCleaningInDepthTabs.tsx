@@ -11,7 +11,7 @@ export function SchoolCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="School cleaning"
             titleGreen="in detail"
-            description="See how we support classrooms, washrooms, labs, and sports areas—timed around bells, terms, and holiday deep-clean windows."
+            description="See how we support classrooms, washrooms, labs, and sports areas: timed around bells, terms, and holiday deep-clean windows."
             tabs={[
                 {
                     id: "classrooms",
@@ -53,7 +53,7 @@ export function SchoolCleaningInDepthTabs() {
                     title: "Science, art, and tech rooms.",
                     subtitle: "Care around equipment and sinks.",
                     description:
-                        "Non-standard surfaces need care—chemical benches, art sinks, and tech bays. We coordinate with faculty on sensitive zones and use methods that protect equipment while meeting hygiene expectations.",
+                        "Non-standard surfaces need care: chemical benches, art sinks, and tech bays. We coordinate with faculty on sensitive zones and use methods that protect equipment while meeting hygiene expectations.",
                     bullets: [
                         "Bench and sink sanitisation without damaging surfaces",
                         "Floor care in spill-prone zones",

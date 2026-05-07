@@ -5,7 +5,7 @@ import { Zap, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-/** Gym cleaning — dedicated hero (no props). Tagline: sanitizing workout equipment and facilities. */
+/** Gym cleaning, dedicated hero (no props). Tagline: sanitizing workout equipment and facilities. */
 export function GymCleaningHero() {
     return (
         <section className="pt-32 pb-24 relative overflow-hidden bg-gray-50">

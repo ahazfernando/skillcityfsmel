@@ -35,7 +35,7 @@ export default function CommercialCleaningHero() {
             />
 
             <div className="relative w-full max-w-7xl mx-auto px-4 md:px-6 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 lg:gap-6 items-center flex-1">
-                {/* Left — Text content */}
+                {/* Left, Text content */}
                 <div className="space-y-8 mt-12 md:mt-16">
                     {/* Badge */}
                     <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mt-4 md:mt-0">
@@ -106,7 +106,7 @@ export default function CommercialCleaningHero() {
                     </div>
                 </div>
 
-                {/* Right — Hero Image with floating badge */}
+                {/* Right, Hero Image with floating badge */}
                 <div className="relative mt-8 lg:mt-0">
                     {/* Image frame */}
                     <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-lg mx-auto lg:ml-auto border border-green-800/30">

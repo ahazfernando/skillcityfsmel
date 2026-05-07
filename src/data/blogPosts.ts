@@ -36,12 +36,12 @@ export const blogPosts: BlogPost[] = [
         readTime: "5 min read",
         featured: true,
         intro: [
-            "A tidy home supports wellbeing and makes daily life easier. These practical tips from Skill City Facility Solutions help you stay on top of dust, clutter, and high-traffic areas—whether you maintain the space yourself or complement routines with professional residential cleaning.",
+            "A tidy home supports wellbeing and makes daily life easier. These practical tips from Skill City Facility Solutions help you stay on top of dust, clutter, and high-traffic areas: whether you maintain the space yourself or complement routines with professional residential cleaning.",
             "Use this guide as a checklist for weekly habits and deeper seasonal tasks that keep Melbourne and Victoria homes guest-ready and healthy.",
         ],
         tableOfContents: [
             { title: "Why consistency matters", content: "Short daily resets beat occasional marathon cleans." },
-            { title: "High-touch surfaces first", content: "Door handles, switches, and benches—sanitize regularly." },
+            { title: "High-touch surfaces first", content: "Door handles, switches, and benches: sanitize regularly." },
             { title: "Zone cleaning", content: "Tackle one room type per day to avoid overwhelm." },
             { title: "When to call professionals", content: "Move-outs, post-renovation, or periodic deep cleans." },
         ],
@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
         readTime: "4 min read",
         featured: true,
         intro: [
-            "Eco-friendly cleaning reduces chemical exposure for staff, residents, and visitors—critical in offices, healthcare-adjacent spaces, and family homes across Australia.",
+            "Eco-friendly cleaning reduces chemical exposure for staff, residents, and visitors: critical in offices, healthcare-adjacent spaces, and family homes across Australia.",
             "Skill City Facility Solutions uses methods and products that meet strong environmental and safety standards while delivering the same level of clean your facility expects.",
         ],
         tableOfContents: [
@@ -103,7 +103,7 @@ export const blogPosts: BlogPost[] = [
         featured: false,
         intro: [
             "Spring is ideal for resetting windows, storage, and overlooked areas after winter. This checklist works for houses and small commercial sites preparing for busier seasons.",
-            "Skill City can handle heavy lifts—carpet extraction, high dusting, and detailed kitchens—while you work through the list room by room.",
+            "Skill City can handle heavy lifts: carpet extraction, high dusting, and detailed kitchens: while you work through the list room by room.",
         ],
         tableOfContents: [
             { title: "Declutter before you clean", content: "Donate, recycle, then wipe surfaces." },
@@ -128,7 +128,7 @@ export const blogPosts: BlogPost[] = [
             "Facilities often schedule deep cleans before audits, after construction, or when onboarding a new cleaning vendor.",
         ],
         tableOfContents: [
-            { title: "Regular maintenance", content: "Trash, vacuum, wipe, restock—predictable cadence." },
+            { title: "Regular maintenance", content: "Trash, vacuum, wipe, restock: predictable cadence." },
             { title: "Deep clean scope", content: "Baseboards, behind equipment, detailed washrooms." },
             { title: "Timing for businesses", content: "End of lease, pre-opening, or annual shutdowns." },
             { title: "Residential use cases", content: "Moving, allergies, or post-illness refresh." },

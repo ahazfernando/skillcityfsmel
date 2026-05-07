@@ -5,7 +5,7 @@ import { Factory, HardHat, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-/** Industrial cleaning — heavy-duty sites. */
+/** Industrial cleaning, heavy-duty sites. */
 export function IndustrialCleaningHero() {
     return (
         <section className="pt-32 pb-16 px-4 bg-gray-50 min-h-0">
@@ -31,7 +31,7 @@ export function IndustrialCleaningHero() {
                                 <span className="text-lime-500">for industrial sites</span>
                             </h1>
                             <p className="text-lg text-gray-400 max-w-md leading-relaxed">
-                                Heavy-duty cleaning for industrial sites—degreasing, high-level dusting, spill response, and safe floor programs across Victoria.
+                                Heavy-duty cleaning for industrial sites: degreasing, high-level dusting, spill response, and safe floor programs across Victoria.
                             </p>
                             <Link
                                 href="/contact-us"

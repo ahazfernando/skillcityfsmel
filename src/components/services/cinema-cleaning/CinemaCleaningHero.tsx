@@ -5,7 +5,7 @@ import { Film, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-/** Cinema & theater — between sessions and events. */
+/** Cinema & theater, between sessions and events. */
 export function CinemaCleaningHero() {
     return (
         <section className="relative pt-40 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-gray-900">
@@ -21,7 +21,7 @@ export function CinemaCleaningHero() {
                         Cinema &amp; Theater Cleaning
                     </h1>
                     <p className="text-xl md:text-2xl text-lime-100/90 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-                        Thorough cleaning between sessions and events—foyers, auditoriums, and high-traffic washrooms.
+                        Thorough cleaning between sessions and events: foyers, auditoriums, and high-traffic washrooms.
                     </p>
                     <Link
                         href="/contact-us"

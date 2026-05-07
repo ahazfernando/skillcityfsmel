@@ -11,7 +11,7 @@ export function MedicalCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="Medical cleaning"
             titleGreen="breakdown"
-            description="Clinical rooms, waiting areas, treatment zones, and back-of-house paths—documentation-friendly scope for practices and clinics."
+            description="Clinical rooms, waiting areas, treatment zones, and back-of-house paths: documentation-friendly scope for practices and clinics."
             tabs={[
                 {
                     id: "clinical",

@@ -11,7 +11,7 @@ export function EarlyChildhoodCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="Early childhood"
             titleGreen="cleaning areas"
-            description="Gentle, non-toxic focused programs for play rooms, sleep areas, food prep, and outdoor zones—aligned to licensing expectations."
+            description="Gentle, non-toxic focused programs for play rooms, sleep areas, food prep, and outdoor zones: aligned to licensing expectations."
             tabs={[
                 {
                     id: "play",

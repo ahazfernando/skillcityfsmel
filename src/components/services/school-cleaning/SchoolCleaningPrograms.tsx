@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { BookOpen, Sparkles } from "lucide-react";
 
-/** School cleaning programs — each block is explicit (no config array). */
+/** School cleaning programs, each block is explicit (no config array). */
 export function SchoolCleaningPrograms() {
     return (
         <section className="py-24 bg-white relative">

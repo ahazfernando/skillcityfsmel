@@ -1,6 +1,6 @@
 "use client";
 
-/** Gym — closing statement block. */
+/** Gym, closing statement block. */
 export function GymCleaningStandardsQuote() {
     return (
         <section className="py-24 border-t border-gray-200 text-center bg-white">

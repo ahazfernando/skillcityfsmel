@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 };
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CertificationTrustBar } from "@/components/shared/CertificationTrustBar";
 import cleanHomeImg from "@/assets/clean-home.jpg";
 
 const baseUrlSchema = "https://www.skillcityfacilitysolutions.com.au";
@@ -113,6 +114,7 @@ export default function Services() {
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         From regular house cleaning to specialized deep cleaning services, we have the expertise to make your space shine.
                     </p>
+                    <CertificationTrustBar variant="light" align="center" className="mt-10 max-w-3xl mx-auto" />
                 </div>
             </section>
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         default: "Skill City Facility Solutions | Professional Cleaning Services Melbourne & Victoria",
         template: "%s | Skill City Facility Solutions",
     },
-    description: "Skill City Facility Solutions — Premium residential and commercial cleaning in Melbourne, Oakleigh & Victoria. Eco-friendly house cleaning, office cleaning, builders cleaning. Free quotes.",
+    description: "Skill City Facility Solutions, Premium residential and commercial cleaning in Melbourne, Oakleigh & Victoria. Eco-friendly house cleaning, office cleaning, builders cleaning. Free quotes.",
     metadataBase: new URL(SITE_URL),
     keywords: [
         "cleaning services Melbourne",

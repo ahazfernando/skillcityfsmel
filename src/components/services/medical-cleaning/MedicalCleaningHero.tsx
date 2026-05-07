@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Activity, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-/** Medical / healthcare cleaning — clinical grade, meeting health standards. */
+/** Medical / healthcare cleaning, clinical grade, meeting health standards. */
 export function MedicalCleaningHero() {
     return (
         <section className="pt-32 pb-20 relative border-b border-lime-100 bg-white">
@@ -34,7 +34,7 @@ export function MedicalCleaningHero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-xl text-gray-600 mb-10 leading-relaxed font-light max-w-2xl mx-auto"
                 >
-                    Clinical grade cleaning meeting health standards. Hospitals, clinics, and labs demand rigorous infection control—we deliver with trained teams
+                    Clinical grade cleaning meeting health standards. Hospitals, clinics, and labs demand rigorous infection control: we deliver with trained teams
                     and approved protocols.
                 </motion.p>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>

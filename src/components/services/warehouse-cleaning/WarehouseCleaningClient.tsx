@@ -68,7 +68,7 @@ export function WarehouseCleaningClient() {
                             Professional Warehouse & Factory <br />
                             <span className="text-green-300 font-semibold italic">Cleaning</span> You Can Trust
                         </h1>
-                        <p className="text-white/80 text-lg lg:text-xl leading-relaxed max-w-lg">Large-footprint cleaning—dock areas, aisles, offices-in-warehouse, and staff amenities at scale.</p>
+                        <p className="text-white/80 text-lg lg:text-xl leading-relaxed max-w-lg">Large-footprint cleaning: dock areas, aisles, offices-in-warehouse, and staff amenities at scale.</p>
                         <ul className="flex flex-wrap gap-x-6 gap-y-3">
                             {HIGHLIGHTS.map((h) => (
                                 <li key={h} className="flex items-center gap-2 text-green-100 text-sm">
@@ -313,7 +313,7 @@ export function WarehouseCleaningClient() {
                                 We Have <span className="text-gray-800">Answers</span>
                             </h2>
                             <div className="space-y-4">
-                                {[{"question":"What areas do you cover for warehouse & factory cleaning?","answer":"We scope each site individually—common areas, high-touch surfaces, washrooms, and specialist zones. Contact us for a walkthrough and written scope."},{"question":"Are your products safe for staff and visitors?","answer":"Yes. We use effective, responsibly chosen products and can align with your site's chemical policies or green requirements."},{"question":"How do I book?","answer":"Call 03 9034 6492 or use our contact form. We'll propose a schedule and pricing for your facility."},{"question":"Do I need to be on site?","answer":"Not necessarily. Many clients provide after-hours access. We're insured and follow your security protocols."},{"question":"What if something needs a touch-up?","answer":"Tell us within 24 hours and we'll address priority areas as part of our service commitment."}].map((faq, index) => (
+                                {[{"question":"What areas do you cover for warehouse & factory cleaning?","answer":"We scope each site individually: common areas, high-touch surfaces, washrooms, and specialist zones. Contact us for a walkthrough and written scope."},{"question":"Are your products safe for staff and visitors?","answer":"Yes. We use effective, responsibly chosen products and can align with your site's chemical policies or green requirements."},{"question":"How do I book?","answer":"Call 03 9034 6492 or use our contact form. We'll propose a schedule and pricing for your facility."},{"question":"Do I need to be on site?","answer":"Not necessarily. Many clients provide after-hours access. We're insured and follow your security protocols."},{"question":"What if something needs a touch-up?","answer":"Tell us within 24 hours and we'll address priority areas as part of our service commitment."}].map((faq, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, y: 10 }}

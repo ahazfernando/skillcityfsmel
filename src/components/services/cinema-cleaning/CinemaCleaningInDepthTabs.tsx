@@ -11,7 +11,7 @@ export function CinemaCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="Cinema"
             titleGreen="cleaning scope"
-            description="Auditoriums, foyers, concessions, and washrooms—crews structured for tight between-session windows and blockbuster nights."
+            description="Auditoriums, foyers, concessions, and washrooms: crews structured for tight between-session windows and blockbuster nights."
             tabs={[
                 {
                     id: "auditorium",
@@ -19,7 +19,7 @@ export function CinemaCleaningInDepthTabs() {
                     title: "Rows, seats, and cup holders.",
                     subtitle: "Systematic between-session reset.",
                     description:
-                        "Every screening should feel fresh. We vacuum aisles, wipe cup holders, spot seats, and clear steps and rails so patrons notice the detail—not the last session’s popcorn.",
+                        "Every screening should feel fresh. We vacuum aisles, wipe cup holders, spot seats, and clear steps and rails so patrons notice the detail: not the last session’s popcorn.",
                     bullets: [
                         "Row-by-row vacuum and debris pick",
                         "Cup holder and armrest wipe",

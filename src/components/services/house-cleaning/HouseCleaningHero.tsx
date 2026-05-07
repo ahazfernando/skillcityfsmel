@@ -5,20 +5,7 @@ import { ArrowRight, Sparkles, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const certificationLogos: { src: string; alt: string }[] = [
-    {
-        src: "/licenses/Logo_Cm3_Contractor-Management-Prequalification.svg",
-        alt: "CM3 contractor management prequalification",
-    },
-    {
-        src: "/licenses/TestandTagW1.png",
-        alt: "Electrical test and tag certification",
-    },
-    {
-        src: "/licenses/LabourHire.png",
-        alt: "Victorian Labour Hire Authority licence",
-    },
-];
+import { CERTIFICATION_LOGOS } from "@/components/shared/CertificationTrustBar";
 
 export function HouseCleaningHero() {
     return (
@@ -76,12 +63,12 @@ export function HouseCleaningHero() {
                         </div>
 
                         <div className="pt-1">
-                            <p className="text-xs text-gray-500 mb-2">
+                            <p className="mb-2 text-xs text-gray-500">
                                 Certified for safe, compliant facility management in Australia
                             </p>
-                            <div className="flex items-center gap-4 flex-wrap">
-                                {certificationLogos.map((logo) => (
-                                    <div key={logo.src} className="h-10 flex items-center">
+                            <div className="flex flex-wrap items-center gap-4">
+                                {CERTIFICATION_LOGOS.map((logo) => (
+                                    <div key={logo.src} className="flex h-10 items-center">
                                         <Image
                                             src={logo.src}
                                             alt={logo.alt}

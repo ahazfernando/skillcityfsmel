@@ -11,7 +11,7 @@ export function EndOfLeaseCleaningCoverage() {
                     <Search className="w-12 h-12 text-lime-200 mx-auto mb-6" />
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Everything we cover</h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Residential and commercial end-of-lease scope—nothing rushed, nothing guessed.
+                        Residential and commercial end-of-lease scope: nothing rushed, nothing guessed.
                     </p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
@@ -32,7 +32,7 @@ export function EndOfLeaseCleaningCoverage() {
                         className="flex items-start gap-4 p-5 rounded-2xl hover:bg-lime-50 transition-colors"
                     >
                         <CheckCircle className="w-6 h-6 text-lime-500 shrink-0 mt-0.5" />
-                        <span className="text-lg text-gray-800 font-medium">Bathroom sanitisation—showers, toilets, tiles</span>
+                        <span className="text-lg text-gray-800 font-medium">Bathroom sanitisation: showers, toilets, tiles</span>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
@@ -42,7 +42,7 @@ export function EndOfLeaseCleaningCoverage() {
                         className="flex items-start gap-4 p-5 rounded-2xl hover:bg-lime-50 transition-colors"
                     >
                         <CheckCircle className="w-6 h-6 text-lime-500 shrink-0 mt-0.5" />
-                        <span className="text-lg text-gray-800 font-medium">All floors—vacuum, mop, stain attention</span>
+                        <span className="text-lg text-gray-800 font-medium">All floors: vacuum, mop, stain attention</span>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}

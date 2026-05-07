@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
 
-/** Generic marketing page (hero + blocks) — route transitions & slow networks */
+/** Generic marketing page (hero + blocks), route transitions & slow networks */
 export function PageLoadingSkeleton({ className }: { className?: string }) {
     return (
         <div className={cn("container-custom py-10 md:py-16 space-y-10", className)}>
@@ -152,7 +152,7 @@ export function DataTableSkeleton({
     );
 }
 
-/** Toolbar + table — matches inquiries / users admin list pages */
+/** Toolbar + table, matches inquiries / users admin list pages */
 export function AdminTablePageSkeleton({
     columns,
     rows = 8,

@@ -29,7 +29,7 @@ import HomeServicesGrid from "@/components/home/HomeServicesGrid";
 import ExperienceSection from "@/components/home/ExperienceSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import BlogSection from "@/components/home/BlogSection";
-import ReviewsSection from "@/components/home/ReviewsSection";
+import { CustomerReviewsSection } from "@/components/CustomerReviewsSection";
 import LicensesSection from "@/components/home/LicensesSection";
 
 export default function Home() {
@@ -44,7 +44,7 @@ export default function Home() {
             <LicensesSection />
             <HomeServicesGrid />
             <ExperienceSection />
-            <ReviewsSection />
+            <CustomerReviewsSection />
             {/* <WhyChooseUs /> */}
             <BlogSection />
         </>

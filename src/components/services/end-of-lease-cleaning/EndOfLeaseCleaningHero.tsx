@@ -5,7 +5,7 @@ import { Key, ArrowRight, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-/** End of lease — property transitions. */
+/** End of lease, property transitions. */
 export function EndOfLeaseCleaningHero() {
     return (
         <section className="pt-32 pb-20 bg-white">
@@ -26,7 +26,7 @@ export function EndOfLeaseCleaningHero() {
                             Comprehensive cleaning for <span className="text-lime-600">property transitions</span>
                         </h1>
                         <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                            Bond-focused detail for tenants and landlords—kitchens, baths, floors, and fixtures inspection-ready.
+                            Bond-focused detail for tenants and landlords: kitchens, baths, floors, and fixtures inspection-ready.
                         </p>
                         <Link
                             href="/contact-us"

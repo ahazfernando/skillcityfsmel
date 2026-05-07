@@ -1,81 +1,78 @@
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
-const steps = [
+const processSteps = [
     {
-        icon: "/verificationicons/GPSTRACKED.png",
-        title: "GPS Tracked",
-        subtitle: "Sign In & Out",
-        description: "Every job is logged with GPS check-in and check-out for full accountability.",
+        step: "01",
+        title: "Initial Consultation & Site Assessment",
+        image: "/services/consultation.svg",
     },
     {
-        icon: "/verificationicons/PoliceCleared.png",
-        title: "Trained And",
-        subtitle: "Police Cleared",
-        description: "All staff undergo rigorous training and full police background checks.",
+        step: "02",
+        title: "Customised Quotation & Proposal",
+        image: "/services/quotation.svg",
     },
     {
-        icon: "/verificationicons/UniformedIcon.png",
-        title: "Uniformed /",
-        subtitle: "Correct PPE",
-        description: "Our team arrives in uniform with appropriate safety equipment",
+        step: "03",
+        title: "Service Agreement & Scheduling",
+        image: "/services/serviceagreement.svg",
     },
     {
-        icon: "/verificationicons/IDIcon.png",
-        title: "ID Verified",
-        subtitle: "Staff",
-        description: "Every cleaner carries verified ID so you always know who's in your space.",
+        step: "04",
+        title: "Pre-Clean Preparation & Team Briefing",
+        image: "/services/teambriefing.svg",
     },
-];
+    {
+        step: "05",
+        title: "Service Delivery & Quality Control",
+        image: "/services/cleaningprocess.svg",
+    },
+    {
+        step: "06",
+        title: "Client Feedback & Ongoing Support",
+        image: "/services/clientfeedback.svg",
+    },
+] as const;
 
 export default function WCUProcess() {
     return (
-        <section className="py-24 bg-white border-t border-gray-100">
-            <div className="container mx-auto px-4 md:px-6">
-                {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-4 py-2 mb-5">
-                        <span className="w-2 h-2 rounded-full bg-green-500" />
-                        <span className="text-green-700 text-sm font-semibold uppercase tracking-wider">
-                            How We Work
-                        </span>
-                    </div>
-                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                        How We Deliver Quality
+        <section className="bg-white px-4 py-16 md:px-8 md:py-24">
+            <div className="mx-auto max-w-7xl">
+                <div className="mb-12 text-center">
+                    <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+                        Professionalism Redefined
+                    </span>
+                    <h2 className="text-primary mt-3 mb-2 text-3xl font-bold md:text-4xl">
+                        Process of How We Work
                     </h2>
-                    <p className="text-gray-500 text-lg">
-                        A simple, transparent process built around your convenience
-                        from first contact to a spotless result.
-                    </p>
                 </div>
 
-                {/* Steps */}
-                <div className="relative">
-                    {/* Connector line — desktop only */}
-                    <div className="hidden lg:block absolute top-14 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-green-200 to-transparent mx-32" />
-
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                        {steps.map((step, i) => (
-                            <div key={i} className="flex flex-col items-center text-center group">
-                                {/* Bare icon — no circle, no number */}
-                                <div className="mb-6 w-20 h-20 flex items-center justify-center">
-                                    <Image
-                                        src={step.icon}
-                                        alt={`${step.title} ${step.subtitle}`}
-                                        width={72}
-                                        height={72}
-                                        className="object-contain drop-shadow-sm"
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+                    {processSteps.map((step, index) => (
+                        <div key={step.step} className="relative flex flex-col items-center">
+                            <div className="relative mb-6 flex w-full items-center justify-center">
+                                <div className="flex h-32 w-32 items-center justify-center">
+                                    <img
+                                        src={step.image}
+                                        alt={step.title}
+                                        className="h-full w-full object-contain"
                                     />
                                 </div>
 
-                                <p className="text-lg font-bold text-gray-900 leading-snug">
-                                    {step.title}<br />{step.subtitle}
-                                </p>
-                                <p className="mt-2 text-sm text-gray-500 leading-relaxed max-w-[180px]">
-                                    {step.description}
-                                </p>
+                                {index < processSteps.length - 1 ? (
+                                    <div className="absolute -right-6 top-1/2 z-10 hidden -translate-y-1/2 xl:block">
+                                        <ArrowRight className="text-primary h-6 w-6" />
+                                    </div>
+                                ) : null}
                             </div>
-                        ))}
-                    </div>
+
+                            <div className="text-center">
+                                <div className="mb-1 text-lg font-bold">Step {step.step}</div>
+                                <h3 className="text-sm font-semibold text-gray-900">
+                                    {step.title}
+                                </h3>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

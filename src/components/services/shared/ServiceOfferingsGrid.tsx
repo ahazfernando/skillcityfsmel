@@ -4,7 +4,7 @@ import { ServiceOfferingItem } from "./ServiceOfferingItem";
 const GREEN = "#00b050";
 
 type ServiceOfferingsGridProps = {
-    /** Current page path — that service is hidden so users browse others */
+    /** Current page path, that service is hidden so users browse others */
     currentHref: string;
     eyebrow?: string;
     title?: string;
@@ -18,7 +18,7 @@ export function ServiceOfferingsGrid({
     currentHref,
     eyebrow = "Our services",
     title = "More ways we support your facility",
-    description = "Explore specialist cleaning across education, healthcare, industrial, hospitality, and more—delivered with the same Skill City standards.",
+    description = "Explore specialist cleaning across education, healthcare, industrial, hospitality, and more: delivered with the same Skill City standards.",
 }: ServiceOfferingsGridProps) {
     const items = siteServices.filter((s) => s.href !== currentHref);
 

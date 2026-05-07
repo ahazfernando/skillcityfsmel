@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Building, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-/** Office cleaning — professional workspace sanitization. */
+/** Office cleaning, professional workspace sanitization. */
 export function OfficeCleaningHero() {
     return (
         <section className="pt-40 pb-24 bg-gray-900 text-white relative overflow-hidden">
@@ -23,7 +23,7 @@ export function OfficeCleaningHero() {
                         <span className="text-lime-400">Professional workspace sanitization</span>
                     </h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
-                        From boutique studios to multi-level HQs—after-hours schedules, vetted staff, and consistent desk-to-kitchen standards.
+                        From boutique studios to multi-level HQs: after-hours schedules, vetted staff, and consistent desk-to-kitchen standards.
                     </p>
                     <div className="pt-8">
                         <Link

@@ -35,7 +35,7 @@ export function OfficeCleaningFacilityLayout() {
                     <BriefcaseBusiness className="w-12 h-12 text-lime-500 mb-6" />
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Fully vetted staff</h3>
                     <p className="text-gray-600 leading-relaxed font-medium">
-                        Insured teams trained in access protocols—your floors and data stay protected.
+                        Insured teams trained in access protocols: your floors and data stay protected.
                     </p>
                 </motion.div>
                 <motion.div
@@ -63,7 +63,7 @@ export function OfficeCleaningFacilityLayout() {
                         <CheckCircle2 className="w-8 h-8 text-lime-200 group-hover:text-lime-500 transition-colors shrink-0" />
                         <div>
                             <h3 className="text-xl font-bold text-gray-900 mb-2">Desk detailing</h3>
-                            <p className="text-gray-600">Workstations and meeting rooms—dust-free surfaces.</p>
+                            <p className="text-gray-600">Workstations and meeting rooms: dust-free surfaces.</p>
                         </div>
                     </div>
                 </motion.div>

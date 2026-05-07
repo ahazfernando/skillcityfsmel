@@ -54,7 +54,7 @@ export function RestaurantCleaningKitchenStandards() {
                             className="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm"
                         >
                             <CheckSquare className="w-6 h-6 text-lime-500 shrink-0 mt-1" />
-                            <p className="text-lg text-gray-700 font-medium">Dining area cleaning—tables, chairs, and floors</p>
+                            <p className="text-lg text-gray-700 font-medium">Dining area cleaning: tables, chairs, and floors</p>
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}

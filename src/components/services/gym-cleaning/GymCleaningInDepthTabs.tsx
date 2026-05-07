@@ -11,7 +11,7 @@ export function GymCleaningInDepthTabs() {
             eyebrow="In-depth services"
             titleLine1="Gym cleaning"
             titleGreen="zones"
-            description="Equipment floors, change rooms, studios, and odour programs—timed for off-peak or 24/7 touch routes."
+            description="Equipment floors, change rooms, studios, and odour programs: timed for off-peak or 24/7 touch routes."
             tabs={[
                 {
                     id: "floor",
@@ -36,7 +36,7 @@ export function GymCleaningInDepthTabs() {
                     title: "Showers, lockers, benches.",
                     subtitle: "Wet area and odour control.",
                     description:
-                        "Change rooms drive retention. We scrub tiles, polish glass, treat drains, and wipe lockers so wet areas feel fresh—not just ‘wet’.",
+                        "Change rooms drive retention. We scrub tiles, polish glass, treat drains, and wipe lockers so wet areas feel fresh: not just ‘wet’.",
                     bullets: [
                         "Shower cubicle scrub and grout attention",
                         "Locker fronts and bench sanitise",

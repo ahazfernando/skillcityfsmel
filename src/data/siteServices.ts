@@ -25,7 +25,7 @@ export type SiteService = {
     href: string;
 };
 
-/** All service routes — single source for nav, mega menu, and service-page grids */
+/** All service routes, single source for nav, mega menu, and service-page grids */
 export const siteServices: SiteService[] = [
     {
         icon: Home,

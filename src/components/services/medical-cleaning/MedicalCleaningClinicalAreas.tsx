@@ -17,7 +17,7 @@ export function MedicalCleaningClinicalAreas() {
                         <Stethoscope className="w-12 h-12 text-lime-600 mb-6" />
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">Uncompromising Protocols</h2>
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            Our team is trained in medical-grade cleaning procedures so clinical areas remain sterile, sanitised, and compliant—from waiting rooms
+                            Our team is trained in medical-grade cleaning procedures so clinical areas remain sterile, sanitised, and compliant: from waiting rooms
                             to sensitive treatment zones.
                         </p>
                     </motion.div>

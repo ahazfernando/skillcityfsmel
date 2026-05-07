@@ -4,7 +4,7 @@ import { HouseCleaningLocations } from "@/components/services/house-cleaning/Hou
 import HouseCleaningSmarter from "@/components/services/house-cleaning/HouseCleaningSmarter";
 import { HouseCleaningInDepthTabs } from "@/components/services/house-cleaning/HouseCleaningInDepthTabs";
 import { HouseCleaningProcess } from "@/components/services/house-cleaning/HouseCleaningProcess";
-import { HouseCleaningReviews } from "@/components/services/house-cleaning/HouseCleaningReviews";
+import { CustomerReviewsSection } from "@/components/CustomerReviewsSection";
 import { Metadata } from "next";
 
 const baseUrl = "https://www.skillcityfacilitysolutions.com.au";
@@ -73,7 +73,17 @@ export default function HouseCleaningPage() {
             <HouseCleaningInDepthTabs />
             <HouseCleaningLocations />
             <HouseCleaningProcess />
-            <HouseCleaningReviews />
+            <CustomerReviewsSection
+                headline={
+                    <>
+                        Read Google reviews.
+                        <br />
+                        Book house cleaning with confidence.
+                    </>
+                }
+                leftTitle="Loved by homeowners across Victoria"
+                leftDescription="Premium house and deep cleaning from a team that respects your home, your schedule, and the details that matter: regular visits, one-off deep cleans, and end-of-lease support."
+            />
         </main>
     );
 }

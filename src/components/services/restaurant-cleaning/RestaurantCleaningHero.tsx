@@ -5,7 +5,7 @@ import { ChefHat, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-/** Restaurant & kitchen — deep cleaning for food service. */
+/** Restaurant & kitchen, deep cleaning for food service. */
 export function RestaurantCleaningHero() {
     return (
         <section className="pt-40 pb-20 border-b border-lime-100 relative overflow-hidden bg-[#fffdfa]">
@@ -31,7 +31,7 @@ export function RestaurantCleaningHero() {
                             Restaurant &amp; Kitchen Cleaning
                         </h1>
                         <p className="text-xl text-gray-600 leading-relaxed font-medium">
-                            Deep cleaning for food service environments—front-of-house polish and back-of-house compliance.
+                            Deep cleaning for food service environments: front-of-house polish and back-of-house compliance.
                         </p>
                         <p className="text-gray-500 leading-relaxed">
                             We help keep your kitchen compliant and your dining area immaculate.

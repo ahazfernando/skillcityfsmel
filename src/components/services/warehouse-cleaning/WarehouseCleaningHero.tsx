@@ -5,7 +5,7 @@ import { Box } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-/** Warehouse & factory — large-scale storage and production. */
+/** Warehouse & factory, large-scale storage and production. */
 export function WarehouseCleaningHero() {
     return (
         <section className="pt-32 pb-12 bg-gray-100">
@@ -24,7 +24,7 @@ export function WarehouseCleaningHero() {
                             <span className="text-lime-400">Large-scale. Detail-driven.</span>
                         </h1>
                         <p className="text-lg text-gray-400 mb-10 max-w-xl leading-relaxed">
-                            Large-scale cleaning for storage and production—minimise downtime, protect workers, and keep docks and racking presentable.
+                            Large-scale cleaning for storage and production: minimise downtime, protect workers, and keep docks and racking presentable.
                         </p>
                         <Link
                             href="/contact-us"

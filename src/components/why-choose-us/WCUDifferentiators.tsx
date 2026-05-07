@@ -8,22 +8,22 @@ const items = [
         image: "/home/PHOTO-2025-10-06-14-54-06.jpg",
     },
     {
-        title: "Recruitment Process",
+        title: "Trusted Cleaning Process",
         description:
-            "We only recruit staff that excel at cleaning and who are willing to action our core values from day one.",
-        image: "/home/PHOTO-2025-10-27-06-41-27.jpg",
+            "Our trusted cleaning process starts with careful recruitment, values-first onboarding, and clear standards from day one.",
+        image: "/servicesimages/I_want_the_current_person_202605070706.jpeg",
     },
     {
         title: "Training Systems",
         description:
             "Every staff member goes through our rigorous induction and on-site training programs before their first shift.",
-        image: "/home/PHOTO-2026-01-07-18-53-29.jpg",
+        image: "/servicesimages/I_want_the_current_person_202605070636.jpeg",
     },
     {
         title: "Our Values",
         description:
             "We use our core values as a guiding principle on our approach to providing high-quality cleaning services.",
-        image: "/home/ContactlessHeader.png",
+        image: "/servicesimages/The_outfit_should_have_this_202605070649.jpeg",
     },
     {
         title: "Recognition & Rewards",
@@ -67,7 +67,7 @@ export default function WCUDifferentiators() {
                         What Sets Us Apart
                     </h2>
                     <p className="text-gray-500 text-lg">
-                        Eight pillars that underpin every clean we deliver — built over
+                        Eight pillars that underpin every clean we deliver, built over
                         20+ years of relentless focus on quality.
                     </p>
                 </div>
@@ -80,12 +80,14 @@ export default function WCUDifferentiators() {
                             className="group flex flex-col gap-4"
                         >
                             {/* Image */}
-                            <div className="relative h-52 rounded-2xl overflow-hidden shadow-md">
+                            <div className="relative h-52 rounded-2xl overflow-hidden shadow-md bg-gray-50">
                                 <Image
                                     src={item.image}
                                     alt={item.title}
                                     fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className={`transition-transform duration-500 group-hover:scale-105 ${
+                                        item.title === "Our Values" ? "object-contain p-2" : "object-cover"
+                                    }`}
                                     unoptimized
                                 />
                                 {/* Green tint on hover */}

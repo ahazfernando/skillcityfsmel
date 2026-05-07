@@ -3,6 +3,10 @@ import Link from "next/link";
 import { TrendingUp, ShieldCheck, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+/** macOS screenshot name includes U+202F before AM. */
+const ABOUT_SECTION_IMAGE =
+    "/servicesimages/Screenshot 2026-05-07 at 10.47.47\u202fAM.png";
+
 const stats = [
     {
         icon: TrendingUp,
@@ -32,11 +36,12 @@ export default function HouseCleaningAbout() {
                         {/* Main Image Container */}
                         <div className="relative rounded-[2rem] overflow-hidden shadow-2xl mb-8">
                             <Image
-                                src="/CommercialCleaning/83c4b48ea5d79b5ddd55b589c36c0eca.jpg"
-                                alt="Professional cleaning service"
+                                src={ABOUT_SECTION_IMAGE}
+                                alt="Professional Skill City house cleaning team"
                                 width={800}
                                 height={600}
                                 className="w-full h-[400px] object-cover"
+                                sizes="(min-width: 1024px) 50vw, 100vw"
                             />
 
                             {/* Overlay Stat Box */}
@@ -69,10 +74,12 @@ export default function HouseCleaningAbout() {
                             </span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] leading-tight">
-                            Your Trusted<br />
-                            <span className="text-[#00b050]">Cleaning Solutions</span><br />
-                            Partner
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight text-[#111827]">
+                            <span className="block">Your Trusted</span>
+                            <span className="block">Partner in</span>
+                            <span className="block text-[#00b050] italic font-medium">
+                                Expert House Cleaning
+                            </span>
                         </h2>
 
                         <p className="text-gray-500 text-lg leading-relaxed">

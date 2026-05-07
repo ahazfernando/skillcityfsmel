@@ -19,7 +19,7 @@ export function WarehouseCleaningFloorAndStaffCare() {
                     <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Hard Floor Scrubbing &amp; Sweeping</h3>
                         <p className="text-gray-600 text-lg">
-                            Industrial sweepers and ride-on scrubbers for dust, debris, and tyre marks—safer concrete for forklifts and foot traffic.
+                            Industrial sweepers and ride-on scrubbers for dust, debris, and tyre marks: safer concrete for forklifts and foot traffic.
                         </p>
                     </div>
                 </motion.div>

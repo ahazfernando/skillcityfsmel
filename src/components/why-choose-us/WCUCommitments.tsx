@@ -32,7 +32,7 @@ const commitments = [
         icon: Clock,
         title: "Always On Time",
         description:
-            "We respect your schedule. Our teams arrive punctually and complete every job within the agreed timeframe — guaranteed.",
+            "We respect your schedule. Our teams arrive punctually and complete every job within the agreed timeframe, guaranteed.",
         bg: "bg-green-50",
         iconColor: "text-green-600",
         border: "border-green-100",
@@ -41,7 +41,7 @@ const commitments = [
         icon: Award,
         title: "100% Satisfaction Guarantee",
         description:
-            "Not happy? We'll return and re-clean at no extra cost. Your satisfaction is not optional — it's our standard.",
+            "Not happy? We'll return and re-clean at no extra cost. Your satisfaction is not optional, it's our standard.",
         bg: "bg-emerald-50",
         iconColor: "text-emerald-600",
         border: "border-emerald-100",
@@ -50,7 +50,7 @@ const commitments = [
         icon: Handshake,
         title: "Transparent Pricing",
         description:
-            "No hidden fees, no surprise charges. You get a clear, upfront quote before we start — and that's exactly what you pay.",
+            "No hidden fees, no surprise charges. You get a clear, upfront quote before we start, and that's exactly what you pay.",
         bg: "bg-teal-50",
         iconColor: "text-teal-600",
         border: "border-teal-100",
