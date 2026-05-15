@@ -41,7 +41,7 @@ const HOW_STEPS = [
 
 const HERO_REVIEW_FACES = [
     { src: "/peoplelogos/LiamCarter.png", alt: "Liam Carter" },
-    { src: "/peoplelogos/SophieBennett.png", alt: "Sophie Bennett" },
+    { src: "/peoplelogos/EvelynTaylor.png", alt: "Evelyn Taylor" },
     { src: "/peoplelogos/DanielHarper.png", alt: "Daniel Harper" },
 ] as const;
 

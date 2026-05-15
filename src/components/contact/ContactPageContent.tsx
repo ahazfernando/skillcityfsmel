@@ -21,6 +21,16 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
+import ClientLogosMarquee from "@/components/shared/ClientLogosMarquee";
+import LicensesSection from "@/components/home/LicensesSection";
+import { CustomerReviewsSection } from "@/components/CustomerReviewsSection";
 
 const contactInfo = [
     {
@@ -50,12 +60,10 @@ const contactInfo = [
 ];
 
 const serviceTypes = [
-    "House Cleaning",
-    "Office Cleaning",
-    "Deep Cleaning",
-    "Move In/Out Cleaning",
-    "Other",
-];
+    "Commercial Cleaning",
+    "Industrial Cleaning",
+    "Childcare Cleaning",
+] as const;
 
 const australianStates = [
     { value: "NSW", label: "New South Wales" },
@@ -85,6 +93,16 @@ export default function ContactPageContent() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!formData.service) {
+            toast({
+                title: "Service type required",
+                description: "Please select a service type to continue.",
+                variant: "destructive",
+            });
+            return;
+        }
+
         setLoading(true);
 
         try {
@@ -122,7 +140,11 @@ export default function ContactPageContent() {
         }
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const handleServiceChange = (value: string) => {
+        setFormData({ ...formData, service: value });
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
@@ -158,6 +180,8 @@ export default function ContactPageContent() {
                     </p>
                 </div>
             </section>
+
+            <ClientLogosMarquee />
 
             {/* Contact Section */}
             <section className="section-padding bg-background">
@@ -243,20 +267,21 @@ export default function ContactPageContent() {
                                             <label className="block text-sm font-medium text-foreground mb-2">
                                                 Service Type *
                                             </label>
-                                            <select
-                                                name="service"
-                                                value={formData.service}
-                                                onChange={handleChange}
-                                                required
-                                                className="w-full h-10 rounded-xl border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                                            <Select
+                                                value={formData.service || undefined}
+                                                onValueChange={handleServiceChange}
                                             >
-                                                <option value="">Select a service</option>
-                                                {serviceTypes.map((type) => (
-                                                    <option key={type} value={type}>
-                                                        {type}
-                                                    </option>
-                                                ))}
-                                            </select>
+                                                <SelectTrigger className="rounded-xl">
+                                                    <SelectValue placeholder="Select a service" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    {serviceTypes.map((type) => (
+                                                        <SelectItem key={type} value={type}>
+                                                            {type}
+                                                        </SelectItem>
+                                                    ))}
+                                                </SelectContent>
+                                            </Select>
                                         </div>
                                     </div>
                                     <div className="grid sm:grid-cols-2 gap-4">
@@ -345,6 +370,10 @@ export default function ContactPageContent() {
                     </div>
                 </div>
             </section>
+
+            <LicensesSection />
+
+            <CustomerReviewsSection />
 
             {/* FAQ Preview */}
             <section className="section-padding bg-secondary">

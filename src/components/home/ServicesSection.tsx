@@ -6,36 +6,26 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import cleanHomeImg from "@/assets/clean-home.jpg";
-import deepCleaningImg from "@/assets/deep-cleaning.jpg";
-import moveCleaningImg from "@/assets/move-cleaning.jpg";
-import healthcareCleaningImg from "@/assets/healthcare-cleaning.jpg";
-import eventCleaningImg from "@/assets/event-cleaning.jpg";
-import carpetCleaningImg from "@/assets/carpet-cleaning.jpg";
-
-const educationalCleaningImg = "/widgetservices/WhatsApp Image 2026-01-14 at 7.14.07 PM.jpeg";
-const officeCleaningWidgetImg = "/widgetservices/WhatsApp Image 2026-01-14 at 7.14.08 PM (1).jpeg";
-const buildersCleaningImg = "/widgetservices/IMG_6798.jpg";
-const carpetCleaningWidgetImg = "/widgetservices/WhatsApp Image 2026-01-14 at 7.26.05 PM (1).jpeg";
+const schoolCleaningImg = "/newimages/earlychildhood.jpg";
+const commercialCleaningImg = "/newimages/Commercial Cleaning.jpg";
+const earlyChildhoodCleaningAltImg = "/newimages/EarlyChildhooCleaningD!.jpg";
+const kitchenCleaningImg = "/newimages/KitchenCleaning.jpg";
+const healthcareCleaningImg = "/newimages/healthcare.jpeg";
+const houseCleaningImg = "/newimages/HouseCleaningFS.jpg";
+const cleanerPortraitImg = "/newimages/The_person_in_the_image_202604290815.jpg";
 
 const services = [
   {
     icon: GraduationCap,
     title: "Educational Cleaning",
     description: "Keep schools and educational facilities clean for students and staff.",
-    image: educationalCleaningImg,
+    image: schoolCleaningImg,
   },
   {
     icon: Truck,
     title: "Builders Cleaning",
     description: "Post-construction cleaning to make your newly built space spotless and move-in ready.",
-    image: buildersCleaningImg,
-  },
-  {
-    icon: Home,
-    title: "House Cleaning",
-    description: "Regular and thorough house cleaning services tailored to keep your home fresh and tidy.",
-    image: cleanHomeImg,
+    image: commercialCleaningImg,
   },
   {
     icon: HeartPulse,
@@ -47,31 +37,31 @@ const services = [
     icon: PartyPopper,
     title: "Event & Venue Cleaning",
     description: "Pre and post-event cleaning for venues, stadiums, and conference centers.",
-    image: officeCleaningWidgetImg,
+    image: commercialCleaningImg,
   },
   {
     icon: Building2,
     title: "Office Cleaning",
     description: "Professional cleaning for office spaces to keep your environment productive.",
-    image: "/ourservices/SkillCityOfficeCleaning.png",
+    image: cleanerPortraitImg,
   },
   {
     icon: Home,
     title: "Residential Cleaning",
     description: "We provide you the best service quality regarding residential needs.",
-    image: cleanHomeImg,
+    image: houseCleaningImg,
   },
   {
     icon: Sparkles,
     title: "Deep Cleaning",
     description: "Thorough deep cleaning for those hard-to-reach areas and tough stains.",
-    image: deepCleaningImg,
+    image: kitchenCleaningImg,
   },
   {
     icon: Layers,
     title: "Carpet Cleaning",
     description: "Deep carpet cleaning to remove stains and refresh your floors.",
-    image: carpetCleaningWidgetImg,
+    image: earlyChildhoodCleaningAltImg,
   },
 ];
 
@@ -122,10 +112,10 @@ const ServicesSection = () => {
 
   return (
     <section className="py-24 bg-background overflow-hidden">
-      <div className="container-custom">
-        <div className="grid lg:grid-cols-12 gap-12">
+      <div className="w-full px-4 sm:px-6 lg:ml-[max(1rem,calc((100vw-80rem)/2+2rem))] lg:w-[calc(100vw-max(1rem,calc((100vw-80rem)/2+2rem)))] lg:px-0 lg:pr-0">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-12">
           {/* Left side - Title and Navigation */}
-          <div className="lg:col-span-4 flex flex-col justify-center z-20 relative">
+          <div className="relative z-20 flex w-full flex-col justify-center lg:max-w-[calc((80rem-4rem)*4/12)] lg:shrink-0">
             {/* Background mask to hide overlapping carousel items (only active on large screens) */}
             <div className="hidden lg:block absolute inset-y-[-50vh] -right-6 w-[100vw] bg-background z-[-1]" />
             <div className="mb-2">
@@ -169,13 +159,13 @@ const ServicesSection = () => {
           </div>
 
           {/* Right side - Carousel */}
-          <div className="lg:col-span-8 min-w-0">
-            <div className="overflow-visible" ref={emblaRef}>
-              <div className="flex gap-8">
-                {services.map((service, index) => (
+          <div className="min-w-0 flex-1 overflow-hidden">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                {services.map((service) => (
                   <div
                     key={service.title}
-                    className="flex-shrink-0 w-[300px] sm:w-[350px]"
+                    className="flex-[0_0_300px] sm:flex-[0_0_350px] mr-8"
                   >
                     <div className="relative bg-card rounded-[2rem] shadow-xl overflow-visible group h-full flex flex-col">
                       {/* Image Container */}

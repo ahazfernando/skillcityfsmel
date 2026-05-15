@@ -22,7 +22,7 @@ const TRUST_GREEN = "#00B67A";
 /** Local headshots for review cards (`public/peoplelogos`). Cycled by card index. */
 const REVIEW_FACE_PEOPLE = [
     { name: "Liam Carter", src: "/peoplelogos/LiamCarter.png" },
-    { name: "Sophie Bennett", src: "/peoplelogos/SophieBennett.png" },
+    { name: "Evelyn Taylor", src: "/peoplelogos/EvelynTaylor.png" },
     { name: "Daniel Harper", src: "/peoplelogos/DanielHarper.png" },
 ] as const;
 

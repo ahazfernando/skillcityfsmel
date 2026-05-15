@@ -1,9 +1,12 @@
 "use client";
 
-import { Briefcase, Store, Factory, Stethoscope } from "lucide-react";
+import { GraduationCap, Store, Factory, Stethoscope } from "lucide-react";
 import { ServiceInDepthTabs } from "@/components/services/shared/ServiceInDepthTabs";
 
-const IMG = "/CommercialCleaning/WhatsApp Image 2026-01-14 at 7.26.15 PM (1).jpeg";
+const EDUCATION_IMG = "/newimages/SchoolWindowCleaning.jpg";
+const RETAIL_IMG = "/newimages/KitchenCleaning.jpg";
+const INDUSTRIAL_IMG = "/newimages/commercialcleaningimage.jpg";
+const MEDICAL_IMG = "/newimages/Screenshot 2026-05-12 at 10.26.39 AM.png";
 
 export function CommercialCleaningInDepthTabs() {
     return (
@@ -14,21 +17,21 @@ export function CommercialCleaningInDepthTabs() {
             description="Switch between services to see exactly what is included, how we operate on-site, and what you can expect when you partner with us for your commercial cleaning needs."
             tabs={[
                 {
-                    id: "office-cleaning",
-                    label: "Office Cleaning",
+                    id: "education-cleaning",
+                    label: "Education Cleaning",
                     title: "A productive, pristine workspace.",
-                    subtitle: "Daily or weekly maintenance for professional environments.",
+                    subtitle: "Daily or weekly maintenance for schools and learning environments.",
                     description:
-                        "We ensure your office remains a healthy, welcoming environment for staff and visitors. From boardrooms to breakrooms, our teams operate discreetly and efficiently.",
+                        "We keep classrooms, common areas, and staff spaces clean and welcoming for students, teachers, and visitors. Our teams work around school schedules with minimal disruption.",
                     bullets: [
-                        "Workstation and desk sanitisation",
-                        "Emptying bins and recycling management",
-                        "Kitchen and breakroom deep cleaning",
-                        "Restroom sanitisation and restocking",
+                        "Classroom and desk sanitisation",
+                        "Hallways, stairwells, and common area cleaning",
+                        "Washroom sanitisation and restocking",
+                        "After-hours and holiday-period cleaning",
                     ],
-                    image: IMG,
-                    Icon: Briefcase,
-                    ctaText: "Get an office cleaning quote",
+                    image: EDUCATION_IMG,
+                    Icon: GraduationCap,
+                    ctaText: "Get an education cleaning quote",
                 },
                 {
                     id: "retail-cleaning",
@@ -43,7 +46,7 @@ export function CommercialCleaningInDepthTabs() {
                         "Fitting room and public restroom maintenance",
                         "After-hours cleaning to avoid disruption",
                     ],
-                    image: IMG,
+                    image: RETAIL_IMG,
                     Icon: Store,
                     ctaText: "Enquire about retail cleaning",
                 },
@@ -60,7 +63,7 @@ export function CommercialCleaningInDepthTabs() {
                         "Industrial degreasing and spill response",
                         "Staff amenities and locker room sanitisation",
                     ],
-                    image: IMG,
+                    image: INDUSTRIAL_IMG,
                     Icon: Factory,
                     ctaText: "Discuss industrial cleaning",
                 },
@@ -77,7 +80,7 @@ export function CommercialCleaningInDepthTabs() {
                         "Safe handling protocols for clinical waste areas",
                         "Infection control and cross-contamination prevention",
                     ],
-                    image: IMG,
+                    image: MEDICAL_IMG,
                     Icon: Stethoscope,
                     ctaText: "Consult on medical cleaning",
                 },

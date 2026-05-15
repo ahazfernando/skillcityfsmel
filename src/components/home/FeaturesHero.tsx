@@ -57,8 +57,8 @@ const FeaturesHero = () => {
             <div className="relative z-10">
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
                 <img
-                  src="/home/PHOTO-2025-10-27-06-41-27.jpg"
-                  alt="Professional cleaner with cleaning supplies"
+                  src="/newimages/KitchenCleaning.jpg"
+                  alt="Commercial kitchen cleaning"
                   className="w-full h-auto max-h-[500px] object-cover"
                 />
               </div>

@@ -5,7 +5,7 @@ const items = [
         title: "Years of Experience",
         description:
             "20+ years of experience taught us how to use accountability to drive consistency across every job we take on.",
-        image: "/home/PHOTO-2025-10-06-14-54-06.jpg",
+        image: "/servicesimages/The_outfit_should_have_this_202605070649.jpeg",
     },
     {
         title: "Trusted Cleaning Process",
@@ -18,12 +18,6 @@ const items = [
         description:
             "Every staff member goes through our rigorous induction and on-site training programs before their first shift.",
         image: "/servicesimages/I_want_the_current_person_202605070636.jpeg",
-    },
-    {
-        title: "Our Values",
-        description:
-            "We use our core values as a guiding principle on our approach to providing high-quality cleaning services.",
-        image: "/servicesimages/The_outfit_should_have_this_202605070649.jpeg",
     },
     {
         title: "Recognition & Rewards",
@@ -42,12 +36,6 @@ const items = [
         description:
             "We constantly seek out innovative ways to improve our service with technology, from scheduling to quality reporting.",
         image: "/widgetservices/IMG_6798.jpg",
-    },
-    {
-        title: "Valued Relationships",
-        description:
-            "Our clients are our priority and we ensure that communication is simple, transparent, and always prioritised.",
-        image: "/home/ContactPageHeader.png",
     },
 ];
 
@@ -85,9 +73,7 @@ export default function WCUDifferentiators() {
                                     src={item.image}
                                     alt={item.title}
                                     fill
-                                    className={`transition-transform duration-500 group-hover:scale-105 ${
-                                        item.title === "Our Values" ? "object-contain p-2" : "object-cover"
-                                    }`}
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     unoptimized
                                 />
                                 {/* Green tint on hover */}

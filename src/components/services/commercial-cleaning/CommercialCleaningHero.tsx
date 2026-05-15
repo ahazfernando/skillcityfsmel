@@ -111,7 +111,7 @@ export default function CommercialCleaningHero() {
                     {/* Image frame */}
                     <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-lg mx-auto lg:ml-auto border border-green-800/30">
                         <Image
-                            src="/CommercialCleaning/CommercialCleaning.png"
+                            src="/newimages/The_person_in_the_image_202604290815.jpg"
                             alt="Commercial Workspace Cleaning"
                             className="w-full h-full object-cover"
                             fill

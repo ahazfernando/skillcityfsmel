@@ -21,7 +21,7 @@ export default function CommercialCleaningWhyChooseUs() {
                         <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-bl-3xl z-10 hidden md:block" />
 
                         <Image
-                            src="/CommercialCleaning/WhatsApp Image 2026-01-14 at 7.26.05 PM.jpeg"
+                            src="/newimages/commercialcleaningimage.jpg"
                             alt="Commercial cleaning professional at work"
                             fill
                             className="object-cover"

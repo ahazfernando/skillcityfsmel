@@ -31,11 +31,13 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import BlogSection from "@/components/home/BlogSection";
 import { CustomerReviewsSection } from "@/components/CustomerReviewsSection";
 import LicensesSection from "@/components/home/LicensesSection";
+import ClientLogosMarquee from "@/components/shared/ClientLogosMarquee";
 
 export default function Home() {
     return (
         <>
             <HeroSection />
+            <ClientLogosMarquee />
             <FeaturesHero />
             <HowItWorks />
             <LocationsSection />

@@ -12,7 +12,7 @@ const highlights = [
 /** Headshots from `public/peoplelogos` (same faces as Google reviews section). */
 const heroReviewFaces = [
     { src: "/peoplelogos/LiamCarter.png", alt: "Liam Carter" },
-    { src: "/peoplelogos/SophieBennett.png", alt: "Sophie Bennett" },
+    { src: "/peoplelogos/EvelynTaylor.png", alt: "Evelyn Taylor" },
     { src: "/peoplelogos/DanielHarper.png", alt: "Daniel Harper" },
 ] as const;
 
