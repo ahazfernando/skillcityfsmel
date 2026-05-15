@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button";
 import LocationsSection from "@/components/home/LocationsSection";
 import { ServiceOfferingsGrid } from "@/components/services/shared/ServiceOfferingsGrid";
 import { EarlyChildhoodCleaningInDepthTabs } from "@/components/services/early-childhood-cleaning/EarlyChildhoodCleaningInDepthTabs";
+import { REVIEW_FACE_PEOPLE } from "@/data/reviewFaces";
 
 const HIGHLIGHTS = [
     "Fully insured & trained staff",
@@ -37,12 +38,6 @@ const HOW_STEPS = [
     { number: "02", title: "We Arrive", description: "Our vetted professionals arrive on time, ready to clean" },
     { number: "03", title: "We Clean", description: "Thorough cleaning following our detailed checklist" },
     { number: "04", title: "You Relax", description: "Enjoy your sparkling clean space, guaranteed" },
-] as const;
-
-const HERO_REVIEW_FACES = [
-    { src: "/peoplelogos/LiamCarter.png", alt: "Liam Carter" },
-    { src: "/peoplelogos/EvelynTaylor.png", alt: "Evelyn Taylor" },
-    { src: "/peoplelogos/DanielHarper.png", alt: "Daniel Harper" },
 ] as const;
 
 export function EarlyChildhoodCleaningClient() {
@@ -104,14 +99,14 @@ export function EarlyChildhoodCleaningClient() {
                         </div>
                         <div className="flex items-center gap-6 pt-2">
                             <div className="flex -space-x-2">
-                                {HERO_REVIEW_FACES.map((face, idx) => (
+                                {REVIEW_FACE_PEOPLE.map((face) => (
                                     <div
-                                        key={`${face.src}-${idx}`}
+                                        key={face.src}
                                         className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-white/40 bg-green-400/30"
                                     >
                                         <Image
                                             src={face.src}
-                                            alt={face.alt}
+                                            alt={face.name}
                                             fill
                                             className="object-cover"
                                             sizes="40px"
