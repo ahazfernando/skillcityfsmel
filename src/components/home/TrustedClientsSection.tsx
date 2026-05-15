@@ -14,7 +14,7 @@ const clientLogos = [
 
 const TrustedClientsSection = () => {
   return (
-    <section className="py-20 bg-muted/20">
+    <section className="py-20 bg-background">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="inline-flex items-center gap-2 text-sm font-bold text-primary uppercase tracking-wider">

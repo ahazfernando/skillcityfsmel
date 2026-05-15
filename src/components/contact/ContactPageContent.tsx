@@ -28,6 +28,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
+import ContactHero from "@/components/contact/ContactHero";
 import ClientLogosMarquee from "@/components/shared/ClientLogosMarquee";
 import LicensesSection from "@/components/home/LicensesSection";
 import { CustomerReviewsSection } from "@/components/CustomerReviewsSection";
@@ -42,8 +43,8 @@ const contactInfo = [
     {
         icon: Mail,
         title: "Email",
-        value: "admin@skillcityfacilitysolutions.com.au",
-        link: "mailto:admin@skillcityfacilitysolutions.com.au",
+        value: "info@skillcityfs.com.au",
+        link: "mailto:info@skillcityfs.com.au",
     },
     {
         icon: MapPin,
@@ -63,6 +64,10 @@ const serviceTypes = [
     "Commercial Cleaning",
     "Industrial Cleaning",
     "Childcare Cleaning",
+    "Window Cleaning",
+    "Office Cleaning",
+    "One Off Cleaning",
+    "Deep Cleaning",
 ] as const;
 
 const australianStates = [
@@ -162,29 +167,12 @@ export default function ContactPageContent() {
 
     return (
         <>
-            {/* Hero Section */}
-            <section className="relative py-32 md:py-40 overflow-hidden">
-                <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: 'url(/home/ContactPageHeader.png)' }}
-                />
-                <div className="container-custom text-center relative z-10">
-                    <span className="text-sm font-semibold text-white/90 uppercase tracking-wider">
-                        Contact Us
-                    </span>
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6">
-                        Book a Free Consultation
-                    </h1>
-                    <p className="text-lg text-white max-w-2xl mx-auto">
-                        Ready to experience spotless cleaning? Reach out to us for a free, no-obligation quote. We're here to help!
-                    </p>
-                </div>
-            </section>
+            <ContactHero />
 
             <ClientLogosMarquee />
 
             {/* Contact Section */}
-            <section className="section-padding bg-background">
+            <section id="contact-form" className="section-padding bg-background scroll-mt-24">
                 <div className="container-custom">
                     <div className="grid lg:grid-cols-5 gap-12">
                         <div className="lg:col-span-2 space-y-8">

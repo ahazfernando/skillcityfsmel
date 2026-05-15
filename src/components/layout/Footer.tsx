@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Mail, Phone, Facebook, Twitter, Instagram, Linkedin, MapPin } from "lucide-react";
+import { Phone, Facebook, Twitter, Instagram, Linkedin, MapPin, Mail } from "lucide-react";
+import { NewsletterSubscribeForm } from "@/components/newsletter/NewsletterSubscribeForm";
 
 // You can customize these links for your new project
 const footerLinks = {
@@ -56,25 +57,7 @@ export const Footer = () => {
                 Get 20% off on your first contract just by subscribing to our newsletter
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                <div className="flex-1 relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full pl-12 pr-4 py-3 rounded-full bg-white text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30"
-                  />
-                </div>
-                <button className="px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">
-                  Subscribe
-                </button>
-              </div>
-
-              <p className="text-white/70 text-sm">
-                You will be able to unsubscribe at any time.
-                <br />
-                Read our privacy policy <Link href="/privacy" className="underline hover:text-white">here</Link>
-              </p>
+              <NewsletterSubscribeForm source="footer" />
             </div>
           </div>
         </div>
@@ -177,9 +160,9 @@ export const Footer = () => {
                   <Phone size={16} className="text-accent" />
                   <span>03 9034 6492</span>
                 </a>
-                <a href="mailto:admin@skillcityfacilitysolutions.com.au" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors text-sm">
+                <a href="mailto:info@skillcityfs.com.au" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors text-sm">
                   <Mail size={16} className="text-accent" />
-                  <span>admin@skillcityfacilitysolutions.com.au</span>
+                  <span>info@skillcityfs.com.au</span>
                 </a>
               </div>
             </div>

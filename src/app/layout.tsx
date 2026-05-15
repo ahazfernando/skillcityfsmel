@@ -98,7 +98,7 @@ export default function RootLayout({
                             "image": "https://www.skillcityfs.com.au/SkillCityPNGLOGO.png",
                             "url": "https://www.skillcityfs.com.au",
                             "telephone": "+61390346492",
-                            "email": "admin@skillcityfacilitysolutions.com.au",
+                            "email": "info@skillcityfs.com.au",
                             "address": {
                                 "@type": "PostalAddress",
                                 "streetAddress": "4A Haughton Road",

@@ -32,6 +32,7 @@ import BlogSection from "@/components/home/BlogSection";
 import { CustomerReviewsSection } from "@/components/CustomerReviewsSection";
 import LicensesSection from "@/components/home/LicensesSection";
 import ClientLogosMarquee from "@/components/shared/ClientLogosMarquee";
+import TrustedClientsSection from "@/components/home/TrustedClientsSection";
 
 export default function Home() {
     return (
@@ -43,6 +44,7 @@ export default function Home() {
             <LocationsSection />
             <AboutPreview />
             <ServicesSection />
+            <TrustedClientsSection />
             <LicensesSection />
             <HomeServicesGrid />
             <ExperienceSection />

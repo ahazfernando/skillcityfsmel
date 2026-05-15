@@ -1,6 +1,6 @@
 "use client"
 
-import { LayoutDashboard, MessageSquare, LogOut, Users, Star } from "lucide-react"
+import { LayoutDashboard, MessageSquare, LogOut, Users, Star, Mail } from "lucide-react"
 import { useAuth } from "@/contexts/AuthContext"
 import {
     Sidebar,
@@ -69,6 +69,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                     <Link href="/admin/reviews">
                                         <Star />
                                         <span>Reviews</span>
+                                    </Link>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton asChild isActive={pathname === "/admin/newsletter"}>
+                                    <Link href="/admin/newsletter">
+                                        <Mail />
+                                        <span>Newsletter</span>
                                     </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>

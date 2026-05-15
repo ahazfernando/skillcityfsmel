@@ -5,8 +5,7 @@ const licenses = [
         src: "/licenses/Logo_Cm3_Contractor-Management-Prequalification.svg",
         alt: "CM3 contractor management prequalification",
         heading: "CM3 prequalified contractor",
-        description:
-            "Prequalified under CM3 for contractor management so your site’s safety and compliance processes align with how we work on your premises.",
+        description: "Site safety & compliance, verified before we arrive.",
         isSvg: true,
     },
     {
@@ -14,7 +13,7 @@ const licenses = [
         alt: "Electrical test and tag certification",
         heading: "Test & tag Training",
         description:
-            "Portable electrical equipment is tested and tagged to Australian standards, supporting safe operations wherever our teams use gear on your facility.",
+            "All electrical gear tested & tagged to Australian standards.",
         isSvg: false,
         width: 200,
         height: 80,
@@ -24,7 +23,7 @@ const licenses = [
         alt: "Victorian Labour Hire Authority licence",
         heading: "Labour hire licensed",
         description:
-            "Licensed with the Victorian Labour Hire Authority giving you transparency and assurance when we supply cleaning and facility staff to your business.",
+            "Victorian Labour Hire Authority licensed — full transparency on every placement.",
         isSvg: false,
         width: 200,
         height: 80,
