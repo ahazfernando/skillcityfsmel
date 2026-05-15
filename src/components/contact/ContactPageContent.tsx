@@ -111,6 +111,19 @@ export default function ContactPageContent() {
         setLoading(true);
 
         try {
+            const emailResponse = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (!emailResponse.ok) {
+                const payload = (await emailResponse.json().catch(() => null)) as {
+                    error?: string;
+                } | null;
+                throw new Error(payload?.error ?? "Failed to send your message.");
+            }
+
             const { collection, addDoc, serverTimestamp } = await import("firebase/firestore");
             const { db } = await import("@/lib/firebase");
 
@@ -137,7 +150,10 @@ export default function ContactPageContent() {
             console.error("Error submitting form:", error);
             toast({
                 title: "Error",
-                description: "Something went wrong. Please try again.",
+                description:
+                    error instanceof Error
+                        ? error.message
+                        : "Something went wrong. Please try again.",
                 variant: "destructive",
             });
         } finally {

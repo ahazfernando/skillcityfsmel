@@ -1,20 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Phone, CheckCircle2, Star, Sparkles } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2, Sparkles } from "lucide-react";
 
 import { CertificationTrustBar } from "@/components/shared/CertificationTrustBar";
+import { ReviewSocialProofStrip } from "@/components/shared/ReviewSocialProofStrip";
 
 const highlights = [
     "Fully insured & background-checked team",
     "Eco-friendly products",
 ];
-
-/** Headshots from `public/peoplelogos` (same faces as Google reviews section). */
-const heroReviewFaces = [
-    { src: "/peoplelogos/LiamCarter.png", alt: "Liam Carter" },
-    { src: "/peoplelogos/EvelynTaylor.png", alt: "Evelyn Taylor" },
-    { src: "/peoplelogos/DanielHarper.png", alt: "Daniel Harper" },
-] as const;
 
 /** Filename uses U+202F before AM (macOS screenshot naming). */
 const WCU_HERO_IMAGE =
@@ -94,33 +88,11 @@ export default function WCUHero() {
                             className="w-fit max-w-md self-start border-gray-200/90"
                         />
 
-                        {/* Trust badges */}
-                        <div className="flex items-center gap-4 self-start sm:self-auto">
-                            <div className="flex -space-x-2">
-                                {heroReviewFaces.map((face) => (
-                                    <div
-                                        key={face.src}
-                                        className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-white/40 bg-green-400/30 ring-2 ring-green-900/40"
-                                    >
-                                        <Image
-                                            src={face.src}
-                                            alt={face.alt}
-                                            fill
-                                            className="object-cover"
-                                            sizes="40px"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                            <div>
-                                <div className="mb-0.5 flex gap-0.5">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                                    ))}
-                                </div>
-                                <span className="text-sm text-green-200">100+ 5-star reviews</span>
-                            </div>
-                        </div>
+                        <ReviewSocialProofStrip
+                            className="self-start sm:self-auto"
+                            starClassName="fill-yellow-400 text-yellow-400"
+                            labelClassName="text-green-200"
+                        />
                     </div>
                 </div>
 

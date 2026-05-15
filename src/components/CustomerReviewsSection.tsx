@@ -7,7 +7,8 @@ import { formatDistanceToNow } from "date-fns";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ReviewSocialProofStrip } from "@/components/shared/ReviewSocialProofStrip";
+import { reviewFaceByIndex } from "@/data/reviewFaces";
 import { Button } from "@/components/ui/button";
 import {
     Carousel,
@@ -18,17 +19,6 @@ import {
 import { firestoreDb } from "@/lib/firebase";
 
 const TRUST_GREEN = "#00B67A";
-
-/** Local headshots for review cards (`public/peoplelogos`). Cycled by card index. */
-const REVIEW_FACE_PEOPLE = [
-    { name: "Liam Carter", src: "/peoplelogos/LiamCarter.png" },
-    { name: "Evelyn Taylor", src: "/peoplelogos/EvelynTaylor.png" },
-    { name: "Daniel Harper", src: "/peoplelogos/DanielHarper.png" },
-] as const;
-
-function reviewFaceByIndex(index: number) {
-    return REVIEW_FACE_PEOPLE[index % REVIEW_FACE_PEOPLE.length];
-}
 
 /** Admin dashboard uses `homepageReviews`; set NEXT_PUBLIC_FIRESTORE_REVIEWS_COLLECTION=reviews to switch. */
 const REVIEWS_COLLECTION =
@@ -141,13 +131,6 @@ function GoogleReviewsMark({ className }: { className?: string }) {
 }
 
 function ReviewBubbleCard({ review }: { review: ReviewCard }) {
-    const initials = review.name
-        .split(" ")
-        .map((p) => p[0])
-        .join("")
-        .slice(0, 2)
-        .toUpperCase();
-
     return (
         <div className="flex h-full min-h-0 w-full flex-col gap-3">
             <div className="relative flex min-h-0 flex-1 flex-col rounded-2xl border border-border/60 bg-card px-5 py-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
@@ -166,10 +149,17 @@ function ReviewBubbleCard({ review }: { review: ReviewCard }) {
             </div>
 
             <div className="flex shrink-0 items-center gap-3 pl-1">
-                <Avatar className="h-11 w-11 shrink-0 border border-border/80">
-                    {review.avatarSrc ? <AvatarImage src={review.avatarSrc} alt="" /> : null}
-                    <AvatarFallback className="bg-muted text-sm font-semibold text-foreground">{initials}</AvatarFallback>
-                </Avatar>
+                <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-border/80">
+                    {review.avatarSrc ? (
+                        <Image
+                            src={review.avatarSrc}
+                            alt={review.name}
+                            fill
+                            className="object-cover"
+                            sizes="44px"
+                        />
+                    ) : null}
+                </div>
                 <div className="min-w-0 pt-0.5">
                     <p className="text-sm font-semibold text-foreground">{review.name}</p>
                     <p className="text-xs text-muted-foreground">{review.timeAgo}</p>
@@ -192,7 +182,7 @@ type CustomerReviewsSectionProps = {
 export function CustomerReviewsSection({
     reviews = defaultReviews,
     aggregateRating = 4.8,
-    reviewCount = 100,
+    reviewCount = 50,
     headline = DEFAULT_REVIEWS_HEADLINE,
     leftBadge = "Google Reviews",
     leftTitle = "Trusted by facilities and homes across Australia",
@@ -236,15 +226,14 @@ export function CustomerReviewsSection({
                         const text = (data.text as string) ?? "";
                         if (!text.trim()) return null;
                         const manualTimeAgo = (data.timeAgo as string) ?? "";
-                        const avatarFromDb =
-                            (data.avatarSrc as string) || (data.avatar as string) || undefined;
+                        const face = reviewFaceByIndex(idx);
                         return {
                             id: reviewDoc.id,
-                            name,
+                            name: name.trim() || face.name,
                             text,
                             rating,
                             timeAgo: manualTimeAgo.trim() || formatDistanceToNow(new Date(createdAtMs), { addSuffix: true }),
-                            avatarSrc: avatarFromDb || reviewFaceByIndex(idx).src,
+                            avatarSrc: face.src,
                         } as ReviewCard;
                     })
                     .filter((review): review is ReviewCard => Boolean(review));
@@ -283,10 +272,13 @@ export function CustomerReviewsSection({
             <div className="container mx-auto px-4">
                 <div className="mx-auto max-w-3xl text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">{headline}</h2>
-                    <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
-                        <span className="font-semibold text-foreground">{aggregateRating}/5</span>
+                    <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-3">
+                        <span className="text-sm font-semibold text-foreground">{aggregateRating}/5</span>
                         <GoogleReviewsMark />
-                        <span>Based on {reviewCount.toLocaleString()}+ reviews</span>
+                        <ReviewSocialProofStrip className="justify-center" />
+                        <span className="text-sm text-muted-foreground">
+                            Based on {reviewCount.toLocaleString()}+ reviews
+                        </span>
                     </div>
                 </div>
 
@@ -303,7 +295,9 @@ export function CustomerReviewsSection({
                             <p className="text-[15px] leading-relaxed text-muted-foreground md:text-base">{leftDescription}</p>
                         </div>
 
-                        <div className="flex items-center gap-2.5 pt-2">
+                        <ReviewSocialProofStrip className="pt-2" />
+
+                        <div className="flex items-center gap-2.5">
                             <Button
                                 type="button"
                                 variant="outline"
