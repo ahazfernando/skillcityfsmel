@@ -122,35 +122,8 @@ const sections: PolicySection[] = [
         ),
     },
     {
-        id: "disclosure",
-        title: "6. Disclosure to third parties",
-        content: (
-            <>
-                <p>We may share personal information with:</p>
-                <ul className="list-disc pl-6 space-y-2 mt-3">
-                    <li>
-                        <strong>Service providers</strong> who assist us with email delivery, cloud
-                        hosting, customer relationship management, and IT support (for example, Firebase,
-                        Resend, or similar providers used to operate our website and communications).
-                    </li>
-                    <li>
-                        <strong>Professional advisers</strong> such as lawyers, accountants, or insurers
-                        where necessary.
-                    </li>
-                    <li>
-                        <strong>Government authorities</strong> when required or authorised by law.
-                    </li>
-                </ul>
-                <p className="mt-4">
-                    We do not sell your personal information. Third parties we engage are required to
-                    handle information securely and only for the purposes we specify.
-                </p>
-            </>
-        ),
-    },
-    {
         id: "overseas",
-        title: "7. Overseas disclosure",
+        title: "6. Overseas disclosure",
         content: (
             <p>
                 Some of our technology providers may store or process data outside Australia (for
@@ -163,7 +136,7 @@ const sections: PolicySection[] = [
     },
     {
         id: "security",
-        title: "8. Storage and security",
+        title: "7. Storage and security",
         content: (
             <p>
                 We store personal information in secure systems with access limited to authorised staff
@@ -176,7 +149,7 @@ const sections: PolicySection[] = [
     },
     {
         id: "cookies",
-        title: "9. Cookies and website analytics",
+        title: "8. Cookies and website analytics",
         content: (
             <>
                 <p>
@@ -194,7 +167,7 @@ const sections: PolicySection[] = [
     },
     {
         id: "marketing",
-        title: "10. Marketing communications",
+        title: "9. Marketing communications",
         content: (
             <p>
                 If you subscribe to our newsletter or opt in to marketing, we may send you updates about
@@ -206,7 +179,7 @@ const sections: PolicySection[] = [
     },
     {
         id: "your-rights",
-        title: "11. Your rights",
+        title: "10. Your rights",
         content: (
             <>
                 <p>Under Australian privacy law, you may:</p>
@@ -240,7 +213,7 @@ const sections: PolicySection[] = [
     },
     {
         id: "retention",
-        title: "12. Retention",
+        title: "11. Retention",
         content: (
             <p>
                 We retain personal information only for as long as needed to fulfil the purposes for
@@ -252,7 +225,7 @@ const sections: PolicySection[] = [
     },
     {
         id: "children",
-        title: "13. Children's privacy",
+        title: "12. Children's privacy",
         content: (
             <p>
                 Our website and services are not directed at children under 16. We do not knowingly
@@ -263,7 +236,7 @@ const sections: PolicySection[] = [
     },
     {
         id: "changes",
-        title: "14. Changes to this policy",
+        title: "13. Changes to this policy",
         content: (
             <p>
                 We may update this Privacy Policy from time to time to reflect changes in our practices,
@@ -274,7 +247,7 @@ const sections: PolicySection[] = [
     },
     {
         id: "contact",
-        title: "15. Contact us",
+        title: "14. Contact us",
         content: (
             <>
                 <p>
