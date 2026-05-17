@@ -24,8 +24,6 @@ import { db } from "@/lib/firebase";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { cn } from "@/lib/utils";
-
 type Inquiry = {
     id: string;
     name: string;
@@ -55,21 +53,17 @@ type StatCardProps = {
     subtitle: string;
     href: string;
     icon: React.ComponentType<{ className?: string }>;
-    accent: string;
-    iconBg: string;
 };
 
-function StatCard({ title, value, subtitle, href, icon: Icon, accent, iconBg }: StatCardProps) {
+function StatCard({ title, value, subtitle, href, icon: Icon }: StatCardProps) {
     return (
         <Link
             href={href}
             className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-5 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
         >
-            <div
-                className={cn("absolute -right-6 -top-6 h-24 w-24 rounded-full opacity-[0.12]", accent)}
-            />
+            <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary opacity-[0.12]" />
             <div className="relative flex items-start justify-between gap-3">
-                <div className={cn("flex h-11 w-11 items-center justify-center rounded-xl", iconBg)}>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary">
                     <Icon className="h-5 w-5 text-white" />
                 </div>
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
@@ -259,8 +253,6 @@ export function AdminDashboardOverview() {
                     }
                     href="/admin/inquiries"
                     icon={MessageSquare}
-                    accent="bg-emerald-500"
-                    iconBg="bg-emerald-600"
                 />
                 <StatCard
                     title="Newsletter"
@@ -268,8 +260,6 @@ export function AdminDashboardOverview() {
                     subtitle="Footer & site subscribers"
                     href="/admin/newsletter"
                     icon={Mail}
-                    accent="bg-sky-500"
-                    iconBg="bg-sky-600"
                 />
                 <StatCard
                     title="Team Users"
@@ -281,8 +271,6 @@ export function AdminDashboardOverview() {
                     }
                     href="/admin/users"
                     icon={Users}
-                    accent="bg-violet-500"
-                    iconBg="bg-violet-600"
                 />
                 <StatCard
                     title="Homepage Reviews"
@@ -290,8 +278,6 @@ export function AdminDashboardOverview() {
                     subtitle="Live on marketing site"
                     href="/admin/reviews"
                     icon={Star}
-                    accent="bg-amber-500"
-                    iconBg="bg-amber-600"
                 />
             </div>
 
@@ -324,7 +310,7 @@ export function AdminDashboardOverview() {
                                     </div>
                                     <div className="h-2 overflow-hidden rounded-full bg-muted">
                                         <div
-                                            className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all"
+                                            className="h-full rounded-full bg-primary transition-all"
                                             style={{
                                                 width: `${Math.max(8, (count / maxServiceCount) * 100)}%`,
                                             }}
