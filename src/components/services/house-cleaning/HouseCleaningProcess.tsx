@@ -32,8 +32,8 @@ export function HouseCleaningProcess() {
             <div className="container mx-auto px-4 max-w-7xl">
                 <div className="text-center mb-20 space-y-4">
                     <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-green-200 bg-green-50">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#00b050]"></span>
-                        <span className="text-xs font-bold tracking-widest text-[#00b050] uppercase">HOW WE WORK</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                        <span className="text-xs font-bold tracking-widest text-primary uppercase">HOW WE WORK</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold text-[#111827]">
@@ -59,7 +59,7 @@ export function HouseCleaningProcess() {
                                 transition={{ delay: index * 0.2 }}
                                 className="relative flex flex-col items-center text-center"
                             >
-                                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-400 to-[#00b050] text-white flex items-center justify-center shadow-lg shadow-green-500/20 z-10 mb-8 border-4 border-white transform transition-transform duration-300 hover:scale-110">
+                                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/80 to-primary text-white flex items-center justify-center shadow-lg shadow-green-500/20 z-10 mb-8 border-4 border-white transform transition-transform duration-300 hover:scale-110">
                                     <step.icon className="w-6 h-6" strokeWidth={2} />
                                 </div>
 

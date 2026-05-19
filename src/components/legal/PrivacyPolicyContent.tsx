@@ -1,16 +1,11 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import LegalPageHero from "@/components/legal/LegalPageHero";
+import LegalPageLayout, { type LegalSection } from "@/components/legal/LegalPageLayout";
 
 const LAST_UPDATED = "17 May 2026";
 
-type PolicySection = {
-    id: string;
-    title: string;
-    content: ReactNode;
-};
-
-const sections: PolicySection[] = [
+const sections: LegalSection[] = [
     {
         id: "introduction",
         title: "1. Introduction",
@@ -293,48 +288,13 @@ export default function PrivacyPolicyContent() {
                 title="Privacy Policy"
                 description="How Skill City Facility Solutions collects, uses, and protects your personal information."
             />
-
-            <section className="section-padding bg-background">
-                <div className="container-custom">
-                    <div className="max-w-4xl mx-auto">
-                        <p className="text-sm text-muted-foreground mb-10">
-                            Last updated: {LAST_UPDATED}
-                        </p>
-
-                        <nav
-                            aria-label="Privacy policy sections"
-                            className="mb-12 rounded-2xl border border-border bg-card p-6"
-                        >
-                            <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-                                On this page
-                            </h2>
-                            <ol className="grid sm:grid-cols-2 gap-2 text-sm">
-                                {sections.map((section) => (
-                                    <li key={section.id}>
-                                        <a
-                                            href={`#${section.id}`}
-                                            className="text-muted-foreground hover:text-primary transition-colors"
-                                        >
-                                            {section.title}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ol>
-                        </nav>
-
-                        <div className="space-y-12 text-muted-foreground leading-relaxed [&_p+p]:mt-4 [&_strong]:text-foreground">
-                            {sections.map((section) => (
-                                <article key={section.id} id={section.id} className="scroll-mt-28">
-                                    <h2 className="text-xl font-bold text-foreground mb-4">
-                                        {section.title}
-                                    </h2>
-                                    {section.content}
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <LegalPageLayout
+                lastUpdated={LAST_UPDATED}
+                navAriaLabel="Privacy policy sections"
+                sections={sections}
+                relatedLinks={[{ href: "/terms", label: "Terms and Conditions" }]}
+                ctaDescription="For privacy enquiries, access requests, or complaints, contact us and we will respond within a reasonable time."
+            />
         </>
     );
 }

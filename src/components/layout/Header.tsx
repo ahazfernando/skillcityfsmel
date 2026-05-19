@@ -88,7 +88,7 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               03 9034 6492
             </a>
-            <Button className="btn-secondary" asChild>
+            <Button className="btn-primary" asChild>
               <Link href="/contact-us">Book a Free Consultation</Link>
             </Button>
           </div>
@@ -182,7 +182,7 @@ const Header = () => {
                 <Phone className="w-4 h-4" />
                 03 9034 6492
               </a>
-              <Button className="btn-secondary w-full mt-2" asChild>
+              <Button className="btn-primary w-full mt-2" asChild>
                 <Link href="/contact-us">Book a Free Consultation</Link>
               </Button>
             </nav>

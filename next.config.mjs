@@ -20,6 +20,7 @@ const nextConfig = {
       { source: '/contact', destination: 'https://www.skillcityfacilitysolutions.com.au/contact-us', permanent: true },
       { source: '/others', destination: '/', permanent: true },
       { source: '/privacy-policy', destination: '/privacy', permanent: true },
+      { source: '/terms-and-conditions', destination: '/terms', permanent: true },
     ];
   },
 };

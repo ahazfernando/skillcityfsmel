@@ -1,5 +1,7 @@
 import { HouseCleaningHero } from "@/components/services/house-cleaning/HouseCleaningHero";
 import HouseCleaningAbout from "@/components/services/house-cleaning/HouseCleaningAbout";
+import ClientLogosMarquee from "@/components/shared/ClientLogosMarquee";
+import HouseCleaningServicesSection from "@/components/services/house-cleaning/HouseCleaningServicesSection";
 import { HouseCleaningLocations } from "@/components/services/house-cleaning/HouseCleaningLocations";
 import HouseCleaningSmarter from "@/components/services/house-cleaning/HouseCleaningSmarter";
 import { HouseCleaningInDepthTabs } from "@/components/services/house-cleaning/HouseCleaningInDepthTabs";
@@ -42,6 +44,8 @@ export default function HouseCleaningPage() {
         <main className="bg-white">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(houseBreadcrumbSchema) }} />
             <HouseCleaningHero />
+            <ClientLogosMarquee />
+            <HouseCleaningServicesSection />
             <HouseCleaningAbout />
             <script
                 type="application/ld+json"

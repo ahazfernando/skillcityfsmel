@@ -20,7 +20,7 @@ export function HouseCleaningLocations() {
                     <div className="space-y-8">
                         {/* Section Header */}
                         <div>
-                            <span className="text-sm font-bold text-[#00b050] uppercase tracking-wider">
+                            <span className="text-sm font-bold text-primary uppercase tracking-wider">
                                 Our Service Areas
                             </span>
                             <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mt-4 mb-6 leading-tight">
@@ -36,7 +36,7 @@ export function HouseCleaningLocations() {
                             {locations.map((location) => (
                                 <div key={location} className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full bg-[#f0fdf4] border border-[#dcfce7] flex items-center justify-center flex-shrink-0 shadow-sm">
-                                        <MapPin className="w-5 h-5 text-[#00b050]" />
+                                        <MapPin className="w-5 h-5 text-primary" />
                                     </div>
                                     <span className="text-[1.1rem] font-medium text-gray-800">
                                         {location}
@@ -47,13 +47,13 @@ export function HouseCleaningLocations() {
 
                         {/* Buttons */}
                         <div className="flex flex-wrap gap-4 pt-2">
-                            <Button className="bg-[#00b050] hover:bg-[#009b46] text-white px-6 py-6 rounded-full text-base font-medium flex items-center gap-2 transition-colors" asChild>
+                            <Button className="btn-primary text-white px-6 py-6 rounded-full text-base font-medium flex items-center gap-2 transition-colors" asChild>
                                 <Link href="/services">
                                     View Our Services
                                     <ArrowRight className="w-4 h-4 ml-1" />
                                 </Link>
                             </Button>
-                            <Button className="bg-[#00b050] hover:bg-[#009b46] text-white px-6 py-6 rounded-full text-base font-medium transition-colors" asChild>
+                            <Button className="btn-primary text-white px-6 py-6 rounded-full text-base font-medium transition-colors" asChild>
                                 <Link href="/contact-us">Book a Free Consultation</Link>
                             </Button>
                         </div>

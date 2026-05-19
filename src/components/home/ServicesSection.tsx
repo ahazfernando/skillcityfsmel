@@ -11,7 +11,7 @@ const commercialCleaningImg = "/newimages/Commercial Cleaning.jpg";
 const earlyChildhoodCleaningAltImg = "/newimages/EarlyChildhooCleaningD!.jpg";
 const kitchenCleaningImg = "/newimages/KitchenCleaning.jpg";
 const healthcareCleaningImg = "/newimages/healthcare.jpeg";
-const houseCleaningImg = "/newimages/HouseCleaningFS.jpg";
+const houseCleaningImg = "/Housecleaning/I_need_the_people_here_202605181047.jpeg";
 const cleanerPortraitImg = "/newimages/The_person_in_the_image_202604290815.jpg";
 
 const services = [
@@ -20,48 +20,56 @@ const services = [
     title: "Educational Cleaning",
     description: "Keep schools and educational facilities clean for students and staff.",
     image: schoolCleaningImg,
+    href: "/services/school-cleaning",
   },
   {
     icon: Truck,
     title: "Builders Cleaning",
     description: "Post-construction cleaning to make your newly built space spotless and move-in ready.",
     image: commercialCleaningImg,
+    href: "/services/builders-cleaning",
   },
   {
     icon: HeartPulse,
     title: "Healthcare Cleaning",
     description: "Specialized sanitization services for medical facilities and healthcare environments.",
     image: healthcareCleaningImg,
+    href: "/services/medical-cleaning",
   },
   {
     icon: PartyPopper,
     title: "Event & Venue Cleaning",
     description: "Pre and post-event cleaning for venues, stadiums, and conference centers.",
     image: commercialCleaningImg,
+    href: "/services/commercial-cleaning",
   },
   {
     icon: Building2,
     title: "Office Cleaning",
     description: "Professional cleaning for office spaces to keep your environment productive.",
     image: cleanerPortraitImg,
+    href: "/services/office-cleaning",
   },
   {
     icon: Home,
     title: "Residential Cleaning",
     description: "We provide you the best service quality regarding residential needs.",
     image: houseCleaningImg,
+    href: "/services/house-cleaning",
   },
   {
     icon: Sparkles,
     title: "Deep Cleaning",
     description: "Thorough deep cleaning for those hard-to-reach areas and tough stains.",
     image: kitchenCleaningImg,
+    href: "/services/one-off-cleaning",
   },
   {
     icon: Layers,
     title: "Carpet Cleaning",
     description: "Deep carpet cleaning to remove stains and refresh your floors.",
     image: earlyChildhoodCleaningAltImg,
+    href: "/services/house-cleaning",
   },
 ];
 
@@ -181,7 +189,8 @@ const ServicesSection = () => {
 
                       {/* Floating Action Button */}
                       <Link
-                        href="/services"
+                        href={service.href}
+                        aria-label={`Learn more about ${service.title}`}
                         className="absolute right-8 top-56 z-20 w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary/90"
                       >
                         <ArrowRight className="w-6 h-6 text-primary-foreground" />
@@ -192,14 +201,20 @@ const ServicesSection = () => {
                         <h3 className="text-xl font-bold text-foreground mb-3 pr-4">
                           {service.title}
                         </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-8 flex-1">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
                           {service.description}
                         </p>
 
-                        {/* Icon Box */}
-                        <div className="mt-auto">
-                          <div className="w-12 h-12 rounded-xl border border-border flex items-center justify-center bg-background">
-                            <service.icon className="w-6 h-6 text-foreground" />
+                        <div className="mt-auto flex items-center justify-between gap-4">
+                          <Link
+                            href={service.href}
+                            className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                          >
+                            Learn More
+                            <ArrowRight className="h-4 w-4" aria-hidden />
+                          </Link>
+                          <div className="w-12 h-12 shrink-0 rounded-xl border border-border flex items-center justify-center bg-background">
+                            <service.icon className="w-6 h-6 text-foreground" aria-hidden />
                           </div>
                         </div>
                       </div>

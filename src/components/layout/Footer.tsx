@@ -2,24 +2,19 @@ import Link from "next/link";
 import { Phone, Facebook, Twitter, Instagram, Linkedin, MapPin, Mail } from "lucide-react";
 import { NewsletterSubscribeForm } from "@/components/newsletter/NewsletterSubscribeForm";
 
-// You can customize these links for your new project
 const footerLinks = {
   company: [
     { name: "About Us", path: "/about-us" },
-    { name: "Services", path: "/services" },
-    { name: "Community", path: "/contact-us" },
-    { name: "Testimonial", path: "/about-us" },
+    { name: "Why Choose Us", path: "/why-choose-us" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact-us" },
   ],
-  support: [
-    { name: "Help Center", path: "/contact-us" },
-    { name: "Tweet @ Us", path: "https://twitter.com/skillcityfs" },
-    { name: "Webinars", path: "/services" },
-    { name: "Feedback", path: "/contact-us" },
-  ],
-  links: [
-    { name: "Courses", path: "/services" },
-    { name: "Service", path: "/services" },
-    { name: "All in One", path: "/services" },
+  services: [
+    { name: "House Cleaning", path: "/services/house-cleaning" },
+    { name: "Commercial Cleaning", path: "/services/commercial-cleaning" },
+    { name: "End of Lease Cleaning", path: "/services/end-of-lease-cleaning" },
+    { name: "Office Cleaning", path: "/services/office-cleaning" },
+    { name: "All Services", path: "/services" },
   ],
 };
 
@@ -68,7 +63,7 @@ export const Footer = () => {
       {/* ========================================= */}
       <div className="bg-forest text-primary-foreground pt-32 pb-8 mt-[-3rem]">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center mb-4">
@@ -114,28 +109,11 @@ export const Footer = () => {
               </ul>
             </div>
 
-            {/* Support Links */}
+            {/* Services Links */}
             <div>
-              <h4 className="font-semibold text-primary-foreground mb-4">Support</h4>
+              <h4 className="font-semibold text-primary-foreground mb-4">Services</h4>
               <ul className="space-y-3">
-                {footerLinks.support.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.path}
-                      className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Links */}
-            <div>
-              <h4 className="font-semibold text-primary-foreground mb-4">Links</h4>
-              <ul className="space-y-3">
-                {footerLinks.links.map((link) => (
+                {footerLinks.services.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.path}
@@ -181,12 +159,6 @@ export const Footer = () => {
               </Link>
               <Link href="/terms" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
                 Terms of Use
-              </Link>
-              <Link href="/legal" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-                Legal
-              </Link>
-              <Link href="/sitemap" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-                Site Map
               </Link>
             </div>
           </div>
