@@ -25,7 +25,6 @@ import HowItWorks from "@/components/home/HowItWorks";
 import LocationsSection from "@/components/home/LocationsSection";
 import AboutPreview from "@/components/home/AboutPreview";
 import ServicesSection from "@/components/home/ServicesSection";
-import HomeServicesGrid from "@/components/home/HomeServicesGrid";
 import ExperienceSection from "@/components/home/ExperienceSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import BlogSection from "@/components/home/BlogSection";
@@ -46,7 +45,6 @@ export default function Home() {
             <ServicesSection />
             <TrustedClientsSection />
             <LicensesSection />
-            <HomeServicesGrid />
             <ExperienceSection />
             <CustomerReviewsSection />
             {/* <WhyChooseUs /> */}

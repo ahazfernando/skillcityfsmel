@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { CookieConsentProvider } from "@/components/cookies/CookieConsentProvider";
 
 export default function ClientLayout({
     children,
@@ -12,11 +13,21 @@ export default function ClientLayout({
     const pathname = usePathname();
     const isAdmin = pathname?.startsWith("/admin");
 
+    if (isAdmin) {
+        return (
+            <div className="min-h-screen flex flex-col">
+                <main className="flex-1">{children}</main>
+            </div>
+        );
+    }
+
     return (
-        <div className="min-h-screen flex flex-col">
-            {!isAdmin && <Header />}
-            <main className="flex-1">{children}</main>
-            {!isAdmin && <Footer />}
-        </div>
+        <CookieConsentProvider>
+            <div className="min-h-screen flex flex-col">
+                <Header />
+                <main className="flex-1">{children}</main>
+                <Footer />
+            </div>
+        </CookieConsentProvider>
     );
 }

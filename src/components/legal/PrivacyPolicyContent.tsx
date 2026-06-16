@@ -148,14 +148,30 @@ const sections: LegalSection[] = [
         content: (
             <>
                 <p>
-                    Our website may use cookies and similar technologies to remember preferences,
-                    maintain session security, and understand how visitors use our site. You can control
-                    cookies through your browser settings. Disabling cookies may affect some website
-                    functionality.
+                    We use cookies and similar technologies to keep the website working, remember your
+                    choices (such as cookie preferences), and—only if you opt in—to understand how visitors
+                    use our site or measure marketing campaigns.
                 </p>
-                <p>
-                    If we use analytics tools in the future, we will update this policy to describe what
-                    data is collected and how you can opt out where applicable.
+                <p>We group cookies into the following categories:</p>
+                <ul className="list-disc pl-6 space-y-2 mt-2">
+                    <li>
+                        <strong>Strictly necessary</strong> — required for core site functionality and
+                        security. These are always active.
+                    </li>
+                    <li>
+                        <strong>Analytics</strong> — help us understand traffic and improve our pages. These
+                        are only used if you accept them.
+                    </li>
+                    <li>
+                        <strong>Marketing</strong> — used to measure campaigns and relevant offers. These are
+                        only used if you accept them.
+                    </li>
+                </ul>
+                <p className="mt-4">
+                    When you first visit our site, you can accept all cookies, reject non-essential cookies,
+                    or manage your preferences. You can change your choices at any time using{" "}
+                    <strong>Cookie settings</strong> in the website footer. You can also control cookies
+                    through your browser settings; disabling cookies may affect some website functionality.
                 </p>
             </>
         ),

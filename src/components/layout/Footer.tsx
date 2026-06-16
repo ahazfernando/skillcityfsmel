@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, Facebook, Twitter, Instagram, Linkedin, MapPin, Mail } from "lucide-react";
 import { NewsletterSubscribeForm } from "@/components/newsletter/NewsletterSubscribeForm";
+import CookieSettingsButton from "@/components/cookies/CookieSettingsButton";
 
 const footerLinks = {
   company: [
@@ -160,6 +161,7 @@ export const Footer = () => {
               <Link href="/terms" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
                 Terms of Use
               </Link>
+              <CookieSettingsButton />
             </div>
           </div>
         </div>
