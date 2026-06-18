@@ -53,6 +53,15 @@ const HeroSection = () => {
                 </div>
             </div>
 
+            <div className="absolute bottom-4 right-4 z-10 md:bottom-8 md:right-8 lg:bottom-10 lg:right-10">
+                <Image
+                    src="/accredition/AccreditionQualityD1.png"
+                    alt="Quality accreditation"
+                    width={160}
+                    height={160}
+                    className="h-16 w-auto object-contain drop-shadow-lg sm:h-20 md:h-24 lg:h-28"
+                />
+            </div>
 
         </section>
     );

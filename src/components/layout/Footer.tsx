@@ -21,7 +21,7 @@ const footerLinks = {
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#f4f7f5]">
+    <footer className="bg-white">
       {/* ========================================= */}
       {/*            Newsletter Section             */}
       {/* ========================================= */}
@@ -62,46 +62,53 @@ export const Footer = () => {
       {/* ========================================= */}
       {/*               Main Footer                 */}
       {/* ========================================= */}
-      <div className="bg-forest text-primary-foreground pt-32 pb-8 mt-[-3rem]">
+      <div className="bg-white text-foreground pt-32 pb-8 mt-[-3rem]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center mb-4">
                 <img
-                  src="/SkillCityFSEC.png"
-                  alt="Skill City Logo"
-                  className="h-12 w-auto brightness-0 invert"
+                  src="/SkillCityPNGLOGO.png"
+                  alt="Skill City Facility Solutions"
+                  className="h-14 w-auto max-w-[220px] object-contain object-left"
                 />
               </Link>
-              <p className="text-primary-foreground/80 text-sm mb-6 leading-relaxed">
+              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
                 Skill City Group of Companies is a leading provider of comprehensive facility solutions, expert recruitment services, and professional development programs.
               </p>
               <div className="flex items-center gap-4">
-                <a href="https://facebook.com/skillcityfs" target="_blank" rel="noreferrer" className="text-primary-foreground hover:text-accent transition-colors">
+                <a href="https://facebook.com/skillcityfs" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Facebook size={18} />
                 </a>
-                <a href="https://twitter.com/skillcityfs" target="_blank" rel="noreferrer" className="text-primary-foreground hover:text-accent transition-colors">
+                <a href="https://twitter.com/skillcityfs" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Twitter size={18} />
                 </a>
-                <a href="https://instagram.com/skillcityfs" target="_blank" rel="noreferrer" className="text-primary-foreground hover:text-accent transition-colors">
+                <a href="https://instagram.com/skillcityfs" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Instagram size={18} />
                 </a>
-                <a href="https://linkedin.com/company/skillcityfs" target="_blank" rel="noreferrer" className="text-primary-foreground hover:text-accent transition-colors">
+                <a href="https://linkedin.com/company/skillcityfs" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Linkedin size={18} />
                 </a>
+              </div>
+              <div className="mt-6 overflow-visible">
+                <img
+                  src="/accredition/Certifications.png"
+                  alt="Skill City certifications and licences"
+                  className="block h-auto w-[min(520px,calc(100vw-2rem))] max-w-none object-contain object-left"
+                />
               </div>
             </div>
 
             {/* Company Links */}
             <div>
-              <h4 className="font-semibold text-primary-foreground mb-4">Company</h4>
+              <h4 className="font-semibold text-foreground mb-4">Company</h4>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.path}
-                      className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
                       {link.name}
                     </Link>
@@ -112,13 +119,13 @@ export const Footer = () => {
 
             {/* Services Links */}
             <div>
-              <h4 className="font-semibold text-primary-foreground mb-4">Services</h4>
+              <h4 className="font-semibold text-foreground mb-4">Services</h4>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.path}
-                      className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
                       {link.name}
                     </Link>
@@ -129,18 +136,18 @@ export const Footer = () => {
 
             {/* Contact Us */}
             <div>
-              <h4 className="font-semibold text-primary-foreground mb-4">Contact Us</h4>
+              <h4 className="font-semibold text-foreground mb-4">Contact Us</h4>
               <div className="space-y-3">
-                <div className="flex items-start gap-3 text-primary-foreground/80 text-sm">
-                  <MapPin size={16} className="text-accent mt-0.5 flex-shrink-0" />
+                <div className="flex items-start gap-3 text-muted-foreground text-sm">
+                  <MapPin size={16} className="text-primary mt-0.5 flex-shrink-0" />
                   <span>4A Haughton Road, Oakleigh, 3166, VIC</span>
                 </div>
-                <a href="tel:+61390346492" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors text-sm">
-                  <Phone size={16} className="text-accent" />
+                <a href="tel:+61390346492" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm">
+                  <Phone size={16} className="text-primary" />
                   <span>03 9034 6492</span>
                 </a>
-                <a href="mailto:info@skillcityfs.com.au" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors text-sm">
-                  <Mail size={16} className="text-accent" />
+                <a href="mailto:info@skillcityfs.com.au" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm">
+                  <Mail size={16} className="text-primary" />
                   <span>info@skillcityfs.com.au</span>
                 </a>
               </div>
@@ -149,16 +156,16 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/20">
+        <div className="border-t border-border">
           <div className="container mx-auto px-4 max-w-7xl py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-primary-foreground/60 text-sm">
+            <p className="text-muted-foreground text-sm">
               © Copyright by Skill City Group of Companies. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <Link href="/privacy" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+              <Link href="/privacy" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+              <Link href="/terms" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Terms of Use
               </Link>
               <CookieSettingsButton />

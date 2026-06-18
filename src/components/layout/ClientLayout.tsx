@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MetaPixel from "@/components/analytics/MetaPixel";
 import { CookieConsentProvider } from "@/components/cookies/CookieConsentProvider";
 
 export default function ClientLayout({
@@ -23,6 +24,7 @@ export default function ClientLayout({
 
     return (
         <CookieConsentProvider>
+            <MetaPixel />
             <div className="min-h-screen flex flex-col">
                 <Header />
                 <main className="flex-1">{children}</main>
