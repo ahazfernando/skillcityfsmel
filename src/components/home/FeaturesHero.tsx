@@ -1,6 +1,13 @@
-import { ArrowRight, Star, Check } from "lucide-react";
+import { ArrowRight, Star, ShieldCheck, Smile, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { REVIEW_FACE_PEOPLE } from "@/data/reviewFaces";
+
+const trustBadges = [
+  { label: "Professional", Icon: ShieldCheck },
+  { label: "Friendly", Icon: Smile },
+  { label: "Convenient", Icon: Clock },
+] as const;
 
 const FeaturesHero = () => {
   return (
@@ -41,12 +48,10 @@ const FeaturesHero = () => {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-6 pt-4">
-              {["Professional", "Friendly", "Convenient"].map((badge) => (
-                <div key={badge} className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-sm font-medium text-foreground">{badge}</span>
+              {trustBadges.map(({ label, Icon }) => (
+                <div key={label} className="flex items-center gap-2">
+                  <Icon className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium text-foreground">{label}</span>
                 </div>
               ))}
             </div>
@@ -67,21 +72,21 @@ const FeaturesHero = () => {
               <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-4 shadow-lg border border-border animate-float">
                 <div className="flex items-center gap-3">
                   <div className="flex -space-x-2">
-                    {[2, 3, 4].map((i) => (
+                    {REVIEW_FACE_PEOPLE.map((face) => (
                       <div
-                        key={i}
+                        key={face.src}
                         className="w-8 h-8 rounded-full border-2 border-white overflow-hidden"
                       >
                         <img
-                          src={`/people/${i}.png`}
-                          alt={`Customer ${i}`}
+                          src={face.src}
+                          alt={face.name}
                           className="w-full h-full object-cover"
                         />
                       </div>
                     ))}
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">400+ Reviews</p>
+                    <p className="font-semibold text-foreground">100+ Reviews</p>
                     <div className="flex">
                       {[1, 2, 3, 4, 5].map((i) => (
                         <Star key={i} className="w-3 h-3 text-accent fill-accent" />

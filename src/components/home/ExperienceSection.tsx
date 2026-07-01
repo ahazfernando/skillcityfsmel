@@ -13,14 +13,9 @@ const featuredServices = [
     image: "/servicesimages/WhatsApp Image 2026-01-14 at 7.44.37 PM (1).jpeg",
   },
   {
-    title: "Deep Cleaning",
-    description: "Revitalize your home with our deep cleaning services, reaching every corner and surface.",
+    title: "Sanitary Cleaning",
+    description: "Thorough sanitary cleaning for healthier spaces, with attention to hygiene-critical areas and surfaces.",
     image: "/servicesimages/WhatsApp Image 2026-01-14 at 7.26.09 PM (1).jpeg",
-  },
-  {
-    title: "Kitchen Cleaning",
-    description: "Spotless countertops, appliances, and surfaces — professional kitchen cleaning for homes and workplaces.",
-    image: "/servicesimages/Replace_the_person_in_the_202606090715.jpeg",
   },
   {
     title: "Commercial Cleaning",
@@ -89,7 +84,7 @@ const ExperienceSection = () => {
             {featuredServices.map((service, index) => (
               <div
                 key={service.title}
-                className="relative group rounded-2xl overflow-hidden h-[300px] md:h-[340px] animate-fade-in flex-[0_0_240px] sm:flex-[0_0_260px] lg:flex-[0_0_calc(20%-19.2px)]"
+                className="relative group rounded-2xl overflow-hidden h-[300px] md:h-[340px] animate-fade-in flex-[0_0_240px] sm:flex-[0_0_260px] lg:flex-[0_0_calc(25%-18px)]"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <img

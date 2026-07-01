@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Star, Users, CheckCircle } from 'lucide-react';
+import { REVIEW_FACE_PEOPLE } from '@/data/reviewFaces';
 
 const AboutHero = () => {
     // Using the image from public folder
@@ -46,9 +47,14 @@ const AboutHero = () => {
 
                             <div className="flex items-center gap-3">
                                 <div className="flex -space-x-3">
-                                    <img src="/people/2.png" alt="Customer" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
-                                    <img src="/people/3.png" alt="Customer" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
-                                    <img src="/people/4.png" alt="Customer" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
+                                    {REVIEW_FACE_PEOPLE.map((face) => (
+                                        <img
+                                            key={face.src}
+                                            src={face.src}
+                                            alt={face.name}
+                                            className="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                        />
+                                    ))}
                                 </div>
                                 <div>
                                     <p className="text-white font-semibold text-sm">Satisfied Customers</p>

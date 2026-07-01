@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { CERTIFICATION_LOGOS } from "@/components/shared/CertificationTrustBar";
+import { REVIEW_FACE_PEOPLE } from "@/data/reviewFaces";
 
 export function HouseCleaningHero() {
     return (
@@ -84,11 +85,11 @@ export function HouseCleaningHero() {
 
                         <div className="flex items-center gap-8 pt-5">
                             <div className="flex -space-x-4">
-                                {[1, 2, 3, 4].map((i) => (
-                                    <div key={i} className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white relative overflow-hidden">
+                                {REVIEW_FACE_PEOPLE.map((face) => (
+                                    <div key={face.src} className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white relative overflow-hidden">
                                         <Image
-                                            src={`https://i.pravatar.cc/150?img=${i + 10}`}
-                                            alt="User"
+                                            src={face.src}
+                                            alt={face.name}
                                             fill
                                             className="object-cover"
                                         />

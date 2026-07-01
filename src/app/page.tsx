@@ -40,7 +40,6 @@ export default function Home() {
             <ClientLogosMarquee />
             <FeaturesHero />
             <HowItWorks />
-            <LocationsSection />
             <AboutPreview />
             <ServicesSection />
             <TrustedClientsSection />
@@ -48,6 +47,7 @@ export default function Home() {
             <ExperienceSection />
             <CustomerReviewsSection />
             {/* <WhyChooseUs /> */}
+            <LocationsSection />
             <BlogSection />
         </>
     );
