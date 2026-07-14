@@ -67,7 +67,7 @@ export function HouseCleaningHero() {
                             <p className="mb-2 text-xs text-gray-500">
                                 Certified for safe, compliant facility management in Australia
                             </p>
-                            <div className="flex flex-wrap items-center gap-4">
+                            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                                 {CERTIFICATION_LOGOS.map((logo) => (
                                     <div key={logo.src} className="flex h-10 items-center">
                                         <Image
@@ -75,7 +75,7 @@ export function HouseCleaningHero() {
                                             alt={logo.alt}
                                             width={120}
                                             height={36}
-                                            className="h-7 w-auto object-contain"
+                                            className="h-7 w-auto max-w-[110px] sm:max-w-[120px] object-contain"
                                             unoptimized={logo.src.endsWith(".svg")}
                                         />
                                     </div>
@@ -121,7 +121,7 @@ export function HouseCleaningHero() {
                             className="absolute inset-0 flex items-center justify-center"
                         >
                             {/* Central Image Mask with interesting shape */}
-                            <div className="relative w-[500px] h-[600px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3">
+                            <div className="relative w-[500px] h-[600px] rounded-[3rem] overflow-hidden shadow-2xl">
                                 <Image
                                     src="/home/Both_people_here_should_be_202604290733.jpeg"
                                     alt="Clean Living Room"

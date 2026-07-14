@@ -1,112 +1,81 @@
-import { Check, Home, SprayCan, Layers, CalendarDays } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import Image from "next/image";
-
-const features = [
-  {
-    icon: Home,
-    title: "Home Deep Cleaning",
-    description:
-      "Complete top-to-bottom cleaning for bedrooms, kitchens, bathrooms, and living spaces.",
-  },
-  {
-    icon: SprayCan,
-    title: "Kitchen & Bathroom Sanitization",
-    description:
-      "Thorough disinfection and hygiene-focused cleaning for healthier home environments.",
-  },
-  {
-    icon: Layers,
-    title: "Carpet, Floor & Surface Care",
-    description:
-      "Professional floor, carpet, and surface cleaning for a fresher and spotless finish.",
-  },
-  {
-    icon: CalendarDays,
-    title: "Scheduled & One Off Cleaning",
-    description: "Flexible cleaning services tailored for routine or one-time needs.",
-  },
-];
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const AboutPreview = () => {
-  return (
-    <section className="py-12 md:py-16 bg-black">
-      <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          {/* Image */}
-          <div className="relative">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-xl">
-              <Image
-                src="/family/SkillCityNewDesigns%20-%2011.png"
-                alt="Professional cleaning team"
-                className="w-full h-[380px] md:h-[460px] object-cover"
-                width={900}
-                height={700}
-                priority
-              />
-            </div>
+    return (
+        <section className="py-20 md:py-24 bg-white overflow-hidden">
+            <div className="container-custom">
+                <div className="grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
+                    <div className="relative">
+                        <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-black/5">
+                            <Image
+                                src="/family/SkillCityNewDesigns%20-%2011.png"
+                                alt="Professional cleaning team"
+                                className="w-full h-[380px] md:h-[420px] object-cover"
+                                width={900}
+                                height={700}
+                                priority
+                            />
 
-            {/* Stats Card */}
-            <div className="absolute -bottom-6 -right-6 rounded-2xl p-6 shadow-xl bg-[#ade544] text-black">
-              <p className="text-4xl font-bold leading-none">15+</p>
-              <p className="text-sm font-medium opacity-90">Years Experience</p>
-            </div>
-
-            {/* Decorative */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#ade544] rounded-full opacity-35 blur-xl" />
-          </div>
-
-          {/* Content */}
-          <div className="space-y-5">
-            <span className="text-sm font-semibold text-[#ade544] uppercase tracking-wider">
-              Who We Are
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-              We Are the Best <br />Option for a Sparkling Home
-            </h2>
-            <p className="text-white/70 leading-relaxed">
-              At Skill City Facility Solutions, we deliver reliable, professional cleaning with clear communication and consistently great results.
-            </p>
-
-            {/* Feature Rail (inspired by reference UI) */}
-            <div className="relative">
-              <div className="absolute left-6 top-3 bottom-3 w-px bg-white/20" />
-              <div className="space-y-6">
-                {features.map((feature) => (
-                  <div key={feature.title} className="flex items-start gap-6">
-                    <div className="relative flex-shrink-0">
-                      <div className="w-12 h-12 rounded-full bg-[#ade544] text-black border-2 border-white flex items-center justify-center shadow-sm">
-                        <feature.icon className="w-6 h-6 text-black" />
-                      </div>
-                    </div>
-
-                    <div className="pt-0.5 space-y-2">
-                      <p className="text-lg font-bold text-white leading-snug">
-                        {feature.title}
-                      </p>
-                      <div className="flex items-start gap-2">
-                        <div className="w-5 h-5 rounded-md bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Check className="w-3.5 h-3.5 text-[#ade544]" />
+                            <div className="absolute bottom-6 left-6 bg-primary text-primary-foreground px-6 py-5 rounded-2xl shadow-xl z-10 min-w-[9rem]">
+                                <p className="text-4xl font-bold leading-none mb-1">15+</p>
+                                <p className="text-white/90 text-sm font-medium">Years of Excellence</p>
+                            </div>
                         </div>
-                        <p className="text-white/70 leading-relaxed">
-                          {feature.description}
-                        </p>
-                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
-            <Button className="btn-primary rounded-[24px] px-6" asChild>
-              <Link href="/contact-us">Book a Free Consultation</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+                    <div className="space-y-6 lg:space-y-7">
+                        <div className="flex items-center gap-4">
+                            <div className="h-px w-12 bg-primary" />
+                            <span className="text-sm font-bold text-primary tracking-widest uppercase">
+                                Who We Are
+                            </span>
+                        </div>
+
+                        <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.12] tracking-tight text-[#111827]">
+                            Your Trusted Partner in Professional Cleaning
+                        </h2>
+
+                        <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-xl">
+                            At Skill City Facility Solutions, we deliver reliable, professional cleaning with
+                            clear communication and consistently great results for homes and businesses across
+                            Australia.
+                        </p>
+
+                        <div className="max-w-xl">
+                            <p className="mb-4 text-sm font-medium leading-snug text-muted-foreground">
+                                Accredited, licensed & quality assured
+                            </p>
+                            <Image
+                                src="/accredition/Certifications.png"
+                                alt="Skill City certifications and accreditations"
+                                width={560}
+                                height={120}
+                                className="h-auto w-full max-w-md object-contain"
+                            />
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-3 pt-2">
+                            <Button
+                                asChild
+                                className="btn-primary rounded-full px-6 py-2.5 text-sm h-auto shadow-sm"
+                            >
+                                <Link href="/contact-us">Book a Free Consultation</Link>
+                            </Button>
+                            <Button
+                                asChild
+                                variant="outline"
+                                className="rounded-full border-2 border-primary px-6 py-2.5 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground h-auto"
+                            >
+                                <Link href="/services">View Our Services</Link>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default AboutPreview;
