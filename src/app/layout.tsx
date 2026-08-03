@@ -133,8 +133,7 @@ export default function RootLayout({
                             ],
                             "sameAs": [
                                 "https://www.facebook.com/profile.php?id=61577863389197",
-                                "https://twitter.com/skillcityfs",
-                                "https://www.instagram.com/skillcityfs",
+                                "https://www.instagram.com/skillcityfacilitysolutions/",
                                 "https://www.linkedin.com/company/skillcityfs"
                             ],
                             "priceRange": "$$"

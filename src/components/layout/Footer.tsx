@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Facebook, Twitter, Instagram, Linkedin, MapPin, Mail } from "lucide-react";
+import { Phone, Facebook, Instagram, Linkedin, MapPin, Mail } from "lucide-react";
 import { NewsletterSubscribeForm } from "@/components/newsletter/NewsletterSubscribeForm";
 import CookieSettingsButton from "@/components/cookies/CookieSettingsButton";
 
@@ -81,10 +81,7 @@ export const Footer = () => {
                 <a href="https://www.facebook.com/profile.php?id=61577863389197" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Facebook size={18} />
                 </a>
-                <a href="https://twitter.com/skillcityfs" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
-                  <Twitter size={18} />
-                </a>
-                <a href="https://instagram.com/skillcityfs" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
+                <a href="https://www.instagram.com/skillcityfacilitysolutions/" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Instagram size={18} />
                 </a>
                 <a href="https://linkedin.com/company/skillcityfs" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
