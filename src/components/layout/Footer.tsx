@@ -78,7 +78,7 @@ export const Footer = () => {
                 Skill City Group of Companies is a leading provider of comprehensive facility solutions, expert recruitment services, and professional development programs.
               </p>
               <div className="flex items-center gap-4">
-                <a href="https://facebook.com/skillcityfs" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
+                <a href="https://www.facebook.com/profile.php?id=61577863389197" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Facebook size={18} />
                 </a>
                 <a href="https://twitter.com/skillcityfs" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary transition-colors">
